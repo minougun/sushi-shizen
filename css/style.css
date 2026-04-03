@@ -2049,7 +2049,11 @@
   }
 
   .header__booking_panel {
-    padding: 18px 16px;
+    display: none;
+  }
+
+  .header__trust_marks {
+    display: none;
   }
 
   .header__booking_text {

@@ -126,16 +126,10 @@ const translations = {
     closed_dd: "不定休",
     phone_dt: "電話番号",
     address_dt: "住所",
-    address_dd: "大阪府大阪市中央区東心斎橋1-14-15 アルスビル 4F",
-    access_dt: "アクセス",
-    access_dd: "御堂筋線 心斎橋駅 徒歩5分<br>長堀橋駅 から 317m",
-    seats_dt: "席数",
-    seats_dd: "10席（カウンター10席）",
-    smoking_dt: "禁煙・喫煙",
-    smoking_dd: "全席禁煙",
+    address_access_dd: "大阪府大阪市中央区東心斎橋1-14-15 アルスビル 4F<br>心斎橋駅 徒歩5分",
+    hours_short_dd: "夜 18:00〜20:00 / 20:30〜23:00<br>土日祝ランチ 12:00〜（前日予約制）",
     payment_dt: "支払い方法",
-    payment_dd:
-      "カード可（VISA / Master / JCB / AMEX / Diners / UnionPay）<br>電子マネー可（交通系電子マネー（Suica等） / 楽天Edy / nanaco / WAON / iD / QUICPay）<br>QRコード決済可（PayPay / d払い / 楽天ペイ / au PAY / Alipay / WeChat Pay）",
+    payment_short_dd: "カード / 電子マネー / QR決済（Alipay・WeChat Pay対応）",
     cancel_title_main: "キャンセルポリシー",
     cancel_title_sub: "予約規定",
     cancel_dt: "当日キャンセル",
@@ -277,16 +271,10 @@ const translations = {
     closed_dd: "Irregular holidays",
     phone_dt: "Phone",
     address_dt: "Address",
-    address_dd: "4F Ars Building, 1-14-15 Higashi-Shinsaibashi, Chuo-ku, Osaka",
-    access_dt: "Access",
-    access_dd: "5 min walk from Shinsaibashi Station<br>317 m from Nagahoribashi Station",
-    seats_dt: "Seats",
-    seats_dd: "10 seats, counter only",
-    smoking_dt: "Smoking",
-    smoking_dd: "Non-smoking",
+    address_access_dd: "4F Ars Building, 1-14-15 Higashi-Shinsaibashi, Chuo-ku, Osaka<br>5 min walk from Shinsaibashi Station",
+    hours_short_dd: "Dinner 18:00–20:00 / 20:30–23:00<br>Weekend lunch from 12:00 (book by the previous day)",
     payment_dt: "Payment",
-    payment_dd:
-      "Cards accepted (VISA / Master / JCB / AMEX / Diners / UnionPay)<br>E-money accepted (Suica / Rakuten Edy / nanaco / WAON / iD / QUICPay)<br>QR payments accepted (PayPay / Alipay / WeChat Pay / au PAY etc.)",
+    payment_short_dd: "Cards / E-money / QR payments (Alipay & WeChat Pay accepted)",
     cancel_title_main: "Cancellation",
     cancel_title_sub: "Cancellation",
     cancel_dt: "Same-day cancellation",
@@ -426,16 +414,10 @@ const translations = {
     closed_dd: "비정기 휴무",
     phone_dt: "전화번호",
     address_dt: "주소",
-    address_dd: "오사카부 오사카시 주오구 히가시신사이바시 1-14-15 아루스빌딩 4F",
-    access_dt: "오시는 길",
-    access_dd: "미도스지선 신사이바시역 도보 5분<br>나가호리바시역에서 317m",
-    seats_dt: "좌석 수",
-    seats_dd: "카운터 10석",
-    smoking_dt: "흡연 여부",
-    smoking_dd: "전석 금연",
+    address_access_dd: "오사카부 오사카시 주오구 히가시신사이바시 1-14-15 아루스빌딩 4F<br>신사이바시역 도보 5분",
+    hours_short_dd: "저녁 18:00–20:00 / 20:30–23:00<br>토·일·공휴일 런치 12:00부터 (전날 예약 필수)",
     payment_dt: "결제 방법",
-    payment_dd:
-      "카드 결제 가능: VISA / Master / JCB / AMEX / Diners / UnionPay<br>전자화폐 결제 가능: Suica / Rakuten Edy / nanaco / WAON / iD / QUICPay<br>QR 결제 가능: PayPay / Alipay / WeChat Pay / d페이 / 라쿠텐페이 / au PAY",
+    payment_short_dd: "카드 / 전자화폐 / QR 결제 (Alipay·WeChat Pay 가능)",
     cancel_title_main: "취소 규정",
     cancel_title_sub: "Cancellation",
     cancel_dt: "당일 취소",
@@ -575,16 +557,10 @@ const translations = {
     closed_dd: "不定休",
     phone_dt: "电话",
     address_dt: "地址",
-    address_dd: "大阪府大阪市中央区东心斋桥1-14-15 Ars大厦4F",
-    access_dt: "交通",
-    access_dd: "御堂筋线心斋桥站步行5分钟<br>距长堀桥站约317米",
-    seats_dt: "座位数",
-    seats_dd: "仅吧台10席",
-    smoking_dt: "吸烟",
-    smoking_dd: "全店禁烟",
+    address_access_dd: "大阪府大阪市中央区东心斋桥1-14-15 Ars大厦4F<br>距心斋桥站步行5分钟",
+    hours_short_dd: "晚间 18:00–20:00 / 20:30–23:00<br>周末及节假日午餐 12:00起（需提前一天预约）",
     payment_dt: "支付方式",
-    payment_dd:
-      "可用信用卡：VISA / Master / JCB / AMEX / Diners / 银联<br>可用电子货币：Suica / Rakuten Edy / nanaco / WAON / iD / QUICPay<br>可用二维码支付：PayPay / 支付宝 / 微信支付 / d Pay / Rakuten Pay / au PAY",
+    payment_short_dd: "信用卡 / 电子货币 / 二维码支付（支持支付宝·微信支付）",
     cancel_title_main: "取消政策",
     cancel_title_sub: "Cancellation",
     cancel_dt: "当日取消",
@@ -608,38 +584,6 @@ function setMetaContent(selector, value) {
   }
 }
 
-function reorderDefinitionList(list, order) {
-  if (!list || !Array.isArray(order) || order.length === 0) {
-    return;
-  }
-
-  const pairs = [];
-  const children = Array.from(list.children);
-  for (let index = 0; index < children.length; index += 2) {
-    const term = children[index];
-    const description = children[index + 1];
-    if (term && description) {
-      pairs.push({
-        key: term.dataset.i18n || "",
-        nodes: [term, description],
-      });
-    }
-  }
-
-  const pairMap = new Map(pairs.map((pair) => [pair.key, pair.nodes]));
-  const orderedNodes = order.flatMap((key) => pairMap.get(key) || []);
-  orderedNodes.forEach((node) => {
-    list.appendChild(node);
-  });
-}
-
-function reorderInformationLayout(lang) {
-  const mainInfoList = document.querySelector(".section__information .group1 .info__list");
-  const mainOrder = lang === "en"
-    ? ["access_dt", "address_dt", "hours_dt", "seats_dt", "payment_dt", "smoking_dt", "phone_dt", "closed_dt"]
-    : ["hours_dt", "closed_dt", "phone_dt", "address_dt", "access_dt", "seats_dt", "smoking_dt", "payment_dt"];
-  reorderDefinitionList(mainInfoList, mainOrder);
-}
 
 function applyLanguage(lang) {
   const dict = translations[lang] || translations.ja;
@@ -681,8 +625,6 @@ function applyLanguage(lang) {
     button.classList.toggle("is-active", isActive);
     button.setAttribute("aria-pressed", String(isActive));
   });
-
-  reorderInformationLayout(lang);
 
   localStorage.setItem(STORAGE_KEY, lang);
 }

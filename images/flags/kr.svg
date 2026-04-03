@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 40" role="img" aria-labelledby="title">
+  <title>South Korea Flag</title>
+  <rect width="60" height="40" fill="#ffffff"/>
+  <g transform="translate(30 20)">
+    <path d="M0-9a9 9 0 0 1 0 18a4.5 4.5 0 0 0 0-9a4.5 4.5 0 0 1 0-9z" fill="#cd2e3a"/>
+    <path d="M0 9a9 9 0 0 1 0-18a4.5 4.5 0 0 0 0 9a4.5 4.5 0 0 1 0 9z" fill="#0047a0"/>
+  </g>
+  <g fill="#111111">
+    <rect x="8" y="7" width="10" height="2" transform="rotate(-28 13 8)"/>
+    <rect x="8" y="10" width="10" height="2" transform="rotate(-28 13 11)"/>
+    <rect x="8" y="13" width="10" height="2" transform="rotate(-28 13 14)"/>
+    <rect x="42" y="25" width="10" height="2" transform="rotate(-28 47 26)"/>
+    <rect x="42" y="28" width="10" height="2" transform="rotate(-28 47 29)"/>
+    <rect x="42" y="31" width="10" height="2" transform="rotate(-28 47 32)"/>
+    <rect x="42" y="7" width="10" height="2" transform="rotate(28 47 8)"/>
+    <rect x="42" y="13" width="10" height="2" transform="rotate(28 47 14)"/>
+    <rect x="8" y="25" width="10" height="2" transform="rotate(28 13 26)"/>
+    <rect x="8" y="31" width="10" height="2" transform="rotate(28 13 32)"/>
+  </g>
+</svg>

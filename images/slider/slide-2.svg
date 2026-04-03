@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="title">
+  <title id="title">Nigiri composition two</title>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0f1518"/>
+      <stop offset="100%" stop-color="#1d2e36"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="700" fill="url(#bg)"/>
+  <circle cx="1030" cy="110" r="120" fill="#d8ba7f" fill-opacity=".11"/>
+  <ellipse cx="600" cy="350" rx="300" ry="182" fill="#0c0f11" stroke="#d5b67b" stroke-width="3"/>
+  <ellipse cx="600" cy="350" rx="225" ry="128" fill="#f8f3ea"/>
+  <g>
+    <ellipse cx="510" cy="312" rx="78" ry="29" fill="#ffe6c0"/>
+    <path d="M428 309c33-39 94-43 165-5c-27 36-88 42-165 5Z" fill="#f9c787"/>
+    <ellipse cx="661" cy="368" rx="94" ry="34" fill="#f47d74"/>
+    <path d="M573 365c31-48 101-57 182-7c-40 41-109 54-182 7Z" fill="#ffc2b7"/>
+    <ellipse cx="741" cy="286" rx="76" ry="28" fill="#9bcf8a"/>
+    <path d="M667 286c27-33 87-37 150-4c-28 31-84 36-150 4Z" fill="#d8e7a8"/>
+  </g>
+  <text x="88" y="618" fill="#d8ba7f" font-size="54" font-family="'Noto Serif JP', serif" letter-spacing="10">SEASONAL</text>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" role="img" aria-labelledby="title">
+  <title id="title">Wasabi illustration</title>
+  <rect width="300" height="300" fill="#121814"/>
+  <circle cx="150" cy="150" r="118" fill="#e7efe3"/>
+  <path d="M110 186c17-46 46-83 84-100c17 23 20 52 7 86c-12 31-37 55-75 70c-18-10-23-28-16-56Z" fill="#8bb26d"/>
+  <path d="M136 174c11-30 30-53 56-68" fill="none" stroke="#a9d08b" stroke-width="8" stroke-linecap="round"/>
+</svg>

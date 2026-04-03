@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 500" role="img" aria-labelledby="title">
+  <title id="title">Omakase course illustration</title>
+  <rect width="700" height="500" fill="#16100c"/>
+  <ellipse cx="350" cy="260" rx="225" ry="130" fill="#101010" stroke="#d5b67b" stroke-width="3"/>
+  <ellipse cx="350" cy="260" rx="168" ry="94" fill="#fbf6ed"/>
+  <g>
+    <ellipse cx="260" cy="240" rx="65" ry="24" fill="#ef9276"/>
+    <path d="M196 238c23-33 72-39 129-6c-24 28-71 36-129 6Z" fill="#ffc8b3"/>
+    <ellipse cx="360" cy="286" rx="74" ry="27" fill="#f2aa70"/>
+    <path d="M290 283c24-35 75-40 145-5c-25 30-74 36-145 5Z" fill="#ffd6a4"/>
+    <ellipse cx="460" cy="228" rx="60" ry="22" fill="#93be7f"/>
+    <path d="M401 226c22-28 68-34 123-4c-24 26-66 31-123 4Z" fill="#dae8a6"/>
+  </g>
+  <text x="62" y="86" fill="#d5b67b" font-size="38" font-family="'Noto Serif JP', serif" letter-spacing="7">CHEF'S SELECTION</text>
+</svg>

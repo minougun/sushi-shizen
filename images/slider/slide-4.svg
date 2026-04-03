@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="title">
+  <title id="title">Nigiri composition four</title>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#160f12"/>
+      <stop offset="100%" stop-color="#32161f"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="700" fill="url(#bg)"/>
+  <ellipse cx="600" cy="350" rx="306" ry="186" fill="#141113" stroke="#d8b97b" stroke-width="3"/>
+  <ellipse cx="600" cy="350" rx="232" ry="132" fill="#fbf5eb"/>
+  <g>
+    <ellipse cx="472" cy="330" rx="88" ry="31" fill="#ef907b"/>
+    <path d="M384 329c34-40 99-48 176-8c-30 37-96 45-176 8Z" fill="#ffcab1"/>
+    <ellipse cx="634" cy="305" rx="72" ry="26" fill="#f0f0d8"/>
+    <path d="M561 304c29-34 79-39 147-5c-26 31-76 35-147 5Z" fill="#d6d7c0"/>
+    <ellipse cx="747" cy="372" rx="86" ry="31" fill="#ed6b63"/>
+    <path d="M661 370c35-42 99-48 173-6c-29 39-92 45-173 6Z" fill="#ffb0a8"/>
+  </g>
+  <text x="88" y="618" fill="#d8ba7f" font-size="54" font-family="'Noto Serif JP', serif" letter-spacing="10">COUNTER</text>
+</svg>

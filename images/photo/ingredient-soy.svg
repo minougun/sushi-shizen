@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 225" role="img" aria-labelledby="title">
+  <title id="title">Soy sauce illustration</title>
+  <rect width="400" height="225" fill="#120f12"/>
+  <ellipse cx="200" cy="128" rx="82" ry="56" fill="#26161a"/>
+  <ellipse cx="200" cy="128" rx="72" ry="46" fill="#3b1f24"/>
+  <ellipse cx="200" cy="128" rx="68" ry="40" fill="#1b1113"/>
+  <ellipse cx="200" cy="84" rx="34" ry="14" fill="#4d3338"/>
+</svg>

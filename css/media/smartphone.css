@@ -1,0 +1,560 @@
+@media only screen and (max-width: 767px) {
+  /* ===== Base ===== */
+  body {
+    font-size: 1.4rem;
+    line-height: 1.76;
+    font-weight: 300;
+  }
+
+  /* ===== Header ===== */
+  .logo__text {
+    font-size: 4.4rem;
+    letter-spacing: 0.16em;
+  }
+
+  .language-switcher {
+    top: 14px;
+    left: 14px;
+    right: 14px;
+    gap: 6px;
+    padding: 0;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+  }
+
+  .language-switcher__button {
+    min-width: 0;
+    min-height: 38px;
+    padding: 0 10px;
+    font-size: 1rem;
+    letter-spacing: 0.04em;
+  }
+
+  header {
+    padding-bottom: 28px;
+  }
+
+  header .header__hero {
+    display: block;
+    padding-top: 74px;
+  }
+
+  .header__hero_copy {
+    padding: 0;
+  }
+
+  .header__eyebrow {
+    margin-bottom: 14px;
+    font-size: 1rem;
+    letter-spacing: 0.16em;
+  }
+
+  header .site__logo {
+    text-align: left;
+  }
+
+  .header__lead {
+    margin-top: 18px;
+    font-size: 1.4rem;
+    line-height: 1.82;
+    letter-spacing: 0.05em;
+  }
+
+  .header__actions {
+    gap: 10px;
+    margin-top: 24px;
+  }
+
+  .header__button {
+    width: 100%;
+    min-height: 50px;
+    font-size: 1.25rem;
+    letter-spacing: 0.1em;
+  }
+
+  .header__meta {
+    margin-top: 18px;
+    font-size: 1.05rem;
+    letter-spacing: 0.06em;
+  }
+
+  .header__booking_panel {
+    padding: 18px 16px;
+  }
+
+  .header__booking_text {
+    font-size: 1.16rem;
+    line-height: 1.68;
+  }
+
+  .header__booking_stats {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .header__booking_stats dd {
+    font-size: 1.24rem;
+  }
+
+  header .header__image_kv img {
+    aspect-ratio: 4/3;
+    min-height: 0;
+  }
+
+  header .header__image_kv {
+    margin-top: 24px;
+  }
+
+  .section__slide_intro .slide__marquee {
+    padding: 0 16px 8px;
+  }
+
+  .section__slide_intro .slide__set {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .section__slide_intro .slide__inner img {
+    aspect-ratio: 4/5;
+  }
+
+  /* ===== Navigation ===== */
+  .navigation .navigation__inner {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .navigation .navigation__inner ul {
+    width: max-content;
+    min-width: 100%;
+    height: 54px;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    padding: 0 14px;
+  }
+
+  .navigation .navigation__inner ul li {
+    width: auto;
+    height: 54px;
+    flex: none;
+  }
+
+  .navigation .navigation__inner ul li a {
+    font-size: 1.16rem;
+    height: 54px;
+    letter-spacing: 0.06em;
+    border-bottom: none;
+    padding: 0 14px;
+  }
+
+  /* ===== Section Inner ===== */
+  .section__inner {
+    width: 100%;
+    padding: 0 16px;
+  }
+
+  /* ===== About / Concept ===== */
+  .intro__about_concept {
+    padding: 40px 0 60px;
+  }
+
+  .intro__about_concept .section__image_decoration1,
+  .intro__about_concept .section__image_decoration2 {
+    display: none;
+  }
+
+  .content__type1 {
+    display: block;
+    padding-bottom: 20px;
+  }
+
+  .content__type1 .section__image {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .content__type1 .section__image img {
+    aspect-ratio: 4/3;
+  }
+
+  .content__type1 .content__type1_origin {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .content__type1 .content__type1_origin .section__title {
+    font-size: 2.2rem;
+    line-height: 1.4;
+    margin-bottom: 12px;
+  }
+
+  .content__type1 .content__type1_origin .section__text {
+    font-size: 1.4rem;
+    line-height: 1.8;
+    padding-top: 12px;
+  }
+
+  .content__type1.content__image_right .section__image {
+    order: 0;
+  }
+
+  .section__chef_story {
+    padding: 46px 0;
+  }
+
+  .section__chef_story .chef__image {
+    width: 100%;
+    margin-bottom: 18px;
+  }
+
+  .section__chef_story .chef__image img {
+    aspect-ratio: 4/5;
+  }
+
+  .chef__eyebrow {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+  }
+
+  .chef__name {
+    font-size: 2.4rem;
+    line-height: 1.4;
+    margin-bottom: 14px;
+  }
+
+  /* ===== Committed ===== */
+  .intro__about_committed {
+    padding: 50px 0 40px;
+  }
+
+  .intro__about_committed .section__title {
+    font-size: 2.2rem;
+    line-height: 1.4;
+    padding-bottom: 20px;
+  }
+
+  .intro__about_committed .section__copy {
+    font-size: 1.4rem;
+    line-height: 1.72;
+    padding-bottom: 30px;
+  }
+
+  .section__committed_shari { padding: 30px 16px; }
+
+  .section__committed_shari .section__title_medium {
+    font-size: 2rem;
+    line-height: 1.22;
+    padding-bottom: 24px;
+  }
+
+  .article__committed_shari {
+    display: block;
+  }
+
+  .article__committed_shari > section {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .article__committed_shari > section .section__header .section__image img {
+    aspect-ratio: 16/9;
+  }
+
+  .article__committed_shari > section .section__header .section__title_small {
+    font-size: 2rem;
+    line-height: 1;
+    width: 200px;
+    height: 44px;
+    margin-left: -100px;
+    margin-top: -22px;
+  }
+
+  .article__committed_shari > section .section__text_under {
+    font-size: 1.4rem;
+    line-height: 1.66;
+    padding-top: 14px;
+  }
+
+  .section__committed_wasabi { padding-top: 30px; }
+
+  .article__committed_wasabi { max-width: 100%; }
+
+  .article__committed_wasabi section {
+    display: block;
+    padding-bottom: 30px;
+    text-align: center;
+  }
+
+  .article__committed_wasabi section .section__image {
+    width: 180px;
+    margin: 0 auto 16px;
+  }
+
+  .article__committed_wasabi section .section__image img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .article__committed_wasabi section .section__info {
+    padding: 0;
+  }
+
+  .article__committed_wasabi section .section__info .section__title_medium {
+    font-size: 2rem;
+    line-height: 1.4;
+    text-align: center;
+  }
+
+  .article__committed_wasabi section .section__info .section__text {
+    font-size: 1.4rem;
+    line-height: 1.7;
+    padding-top: 12px;
+    text-align: left;
+  }
+
+  /* ===== Course ===== */
+  .section__course_special { padding: 40px 0; }
+
+  .section__course_special .section__panel_base {
+    display: block;
+  }
+
+  .section__course_special .section__panel_base .section__panel_image {
+    width: 100%;
+    margin-bottom: 24px;
+  }
+
+  .section__course_special .section__panel_base .section__panel_text {
+    padding: 0;
+  }
+
+  .section__course_special .section__panel_base .section__panel_text .section__title .section__title_primary {
+    font-size: 2.4rem;
+    line-height: 1.4;
+  }
+
+  .section__course_special .section__panel_base .section__panel_text .section__title .section__title_en {
+    font-size: 1.4rem;
+    line-height: 1.4;
+    opacity: 0.62;
+    margin-bottom: 10px;
+  }
+
+  .section__course_special .section__panel_base .section__panel_text .section__intro {
+    padding-top: 16px;
+    font-size: 1.3rem;
+    line-height: 1.8;
+  }
+
+  .section__course_special .section__panel_base .section__panel_text .section__info_base {
+    padding-top: 20px;
+  }
+
+  .section__course_special .section__panel_base .section__panel_text .section__info .section__price {
+    font-size: 2.8rem;
+    line-height: 1.4;
+  }
+
+  .section__course_special .section__panel_base .section__panel_text .section__info .section__note {
+    font-size: 1.2rem;
+    opacity: 0.7;
+  }
+
+  /* ===== Contact ===== */
+  .section__contact {
+    padding: 50px 16px 60px;
+  }
+
+  .section__contact .section__title { margin-bottom: 24px; }
+
+  .reserve__intro {
+    font-size: 1.18rem;
+    line-height: 1.72;
+    text-align: left;
+  }
+
+  .title__type1 .section__main {
+    font-size: 2.6rem;
+    line-height: 1.3;
+  }
+
+  .title__type1 .section__sub {
+    font-size: 1.1rem;
+    line-height: 1.4;
+  }
+
+  .content__list_contact {
+    display: block;
+    margin-top: 30px;
+  }
+
+  .content__list_contact > li {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .content__list_contact > li .access {
+    gap: 12px;
+    font-size: 1.5rem;
+    line-height: 1.42;
+    overflow-wrap: anywhere;
+  }
+
+  .content__list_contact > li .access__tel .access__tel_number {
+    font-size: 3rem;
+    line-height: 1;
+    letter-spacing: 0.05em;
+  }
+
+  .content__list_contact > li .access__tel .access__tel_note {
+    font-size: 1.2rem;
+    line-height: 1.66;
+    padding-top: 10px;
+    opacity: 0.8;
+  }
+
+  .reserve__steps li {
+    padding: 14px 14px 14px 52px;
+    font-size: 1.14rem;
+    line-height: 1.64;
+  }
+
+  .reserve__steps li::before {
+    left: 14px;
+  }
+
+  /* ===== Information ===== */
+  .section__information {
+    padding: 50px 16px 40px;
+  }
+
+  .section__information .section__title { margin-bottom: 24px; }
+
+  .section__information .info__panel_base {
+    display: block;
+    padding: 0;
+  }
+
+  .section__information .info__panel_base .group1,
+  .section__information .info__panel_base .group2 {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  .title__type2 { padding: 8px 14px; }
+
+  .title__type2 .section__main {
+    display: inline-block;
+    font-size: 1.8rem;
+    line-height: 1.3;
+  }
+
+  .title__type2 .section__sub {
+    display: inline-block;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .base__map iframe { height: 280px; }
+
+  .button1,
+  .button1 span {
+    width: 100%;
+  }
+
+  .button1 span {
+    min-width: 0;
+  }
+
+  .info__list > dd,
+  .section__cancel_note {
+    overflow-wrap: anywhere;
+  }
+
+  /* ===== Utility ===== */
+  .spNone { display: none !important; }
+}
+
+@media only screen and (max-width: 479px) {
+  body {
+    font-size: 1.35rem;
+    line-height: 1.72;
+  }
+
+  .logo__text {
+    font-size: 3.4rem;
+    letter-spacing: 0.12em;
+  }
+
+  header .header__image_kv img {
+    min-height: 180px;
+  }
+
+  .language-switcher {
+    gap: 4px;
+  }
+
+  .language-switcher__button {
+    min-height: 34px;
+    padding: 0 8px;
+    font-size: 0.92rem;
+  }
+
+  .navigation .navigation__inner ul {
+    height: 50px;
+    padding: 0 10px;
+  }
+
+  .navigation .navigation__inner ul li {
+    height: 50px;
+  }
+
+  .navigation .navigation__inner ul li a {
+    font-size: 1.06rem;
+    height: 50px;
+    letter-spacing: 0.03em;
+    line-height: 1.2;
+    padding: 0 12px;
+  }
+
+  .section__inner,
+  .section__contact,
+  .section__information {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .section__slide_intro .slide__set {
+    gap: 10px;
+  }
+
+  .article__committed_wasabi section .section__image {
+    width: 160px;
+  }
+
+  .article__committed_wasabi section .section__image img {
+    width: 160px;
+    height: 160px;
+  }
+
+  .content__list_contact > li .access__tel .access__tel_number {
+    font-size: 2.6rem;
+  }
+
+  .title__type2 {
+    padding: 8px 12px;
+  }
+
+  .title__type2 .section__main {
+    font-size: 1.7rem;
+  }
+
+  .base__map iframe {
+    height: 240px;
+  }
+}

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="title">
+  <title id="title">Nigiri composition five</title>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0e1614"/>
+      <stop offset="100%" stop-color="#153127"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="700" fill="url(#bg)"/>
+  <ellipse cx="600" cy="350" rx="304" ry="184" fill="#0b100e" stroke="#d8b97b" stroke-width="3"/>
+  <ellipse cx="600" cy="350" rx="230" ry="130" fill="#fbf6ed"/>
+  <g>
+    <ellipse cx="500" cy="305" rx="74" ry="27" fill="#f3b06f"/>
+    <path d="M424 304c30-38 83-43 153-6c-29 34-82 40-153 6Z" fill="#ffd59f"/>
+    <ellipse cx="659" cy="344" rx="94" ry="34" fill="#ef7b6a"/>
+    <path d="M568 343c33-45 102-52 184-8c-35 39-103 47-184 8Z" fill="#ffbeb3"/>
+    <ellipse cx="733" cy="290" rx="78" ry="28" fill="#9fc988"/>
+    <path d="M658 289c28-35 86-40 155-5c-27 31-83 36-155 5Z" fill="#dce7a7"/>
+  </g>
+  <text x="88" y="618" fill="#d8ba7f" font-size="54" font-family="'Noto Serif JP', serif" letter-spacing="10">RESERVATION</text>
+</svg>

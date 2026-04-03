@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-labelledby="title">
+  <title id="title">Chef hand illustration</title>
+  <rect width="600" height="600" fill="#11161b"/>
+  <ellipse cx="304" cy="322" rx="206" ry="124" fill="#f3eadb"/>
+  <ellipse cx="304" cy="322" rx="246" ry="154" fill="none" stroke="#d4b47b" stroke-width="3" stroke-opacity=".5"/>
+  <path d="M118 344c56-44 118-60 186-53c92 11 146 54 180 114c-72 26-157 16-243-24c-52-24-92-25-123-37Z" fill="#dba575"/>
+  <path d="M274 258c72-42 142-40 213 4c-33 39-106 61-204 43c-21-13-26-26-9-47Z" fill="#ef7b69"/>
+  <path d="M198 223c20-44 49-69 87-74c36-5 78 9 127 42" fill="none" stroke="#d4b47b" stroke-width="5" stroke-linecap="round"/>
+  <text x="64" y="86" fill="#d4b47b" font-size="42" font-family="'Noto Serif JP', serif" letter-spacing="8">DETAIL IN EACH BITE</text>
+</svg>

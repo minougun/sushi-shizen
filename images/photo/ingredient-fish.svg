@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" role="img" aria-labelledby="title">
+  <title id="title">Fish illustration</title>
+  <rect width="300" height="300" fill="#191214"/>
+  <circle cx="150" cy="150" r="118" fill="#f3ece2"/>
+  <path d="M66 168c34-55 95-84 182-86c-10 68-47 118-112 150c-40-9-64-30-70-64Z" fill="#f08a7e"/>
+  <path d="M78 168c48-23 96-37 145-44" fill="none" stroke="#ffc0b2" stroke-width="10" stroke-linecap="round" opacity=".7"/>
+</svg>

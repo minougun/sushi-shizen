@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 225" role="img" aria-labelledby="title">
+  <title id="title">Vinegar illustration</title>
+  <rect width="400" height="225" fill="#19120d"/>
+  <rect x="152" y="54" width="96" height="128" rx="20" fill="#7b4e22"/>
+  <rect x="168" y="70" width="64" height="94" rx="14" fill="#cb9b5b"/>
+  <rect x="176" y="36" width="48" height="26" rx="8" fill="#2d2016"/>
+  <path d="M118 178h164" stroke="#d4b47b" stroke-width="4" stroke-linecap="round" opacity=".4"/>
+</svg>

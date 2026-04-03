@@ -17,7 +17,7 @@ const translations = {
     hero_lead:
       "旬、温度、間。<br>十席のカウンターで、その日の一貫と向き合う。",
     hero_cta_secondary: "店舗情報を見る",
-    hero_meta: "完全予約制 / カウンター10席 / 心斎橋駅 徒歩5分 / 食べログ予約可",
+    hero_meta: "¥15,000〜 / 10席 / 心斎橋駅5分 / 完全予約制",
     hero_phone_note: "当日のお問い合わせはお電話で",
     hero_highlight_1: "夜のおまかせ ¥15,000〜",
     hero_highlight_2: "カウンター10席のみ",
@@ -99,8 +99,7 @@ const translations = {
     reserve_title_sub: "ご予約案内",
     reserve_intro:
       "海外からのご予約は食べログが最短です。<br>価格と条件を見たまま予約できます。",
-    reserve_tel_note:
-      "お電話は営業時間内に承ります。<br>ご予約は前日までにお願いいたします。",
+    reserve_tel_note_short: "前日までにご予約ください",
     reserve_button: "食べログから予約する",
     reserve_fact_1: "完全予約制",
     reserve_fact_2: "カウンター10席のみ",
@@ -113,7 +112,7 @@ const translations = {
     reserve_reason_1: "各回10席のみ",
     reserve_reason_2: "価格と条件を確認して予約できる",
     reserve_reason_3: "週末ランチは前日までの予約制",
-    reserve_support: "夜は二部制 / 全席禁煙 / カード・電子マネー・QR決済対応",
+    reserve_support_short: "当日キャンセル100% / 全席禁煙 / カード・電子マネー・QR決済対応",
     info_title_main: "ご案内",
     info_title_sub: "店舗のご案内",
     shop_title_main: "店舗情報",
@@ -160,7 +159,7 @@ const translations = {
     hero_lead:
       "Only 10 seats.<br>One quiet omakase counter in Osaka.",
     hero_cta_secondary: "Access & Details",
-    hero_meta: "Reservation only / Chef Kazuhiko Somono / 10 counter seats / 5 min from Shinsaibashi",
+    hero_meta: "JPY 15,000– / 10 seats / 5 min from Shinsaibashi / Reservation only",
     hero_phone_note: "Same-day inquiries: call us directly",
     hero_highlight_1: "Dinner omakase from JPY 15,000 per person",
     hero_highlight_2: "Only 10 counter seats",
@@ -243,8 +242,7 @@ const translations = {
     reserve_title_sub: "Reservation",
     reserve_intro:
       "Tabelog — Japan's largest restaurant booking site — is the fastest way to reserve from overseas.<br>Check the details and book in one step.",
-    reserve_tel_note:
-      "Phone inquiries are welcome during business hours.<br>Please book by the previous day.",
+    reserve_tel_note_short: "Please book by the previous day",
     reserve_button: "Reserve via Tabelog",
     reserve_fact_1: "Reservation only",
     reserve_fact_2: "10 counter seats only",
@@ -257,7 +255,7 @@ const translations = {
     reserve_reason_1: "Only 10 seats per seating",
     reserve_reason_2: "Check price and policy before checkout",
     reserve_reason_3: "Weekend lunch requires advance booking",
-    reserve_support: "Two dinner seatings / Non-smoking / Cards, e-money, and QR payments accepted",
+    reserve_support_short: "Same-day cancellation 100% / Non-smoking / Cards, e-money & QR accepted",
     info_title_main: "Information",
     info_title_sub: "Information",
     shop_title_main: "Shop Info",
@@ -305,7 +303,7 @@ const translations = {
     hero_lead:
       "제철, 온도, 타이밍.<br>10석 카운터에서 그날의 한 점과 마주합니다.",
     hero_cta_secondary: "매장 정보 보기",
-    hero_meta: "완전 예약제 / 카운터 10석 / 신사이바시역 도보 5분 / 타베로그 예약 가능",
+    hero_meta: "¥15,000~ / 10석 / 신사이바시역 5분 / 완전 예약제",
     hero_phone_note: "당일 문의는 전화로 가능합니다",
     hero_highlight_1: "1인 저녁 오마카세 15,000엔부터",
     hero_highlight_2: "카운터 10석만 운영",
@@ -387,8 +385,7 @@ const translations = {
     reserve_title_sub: "Reservation",
     reserve_intro:
       "타베로그(일본 최대 레스토랑 예약 사이트)를 이용하면 해외에서도 편하게 예약하실 수 있습니다.<br>가격과 예약 조건을 확인한 뒤 바로 예약하실 수 있습니다.",
-    reserve_tel_note:
-      "전화 문의는 영업시간 내에 부탁드립니다.<br>예약은 전날까지 가능합니다.",
+    reserve_tel_note_short: "전날까지 예약해 주세요",
     reserve_button: "타베로그로 예약하기",
     reserve_fact_1: "완전 예약제",
     reserve_fact_2: "카운터 10석만 운영",
@@ -401,7 +398,7 @@ const translations = {
     reserve_reason_1: "각 타임 10석만 운영",
     reserve_reason_2: "가격과 조건을 확인하고 예약 가능",
     reserve_reason_3: "주말 런치는 전날까지 예약 필수",
-    reserve_support: "저녁 2부제 / 전석 금연 / 카드·전자화폐·QR 결제 가능",
+    reserve_support_short: "당일 취소 100% / 전석 금연 / 카드·전자화폐·QR 결제 가능",
     info_title_main: "안내",
     info_title_sub: "Information",
     shop_title_main: "매장 정보",
@@ -448,7 +445,7 @@ const translations = {
     hero_lead:
       "时令、温度、分寸。<br>在十席吧台前，遇见当天最好的一贯。",
     hero_cta_secondary: "查看店铺信息",
-    hero_meta: "完全预约制 / 吧台10席 / 距心斋桥站步行5分钟 / 支持 Tabelog 预约",
+    hero_meta: "¥15,000~ / 10席 / 心斋桥站5分钟 / 完全预约制",
     hero_phone_note: "当日咨询请直接致电",
     hero_highlight_1: "晚间主厨推荐每位 ¥15,000 起",
     hero_highlight_2: "仅设10席吧台",
@@ -530,8 +527,7 @@ const translations = {
     reserve_title_sub: "Reservation",
     reserve_intro:
       "Tabelog 是日本大型餐厅预约网站，海外客人使用也很方便。<br>确认价格与预约条件后即可直接预订。",
-    reserve_tel_note:
-      "电话咨询请在营业时间内进行。<br>预约请最晚于前一天完成。",
+    reserve_tel_note_short: "请至少提前一天预约",
     reserve_button: "通过 Tabelog 预约",
     reserve_fact_1: "完全预约制",
     reserve_fact_2: "仅设10席吧台",
@@ -544,7 +540,7 @@ const translations = {
     reserve_reason_1: "每个时段仅10席",
     reserve_reason_2: "确认价格与条件后即可预约",
     reserve_reason_3: "周末午餐需提前一天预约",
-    reserve_support: "晚间分两场 / 全店禁烟 / 支持信用卡、电子货币与二维码支付",
+    reserve_support_short: "当日取消100% / 全店禁烟 / 支持信用卡、电子货币与二维码支付",
     info_title_main: "店铺信息",
     info_title_sub: "Information",
     shop_title_main: "店铺信息",

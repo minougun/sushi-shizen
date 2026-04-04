@@ -25,19 +25,7 @@
         var key = "sushi-zen-language";
         var supported = { ja: 1, en: 1, ko: 1, zh: 1 };
         var lang = localStorage.getItem(key) || "";
-        if (!supported[lang]) {
-          var candidates = navigator.languages && navigator.languages.length
-            ? navigator.languages
-            : [navigator.language || "ja"];
-          lang = "en";
-          for (var index = 0; index < candidates.length; index += 1) {
-            var candidate = String(candidates[index]).toLowerCase();
-            if (candidate.indexOf("ja") === 0) { lang = "ja"; break; }
-            if (candidate.indexOf("ko") === 0) { lang = "ko"; break; }
-            if (candidate.indexOf("zh") === 0) { lang = "zh"; break; }
-            if (candidate.indexOf("en") === 0) { lang = "en"; break; }
-          }
-        }
+        if (!supported[lang]) { lang = "ja"; }
         document.documentElement.lang = lang;
         window.__SUSHI_ZEN_BOOT = { lang: lang };
       } catch (error) {}

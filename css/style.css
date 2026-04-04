@@ -4700,15 +4700,6 @@ footer {
   color: rgba(179, 145, 82, 0.42);
 }
 
-.booking-card__microcopy {
-  margin: 0;
-  max-width: 32em;
-  font-size: 0.98rem;
-  letter-spacing: 0.06em;
-  line-height: 1.68;
-  color: rgba(200, 188, 165, 0.72);
-}
-
 .header__map-cta,
 .info__map-cta {
   display: inline-flex;
@@ -4865,11 +4856,14 @@ footer {
 
 .header__trust--ratings-row {
   margin-top: 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 2px;
 }
 
 .header__trust--ratings {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: baseline;
   gap: 0.2em 0.5em;
   max-width: 100%;
@@ -4949,7 +4943,10 @@ footer {
 
 .header__trust-star {
   color: rgba(212, 175, 95, 0.88);
-  font-size: 1.05em;
+  font-size: 1.32em;
+  line-height: 1;
+  position: relative;
+  top: 0.05em;
 }
 
 .header__trust-sep {
@@ -5273,7 +5270,6 @@ body,
 .header__trust-compact,
 .header__trust-slashes,
 .header__trust-final,
-.booking-card__microcopy,
 .header__access-exit-hint,
 .info__access-exit-hint,
 .header__map-cta,
@@ -5464,6 +5460,84 @@ header .header__image_kv img {
   header .header__image_kv {
     width: min(74vw, 420px);
     margin-right: 0;
+  }
+}
+
+/* ご予約: 見出しサイズ・左揃え（コンポ参照。ご案内の title__type1 とは切り離し） */
+#reserveSection .title__type1 {
+  text-align: left;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: flex-start;
+  gap: 0.2em 1em;
+  margin-bottom: 18px;
+}
+
+#reserveSection .title__type1 .section__main {
+  display: inline-block;
+  padding-bottom: 10px;
+  margin-bottom: 0;
+  font-size: clamp(2.35rem, 4vw, 3.15rem);
+  line-height: 1.22;
+  letter-spacing: 0.12em;
+  text-align: left;
+}
+
+#reserveSection .title__type1 .section__main::after {
+  left: 0;
+  transform: none;
+  width: 52px;
+}
+
+#reserveSection .title__type1 .section__sub {
+  display: inline-block;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-size: 1.16rem;
+  line-height: 1.45;
+  letter-spacing: 0.22em;
+  color: rgba(213, 191, 147, 0.62);
+  vertical-align: baseline;
+}
+
+#reserveSection .content__list_contact {
+  margin-top: 6px;
+  justify-content: flex-start;
+}
+
+#reserveSection .content__list_contact > li,
+#reserveSection .content__list_contact > li .access {
+  text-align: left;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+#reserveSection .reserve__meta {
+  margin-left: 0;
+  margin-right: auto;
+  text-align: left;
+  font-size: 1.34rem;
+  letter-spacing: 0.1em;
+  line-height: 1.75;
+}
+
+#reserveSection .reserve__support_list,
+#reserveSection .reserve__utility_links {
+  justify-content: flex-start;
+}
+
+#reserveSection .reserve__policy_note,
+#reserveSection .reserve__call_note {
+  text-align: left;
+  max-width: 42em;
+}
+
+@media (max-width: 767px) {
+  .header__trust--ratings-row .header__trust > li {
+    width: auto;
+    max-width: none;
   }
 }
 

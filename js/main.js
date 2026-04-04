@@ -36,8 +36,6 @@ const translations = {
     ogSiteName: "鮨し禅｜大阪心斎橋の隠れ家鮨",
     language_switcher_label: "言語切り替え",
     language_switcher_caption: "Language 言語",
-    booking_microcopy:
-      "お食事の目安は約2時間／変更・キャンセルは前日まで（当日は100%）",
     maps_primary_cta: "Google Mapsで道順を開く",
     access_exit_hint: "心斎橋駅から徒歩約5分・アルスビル4階",
     hero_eyebrow: "大阪・東心斎橋 / 完全予約制",
@@ -176,8 +174,6 @@ const translations = {
     ogSiteName: "Sushi Zen",
     language_switcher_label: "Language selector",
     language_switcher_caption: "Language",
-    booking_microcopy:
-      "~2 hrs dining · Cancel by the day before (same day: charged in full)",
     maps_primary_cta: "Open directions in Google Maps",
     access_exit_hint: "~5 min walk from Shinsaibashi Station · 4F Ars Building",
     hero_eyebrow: "Shinsaibashi, Osaka",
@@ -316,8 +312,6 @@ const translations = {
     ogSiteName: "스시 시젠",
     language_switcher_label: "언어 선택",
     language_switcher_caption: "언어 Language",
-    booking_microcopy:
-      "식사 약 2시간 예상 / 변경·취소는 전날까지 (당일 100%)",
     maps_primary_cta: "Google 지도에서 길 찾기",
     access_exit_hint: "신사이바시역 도보 약 5분 · 아루스빌딩 4층",
     hero_eyebrow: "오사카 오마카세 / 예약제",
@@ -455,8 +449,6 @@ const translations = {
     ogSiteName: "鮨し禅",
     language_switcher_label: "语言切换",
     language_switcher_caption: "语言 Language",
-    booking_microcopy:
-      "用餐约2小时／变更或取消请提前一天联系（当日将收取100%费用）",
     maps_primary_cta: "在 Google 地图中打开路线",
     access_exit_hint: "距心斋桥站步行约5分钟 · Ars大厦4楼",
     hero_eyebrow: "大阪主厨推荐 / 预约制",

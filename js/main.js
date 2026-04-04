@@ -627,22 +627,6 @@ const translations = {
   },
 };
 
-// #region agent log
-/** @param {{ hypothesisId: string; location: string; message: string; data?: Record<string, unknown> }} payload */
-function __agentDbg(payload) {
-  fetch("http://127.0.0.1:7928/ingest/704095d5-5d78-4dab-93d9-cd3d88b6b483", {
-    method: "POST",
-    headers: { "Content-Type": "application/json", "X-Debug-Session-Id": "46bb2a" },
-    body: JSON.stringify({
-      sessionId: "46bb2a",
-      timestamp: Date.now(),
-      runId: "code-review",
-      ...payload,
-    }),
-  }).catch(() => {});
-}
-// #endregion
-
 function setMetaContent(selector, value) {
   const node = document.querySelector(selector);
   if (node) {
@@ -729,34 +713,6 @@ function applyLanguage(lang) {
 
   safeSetStorage(STORAGE_KEY, lang);
   syncLangQueryParam(lang);
-
-  // #region agent log
-  (function agentLogApplyLanguageSnapshot() {
-    const missing = [];
-    document.querySelectorAll("[data-i18n]").forEach((n) => {
-      const k = n.dataset.i18n;
-      if (k && dict[k] === undefined) missing.push(k);
-    });
-    document.querySelectorAll("[data-i18n-html]").forEach((n) => {
-      const k = n.dataset.i18nHtml;
-      if (k && dict[k] === undefined) missing.push(`${k}:html`);
-    });
-    const tc = document.querySelector("[data-tablecheck]");
-    __agentDbg({
-      hypothesisId: "H1-H4-H5",
-      location: "main.js:applyLanguage",
-      message: "post-apply i18n + tablecheck snapshot",
-      data: {
-        requestedLang: lang,
-        effectiveDictLang: langCode,
-        missingI18nUnique: [...new Set(missing)].slice(0, 10),
-        missingCount: [...new Set(missing)].length,
-        tablecheckHrefSample: tc ? tc.getAttribute("href") : null,
-        domPurifyPresent: !!(window.DOMPurify && typeof window.DOMPurify.sanitize === "function"),
-      },
-    });
-  })();
-  // #endregion
 }
 
 function safeGetStorage(key) {
@@ -1059,37 +1015,6 @@ function initializePageBgParallax() {
 
 document.addEventListener("DOMContentLoaded", () => {
   const initialLanguage = getInitialLanguage();
-
-  // #region agent log
-  (function agentLogBootResolved() {
-    let urlLang = null;
-    try {
-      urlLang = new URL(window.location.href).searchParams.get("lang");
-    } catch (_) {
-      /* ignore */
-    }
-    const urlNorm = urlLang ? urlLang.trim().toLowerCase() : null;
-    let expectedFromUrl = null;
-    if (urlNorm) {
-      if (urlNorm === "jp" && translations.ja) expectedFromUrl = "ja";
-      else if (translations[urlNorm]) expectedFromUrl = urlNorm;
-    }
-    __agentDbg({
-      hypothesisId: "H2-H3",
-      location: "main.js:DOMContentLoaded",
-      message: "getInitialLanguage result (URL > boot > storage > ja)",
-      data: {
-        urlLangParam: urlLang,
-        expectedFromUrl,
-        initialLanguage,
-        urlMatchesInitial: expectedFromUrl !== null ? initialLanguage === expectedFromUrl : null,
-        domPurifyPresent: !!(window.DOMPurify && typeof window.DOMPurify.sanitize === "function"),
-        runId: "post-fix",
-      },
-    });
-  })();
-  // #endregion
-
   applyLanguage(initialLanguage);
   initializeScrollReveal();
   initializeHeroOrnamentMotion();

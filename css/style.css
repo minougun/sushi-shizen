@@ -3360,12 +3360,25 @@ header .header__image_kv img {
   }
 
   body::before {
-    background: none;
-    opacity: 0;
+    background:
+      linear-gradient(
+        90deg,
+        transparent 0,
+        transparent calc(50% - 620px),
+        rgba(255,255,255,0.08) calc(50% - 620px),
+        rgba(255,255,255,0.08) calc(50% - 619px),
+        transparent calc(50% - 619px),
+        transparent calc(50% + 619px),
+        rgba(255,255,255,0.08) calc(50% + 619px),
+        rgba(255,255,255,0.08) calc(50% + 620px),
+        transparent calc(50% + 620px)
+      );
+    opacity: 0.34;
   }
 
   header::after {
-    background: linear-gradient(180deg, rgba(9, 12, 15, 0.08), rgba(9, 12, 15, 0.22));
+    background:
+      linear-gradient(90deg, rgba(9,12,15,0.82) 0%, rgba(9,12,15,0.48) 44%, rgba(9,12,15,0.18) 100%);
   }
 
   header .header__hero {
@@ -4132,8 +4145,8 @@ body {
 }
 
 body::before {
-  /* 左右の細い縦ライン（1240px付近で目立つ帯）を撤去し、紙筋＋淡い円のみ */
   background:
+    linear-gradient(90deg, transparent 0, transparent calc(50% - 560px), rgba(179,145,82,0.08) calc(50% - 560px), transparent calc(50% - 559px), transparent calc(50% + 559px), rgba(179,145,82,0.08) calc(50% + 559px), transparent calc(50% + 560px)),
     repeating-linear-gradient(180deg, rgba(255,255,255,0.016) 0 1px, transparent 1px 9px),
     radial-gradient(circle at 20% 30%, rgba(255,255,255,0.035), transparent 28%);
   opacity: 0.42;
@@ -4154,11 +4167,15 @@ header {
 }
 
 header::after {
-  background: linear-gradient(180deg, rgba(18,15,12,0.06), rgba(18,15,12,0.2));
+  background:
+    linear-gradient(90deg, rgba(8, 7, 6, 0.84) 0%, rgba(8, 7, 6, 0.56) 38%, rgba(8, 7, 6, 0.12) 100%),
+    linear-gradient(180deg, rgba(18,15,12,0.08), rgba(18,15,12,0.22));
 }
 
 header .header__hero {
-  background: none;
+  background:
+    linear-gradient(90deg, rgba(179,145,82,0.06), transparent 16%),
+    linear-gradient(180deg, rgba(9, 8, 7, 0.08), rgba(9, 8, 7, 0));
 }
 
 .header__eyebrow {
@@ -4530,10 +4547,6 @@ footer {
 }
 
 @media (max-width: 767px) {
-  body::before {
-    opacity: 0.28;
-  }
-
   .header__lead {
     max-width: none;
     font-size: 1.34rem;
@@ -5312,10 +5325,90 @@ header::after {
   content: "";
   position: absolute;
   inset: 0;
-  /* 左端の横グラデーションは撤去（トップ全体の帯状に見えるのを防ぐ） */
-  background: linear-gradient(180deg, rgba(8, 9, 11, 0.06), rgba(8, 9, 11, 0.2));
+  background:
+    linear-gradient(90deg, rgba(10, 12, 15, 0.88) 0%, rgba(10, 12, 15, 0.74) 46%, rgba(10, 12, 15, 0.38) 100%),
+    linear-gradient(180deg, rgba(8, 9, 11, 0.08), rgba(8, 9, 11, 0.26));
   pointer-events: none;
   z-index: 1;
+}
+
+@media (max-width: 1023px) {
+  header::after {
+    background:
+      linear-gradient(90deg, rgba(10, 12, 15, 0.78) 0%, rgba(10, 12, 15, 0.58) 52%, rgba(10, 12, 15, 0.32) 100%),
+      linear-gradient(180deg, rgba(8, 9, 11, 0.07), rgba(8, 9, 11, 0.22));
+  }
+
+  header .header__hero {
+    background:
+      linear-gradient(90deg, rgba(179,145,82,0.05), transparent 22%),
+      linear-gradient(180deg, rgba(9, 8, 7, 0.07), rgba(9, 8, 7, 0));
+  }
+
+  body::before {
+    background:
+      linear-gradient(90deg, transparent 0, transparent calc(50% - min(480px, 42vw)), rgba(179,145,82,0.07) calc(50% - min(480px, 42vw)), transparent calc(50% - min(480px, 42vw) + 1px), transparent calc(50% + min(480px, 42vw) - 1px), rgba(179,145,82,0.07) calc(50% + min(480px, 42vw)), transparent calc(50% + min(480px, 42vw))),
+      repeating-linear-gradient(180deg, rgba(255,255,255,0.014) 0 1px, transparent 1px 9px),
+      radial-gradient(circle at 18% 28%, rgba(255,255,255,0.032), transparent 28%);
+    opacity: 0.38;
+  }
+}
+
+@media (max-width: 767px) {
+  header::after {
+    background:
+      linear-gradient(90deg, rgba(10, 12, 15, 0.68) 0%, rgba(10, 12, 15, 0.44) 58%, rgba(10, 12, 15, 0.22) 100%),
+      linear-gradient(180deg, rgba(8, 9, 11, 0.05), rgba(8, 9, 11, 0.18));
+  }
+
+  header .header__hero {
+    background:
+      linear-gradient(90deg, rgba(179,145,82,0.035), transparent 34%),
+      linear-gradient(180deg, rgba(9, 8, 7, 0.05), rgba(9, 8, 7, 0));
+  }
+
+  body::before {
+    background:
+      linear-gradient(90deg, transparent 0, transparent calc(50% - min(300px, 46vw)), rgba(179,145,82,0.06) calc(50% - min(300px, 46vw)), transparent calc(50% - min(300px, 46vw) + 1px), transparent calc(50% + min(300px, 46vw) - 1px), rgba(179,145,82,0.06) calc(50% + min(300px, 46vw)), transparent calc(50% + min(300px, 46vw))),
+      repeating-linear-gradient(180deg, rgba(255,255,255,0.012) 0 1px, transparent 1px 9px),
+      radial-gradient(circle at 10% 22%, rgba(255,255,255,0.028), transparent 32%);
+    opacity: 0.3;
+  }
+
+  .navigation .navigation__inner {
+    padding-left: max(8px, env(safe-area-inset-left, 0px));
+    padding-right: max(8px, env(safe-area-inset-right, 0px));
+    box-sizing: border-box;
+  }
+
+  .navigation .navigation__inner ul {
+    justify-content: flex-start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .navigation .navigation__inner ul::-webkit-scrollbar {
+    height: 0;
+  }
+
+  .navigation .navigation__inner ul li {
+    flex: 0 0 auto;
+  }
+
+  .navigation .navigation__inner ul li a {
+    padding: 0 14px;
+    font-size: 1.28rem;
+  }
+
+  header .header__hero.section__inner {
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+  }
+
+  .language-switcher {
+    right: max(16px, env(safe-area-inset-right, 0px));
+  }
 }
 
 .language-switcher,

@@ -6127,3 +6127,112 @@ header .header__image_kv img {
     border: 0;
   }
 }
+
+/* =====================================================================
+   スマホ: 画面幅・ノッチに追従（レスポンシブ最終層）
+   ===================================================================== */
+@media (max-width: 767px) {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* main・各セクション: 固定 px より safe-area を優先 */
+  .content__inner > main {
+    padding-left: max(16px, var(--sz-safe-x)) !important;
+    padding-right: max(16px, var(--sz-safe-xr)) !important;
+  }
+
+  header .header__hero.section__inner {
+    padding-left: max(18px, var(--sz-safe-x)) !important;
+    padding-right: max(18px, var(--sz-safe-xr)) !important;
+    padding-top: max(86px, calc(72px + var(--sz-safe-y))) !important;
+    padding-bottom: max(46px, calc(32px + var(--sz-safe-b))) !important;
+    box-sizing: border-box !important;
+  }
+
+  .intro__about_concept .section__inner,
+  .section__chef_story .section__inner,
+  .intro__about_committed .section__inner,
+  .section__course_special .section__inner,
+  .section__contact .section__inner,
+  .section__information .info__panel_base {
+    padding-left: max(16px, var(--sz-safe-x)) !important;
+    padding-right: max(16px, var(--sz-safe-xr)) !important;
+    box-sizing: border-box !important;
+  }
+
+  .language-switcher {
+    top: max(16px, var(--sz-safe-y)) !important;
+    right: max(16px, var(--sz-safe-xr)) !important;
+  }
+
+  /* ヒーロー文字: 画面幅に応じて自動スケール */
+  .logo__text {
+    font-size: clamp(2.55rem, 11vw, 4.35rem) !important;
+    letter-spacing: clamp(0.04em, 0.1em + 0.2vw, 0.12em) !important;
+  }
+
+  .header__lead {
+    font-size: clamp(1.05rem, 3.9vw, 1.42rem) !important;
+    line-height: 1.78 !important;
+  }
+
+  .header__summary {
+    font-size: clamp(1.02rem, 3.5vw, 1.22rem) !important;
+  }
+
+  .title__type1 .section__main,
+  #reserveSection .title__type1 .section__main {
+    font-size: clamp(2.1rem, 7vw, 3.2rem) !important;
+  }
+
+  /* ナビ・フローティング: タップ領域とセーフエリア */
+  .navigation .navigation__inner ul li a {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+  .floating-reserve {
+    left: max(12px, var(--sz-safe-x)) !important;
+    right: auto !important;
+    max-width: min(340px, calc(100vw - 24px - var(--sz-safe-x) - var(--sz-safe-xr))) !important;
+    bottom: max(14px, var(--sz-safe-b)) !important;
+  }
+
+  .booking-card,
+  .info__map-cta,
+  .header__map-cta {
+    min-height: 48px;
+  }
+
+  .header__utility_links a,
+  .reserve__utility_links a {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 380px) {
+  .content__inner > main {
+    padding-left: max(12px, var(--sz-safe-x)) !important;
+    padding-right: max(12px, var(--sz-safe-xr)) !important;
+  }
+
+  .logo__text {
+    font-size: clamp(2.2rem, 10vw, 3.6rem) !important;
+  }
+
+  .section__slide_intro .slide__set {
+    gap: 10px !important;
+  }
+}

@@ -1,5 +1,10 @@
 /* Design tokens — imported at top of style.css. Prefer var() in new / refactored rules. */
 :root {
+  /* スマホ余白（style.css 末尾メディアで参照可） */
+  --sz-safe-x: env(safe-area-inset-left, 0px);
+  --sz-safe-y: env(safe-area-inset-top, 0px);
+  --sz-safe-xr: env(safe-area-inset-right, 0px);
+  --sz-safe-b: env(safe-area-inset-bottom, 0px);
   --sz-gold-12: rgba(199, 170, 106, 0.12);
   --sz-gold-52: rgba(199, 170, 106, 0.52);
   --sz-gold-88: rgba(199, 170, 106, 0.88);

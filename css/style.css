@@ -46,6 +46,10 @@
     color-scheme: light;
   }
 
+  body.body {
+    position: relative;
+  }
+
   body {
     background:
       radial-gradient(circle at top, rgba(199,170,106,0.08), transparent 28%),
@@ -1611,7 +1615,7 @@
       -webkit-transition: none;
       transition: none;
     }
-    .header__bg-parallax {
+    .page-bg-parallax {
       will-change: auto;
       -webkit-transform: none !important;
       transform: none !important;
@@ -4669,6 +4673,47 @@ footer {
   color: rgba(226, 214, 191, 0.64);
 }
 
+.header__trust--ratings {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.2em 0.5em;
+  max-width: 100%;
+}
+
+.header__trust-link {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.12em;
+  color: rgba(226, 214, 191, 0.78);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(179, 145, 82, 0.35);
+  padding-bottom: 1px;
+  transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.header__trust-link:hover,
+.header__trust-link:focus-visible {
+  color: #f0e6d4;
+  border-bottom-color: rgba(179, 145, 82, 0.72);
+}
+
+.header__trust-score {
+  font-variant-numeric: tabular-nums;
+  min-width: 2.2em;
+  text-align: right;
+}
+
+.header__trust-star {
+  color: rgba(212, 175, 95, 0.88);
+  font-size: 1.05em;
+}
+
+.header__trust-sep {
+  opacity: 0.4;
+  user-select: none;
+}
+
 .section__slide_intro .slide__marquee {
   padding: 42px 0 10px;
 }
@@ -4968,15 +5013,17 @@ body,
 }
 
 header {
-  background-color: #0f1114;
+  background-color: transparent;
 }
 
-.header__bg-parallax {
-  position: absolute;
+/* ビューポート固定。ページ全体の scrollY で JS が transform する */
+.page-bg-parallax {
+  position: fixed;
   left: 0;
   right: 0;
-  top: -18%;
-  height: 136%;
+  top: -15vh;
+  height: 130vh;
+  width: 100%;
   z-index: 0;
   pointer-events: none;
   background-color: #0f1114;
@@ -5070,7 +5117,7 @@ header .header__image_kv img {
 }
 
 @media (max-width: 1023px) {
-  .header__bg-parallax {
+  .page-bg-parallax {
     background-position: left -12rem top -2rem, center top 0, center;
     background-size: 28rem auto, 52rem auto, cover;
   }
@@ -5109,7 +5156,7 @@ header .header__image_kv img {
     display: inline-block;
   }
 
-  .header__bg-parallax {
+  .page-bg-parallax {
     background-position: left -10rem top 0, center top 1rem, center;
     background-size: 24rem auto, 36rem auto, cover;
   }

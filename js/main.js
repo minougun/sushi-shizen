@@ -1,6 +1,20 @@
 const STORAGE_KEY = "sushi-zen-language";
 
-const REVIEW_SCORES = { google: "4.8", tabelog: "3.72" };
+const REVIEW_DEFAULTS = {
+  google: {
+    rating: 4.8,
+    decimals: 1,
+    url:
+      "https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E9%98%AA%E5%BA%9C%E5%A4%A7%E9%98%AA%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E6%9D%B1%E5%BF%83%E6%96%8E%E6%A9%8B1-14-15%20%E3%82%A2%E3%83%AB%E3%82%B9%E3%83%93%E3%83%AB%204F",
+  },
+  tabelog: {
+    rating: 3.72,
+    decimals: 2,
+    url: "https://tabelog.com/osaka/A2701/A270201/27152697/",
+  },
+};
+
+const REVIEW_REFRESH_MS = 10 * 60 * 1000;
 
 const TABLECHECK_URLS = {
   ja: "https://www.tablecheck.com/ja/sushi-zen/reserve/message",
@@ -36,7 +50,10 @@ const translations = {
     hero_trust_1: "完全予約制・10席のカウンター",
     hero_trust_2: "心斎橋駅から徒歩5分",
     hero_trust_3: "全席禁煙・キャッシュレス対応",
-    hero_trust_ratings: `Google ${REVIEW_SCORES.google} ★ / 食べログ ${REVIEW_SCORES.tabelog}`,
+    trust_google_aria: "Googleマップの口コミ・評価を開く",
+    trust_tabelog_aria: "食べログの店舗ページを開く",
+    trust_google_label: "Google",
+    trust_tabelog_label: "食べログ",
     hero_visitor_hint:
       "夜は2回転の入替制です（18:00〜20:00／20:30〜23:00）。お食事はおおよそ2時間程度を想定しています。表示価格は税別のため、目安として税込（10%）で約¥16,500〜。スマートカジュアルでお越しください。",
     hero_phone_note: "当日のお問い合わせはお電話で",
@@ -165,7 +182,10 @@ const translations = {
     hero_trust_1: "Reservation only / 10 counter seats",
     hero_trust_2: "5 minutes from Shinsaibashi Station",
     hero_trust_3: "Non-smoking / cards and QR accepted",
-    hero_trust_ratings: `Google ${REVIEW_SCORES.google} ★ — highly rated by guests`,
+    trust_google_aria: "Open Google Maps reviews for this restaurant",
+    trust_tabelog_aria: "Open the Tabelog restaurant page",
+    trust_google_label: "Google",
+    trust_tabelog_label: "Tabelog",
     hero_visitor_hint:
       "Dinner is served in two seatings (18:00–20:00 and 20:30–23:00). Allow about two hours. Prices exclude tax; with 10% consumption tax, evening omakase from about JPY 16,500. Smart casual attire is appreciated.",
     hero_phone_note: "Call for same-day inquiries",
@@ -294,7 +314,10 @@ const translations = {
     hero_trust_1: "완전 예약제 / 카운터 10석",
     hero_trust_2: "신사이바시역 도보 5분",
     hero_trust_3: "전석 금연 / 카드·QR 결제 가능",
-    hero_trust_ratings: `Google ${REVIEW_SCORES.google} ★ — 투숙객 평가 기준`,
+    trust_google_aria: "Google 지도에서 이 매장의 리뷰 열기",
+    trust_tabelog_aria: "타베로그 매장 페이지 열기",
+    trust_google_label: "Google",
+    trust_tabelog_label: "타베로그",
     hero_visitor_hint:
       "저녁은 2회전(18:00–20:00 / 20:30–23:00)입니다. 식사는 약 2시간을 가정해 주세요. 표시 가격은 세금 별도이며, 소비세 10% 포함 시 저녁 오마카세 약 ¥16,500~. 스마트 캐주얼 차림을 권장합니다.",
     hero_phone_note: "당일 문의는 전화로 가능합니다",
@@ -422,7 +445,10 @@ const translations = {
     hero_trust_1: "完全预约制 / 仅10席吧台",
     hero_trust_2: "距心斋桥站步行5分钟",
     hero_trust_3: "全店禁烟 / 支持卡与二维码支付",
-    hero_trust_ratings: `Google ${REVIEW_SCORES.google} ★ — 宾客评价参考`,
+    trust_google_aria: "在 Google 地图查看该店的评价",
+    trust_tabelog_aria: "打开食べログ店铺页面",
+    trust_google_label: "Google",
+    trust_tabelog_label: "食べログ",
     hero_visitor_hint:
       "晚餐分两个时段（18:00–20:00 / 20:30–23:00），请预留约两小时。标价不含税，含 10% 消费税后晚间主厨推荐套餐约 ¥16,500 起。建议 smart casual 着装。",
     hero_phone_note: "当日咨询请直接致电",
@@ -657,9 +683,177 @@ function initializeHeroOrnamentMotion() {
   };
 }
 
-/** トップ背景レイヤーをスクロール量に連動してわずかに移動（視差）。 */
-function initializeHeaderBgParallax() {
-  const layer = document.querySelector(".header__bg-parallax");
+function formatRating(value, decimals) {
+  const n = Number(value);
+  if (!Number.isFinite(n)) {
+    return "—";
+  }
+  return n.toFixed(decimals);
+}
+
+function parseRatingText(text) {
+  const n = Number.parseFloat(String(text).replace(/[^\d.-]/g, ""));
+  return Number.isFinite(n) ? n : 0;
+}
+
+function animateScoreElement(el, toValue, decimals, durationMs) {
+  if (!el) {
+    return;
+  }
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const to = Number(toValue);
+  if (!Number.isFinite(to)) {
+    el.textContent = "—";
+    return;
+  }
+  if (reduce) {
+    el.textContent = formatRating(to, decimals);
+    return;
+  }
+  const from = parseRatingText(el.textContent);
+  if (Math.abs(from - to) < 0.0005) {
+    el.textContent = formatRating(to, decimals);
+    return;
+  }
+  const start = performance.now();
+
+  function easeOutCubic(t) {
+    return 1 - (1 - t) ** 3;
+  }
+
+  function frame(now) {
+    const t = Math.min(1, (now - start) / durationMs);
+    const v = from + (to - from) * easeOutCubic(t);
+    el.textContent = formatRating(v, decimals);
+    if (t < 1) {
+      requestAnimationFrame(frame);
+    } else {
+      el.textContent = formatRating(to, decimals);
+    }
+  }
+
+  requestAnimationFrame(frame);
+}
+
+function normalizeReviewPayload(data) {
+  const fallback = {
+    google: {
+      rating: REVIEW_DEFAULTS.google.rating,
+      url: REVIEW_DEFAULTS.google.url,
+    },
+    tabelog: {
+      rating: REVIEW_DEFAULTS.tabelog.rating,
+      url: REVIEW_DEFAULTS.tabelog.url,
+    },
+  };
+  if (!data || typeof data !== "object") {
+    return fallback;
+  }
+  const g = data.google;
+  const t = data.tabelog;
+  const googleRating =
+    g && typeof g.rating === "number" ? g.rating : fallback.google.rating;
+  const tabelogRating =
+    t && typeof t.rating === "number" ? t.rating : fallback.tabelog.rating;
+  return {
+    google: {
+      rating: googleRating,
+      url: (g && typeof g.url === "string" && g.url) || fallback.google.url,
+    },
+    tabelog: {
+      rating: tabelogRating,
+      url: (t && typeof t.url === "string" && t.url) || fallback.tabelog.url,
+    },
+  };
+}
+
+function getSiteBaseUrl() {
+  const { origin, pathname } = window.location;
+  if (pathname.endsWith("/")) {
+    return `${origin}${pathname}`;
+  }
+  const dir = pathname.replace(/\/[^/]*$/, "/");
+  return `${origin}${dir || "/"}`;
+}
+
+async function fetchReviewScoresPayload() {
+  const base = getSiteBaseUrl();
+  const bases = [
+    new URL("api/review-scores", base).href,
+    new URL("review-scores.json", base).href,
+  ];
+  for (let i = 0; i < bases.length; i += 1) {
+    try {
+      const r = await fetch(bases[i], { cache: "no-store" });
+      if (!r.ok) {
+        continue;
+      }
+      const ct = r.headers.get("content-type") || "";
+      if (!ct.includes("json")) {
+        continue;
+      }
+      const data = await r.json();
+      return normalizeReviewPayload(data);
+    } catch (_) {
+      /* try next */
+    }
+  }
+  return normalizeReviewPayload(null);
+}
+
+function applyReviewScoresToDom(payload) {
+  const googleLink = document.getElementById("trust-google-link");
+  const tabelogLink = document.getElementById("trust-tabelog-link");
+  const googleEl = document.querySelector('[data-review-score="google"]');
+  const tabelogEl = document.querySelector('[data-review-score="tabelog"]');
+  if (!googleLink || !tabelogLink || !googleEl || !tabelogEl) {
+    return;
+  }
+
+  const p = payload || normalizeReviewPayload({});
+  googleLink.href = p.google.url;
+  tabelogLink.href = p.tabelog.url;
+
+  const gDec = Number(googleEl.dataset.reviewDecimals) || 1;
+  const tDec = Number(tabelogEl.dataset.reviewDecimals) || 2;
+  animateScoreElement(googleEl, p.google.rating, gDec, 700);
+  animateScoreElement(tabelogEl, p.tabelog.rating, tDec, 700);
+}
+
+function initializeReviewScores() {
+  const googleLink = document.getElementById("trust-google-link");
+  if (!googleLink) {
+    return;
+  }
+
+  applyReviewScoresToDom(normalizeReviewPayload(null));
+
+  let timerId = null;
+
+  async function refresh() {
+    const payload = await fetchReviewScoresPayload();
+    applyReviewScoresToDom(payload);
+  }
+
+  refresh();
+  timerId = window.setInterval(refresh, REVIEW_REFRESH_MS);
+
+  window.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "visible") {
+      refresh();
+    }
+  });
+
+  return () => {
+    if (timerId) {
+      window.clearInterval(timerId);
+    }
+  };
+}
+
+/** 固定背景レイヤーをページ全体のスクロール量に連動して移動（視差）。 */
+function initializePageBgParallax() {
+  const layer = document.querySelector(".page-bg-parallax");
   if (!layer) {
     return;
   }
@@ -669,7 +863,7 @@ function initializeHeaderBgParallax() {
     return;
   }
 
-  const factor = 0.22;
+  const factor = 0.28;
   let ticking = false;
 
   function applyParallax() {
@@ -694,7 +888,8 @@ document.addEventListener("DOMContentLoaded", () => {
   applyLanguage(initialLanguage);
   initializeScrollReveal();
   initializeHeroOrnamentMotion();
-  initializeHeaderBgParallax();
+  initializePageBgParallax();
+  initializeReviewScores();
 
   document.querySelectorAll(".language-switcher__button").forEach((button) => {
     button.addEventListener("click", () => {

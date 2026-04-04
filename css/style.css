@@ -1784,12 +1784,15 @@ header .header__image_kv img {
 }
 
 .section__course_special .section__panel_base .section__panel_image {
-  overflow: hidden;
+  overflow: visible;
 }
 
-.section__course_special .section__panel_base .section__panel_image img {
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
+.section__course_special .section__panel_base .section__panel_image img,
+.section__course_special .section__panel_base .section__panel_image picture img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
   object-position: center;
   border-radius: 24px;
   transform: scale(1);
@@ -4117,6 +4120,13 @@ header > .language-switcher {
   max-width: 100%;
 }
 
+.section__course_special .section__panel_base .section__panel_text .section__info_base {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(16px, 2.5vw, 24px);
+}
+
 .section__course_special .section__panel_base .section__panel_image {
   flex: 0 0 min(44vw, 560px);
   width: auto;
@@ -4351,7 +4361,8 @@ header .header__image_kv img,
 .section__slide_intro .slide__inner picture img,
 .content__type1 .section__image img,
 .section__chef_story .chef__image img,
-.section__course_special .section__panel_base .section__panel_image img {
+.section__course_special .section__panel_base .section__panel_image img,
+.section__course_special .section__panel_base .section__panel_image picture img {
   border-radius: 0;
   border: 0;
   box-shadow: none;
@@ -5065,8 +5076,7 @@ footer {
 
 header .header__image_kv,
 .content__type1 .section__image,
-.section__chef_story .chef__image,
-.section__course_special .section__panel_base .section__panel_image {
+.section__chef_story .chef__image {
   overflow: hidden;
 }
 
@@ -5099,7 +5109,8 @@ header .header__image_kv img {
   image-rendering: auto;
 }
 
-.section__course_special .section__panel_base .section__panel_image img {
+.section__course_special .section__panel_base .section__panel_image img,
+.section__course_special .section__panel_base .section__panel_image picture img {
   transform: scale(1);
   transform-origin: center center;
   filter: sepia(0.03) saturate(0.97) contrast(1) brightness(0.99);
@@ -6026,11 +6037,19 @@ header .header__image_kv img {
   overflow: visible !important;
 }
 
-.content__type1 .section__image:not(.chef__image) > picture,
-.section__course_special .section__panel_base .section__panel_image > picture {
+.content__type1 .section__image:not(.chef__image) > picture {
   display: block !important;
   width: 70% !important;
   max-width: 70% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  box-sizing: border-box !important;
+}
+
+.section__course_special .section__panel_base .section__panel_image > picture {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
   margin-left: auto !important;
   margin-right: auto !important;
   box-sizing: border-box !important;
@@ -6044,6 +6063,9 @@ header .header__image_kv img {
   width: 100% !important;
   max-width: 100% !important;
   height: auto !important;
+  aspect-ratio: auto !important;
+  object-fit: contain !important;
+  object-position: center !important;
   transform: none !important;
 }
 

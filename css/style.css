@@ -5707,68 +5707,33 @@ header .header__image_kv img {
   margin-right: auto;
 }
 
-/* ご予約: 左罫線ラッパーだと視覚重心が右にズレるため、罫線はカード本体に付けて中央配置 */
+/* ご予約 TableCheck: 224536 スクショ準拠。左罫線はラッパーの border + padding（疑似要素で重ならない） */
 #reserveSection .booking-card-block--ruled {
-  border-left: none;
-  padding-left: 0;
-  align-items: center;
-}
-
-/* 左罫線は疑似要素。padding-left で線〜本文の間隔を確保。右は margin-right: 20px */
-#reserveSection .booking-card-block--ruled .booking-card,
-#reserveSection .booking-card-block--ruled .booking-card--reserve {
-  position: relative;
-  border-left: none;
-  padding: 16px 28px 16px 40px;
-  margin-left: auto;
-  margin-right: 20px;
-  margin-top: 0;
-  margin-bottom: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+  border-left: 2px solid rgba(179, 145, 82, 0.58);
+  padding-left: 24px;
+  padding-right: 20px;
+  margin-inline: auto;
   width: max-content;
   max-width: min(100%, 520px);
   box-sizing: border-box;
 }
 
-#reserveSection .booking-card-block--ruled .booking-card::before {
-  content: "";
-  position: absolute;
-  left: 14px;
-  top: 12px;
-  bottom: 12px;
-  width: 2px;
-  border-radius: 1px;
-  background: rgba(179, 145, 82, 0.58);
-  pointer-events: none;
-}
-
-/* ラベル1行目を軸に、CTA・ブランドも同じ中央線上に（幅は最長行に合わせ max-content） */
-#reserveSection .booking-card__reserve-line {
+#reserveSection .booking-card-block--ruled .booking-card,
+#reserveSection .booking-card-block--ruled .booking-card--reserve {
+  position: static;
+  border-left: none;
+  padding: 14px 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  width: max-content;
-  max-width: 100%;
-  margin-inline: auto;
-  text-align: center;
+  align-items: flex-start;
+  text-align: left;
+  width: 100%;
+  max-width: none;
 }
 
-/* letter-spacing の行末分でボックスが右に伸び、中央でも文字が右寄りに見えるため補正（値は .booking-card__label に合わせる） */
-#reserveSection .booking-card__reserve-line .booking-card__label {
-  display: inline-block;
-  white-space: nowrap;
-  margin-right: -0.22em;
-  text-align: center;
-}
-
-#reserveSection .booking-card__reserve-line .booking-card__cta {
-  justify-content: center;
-  gap: 0.35em;
+#reserveSection .booking-card-block--ruled .booking-card__cta {
+  justify-content: flex-start;
   white-space: nowrap;
 }
 

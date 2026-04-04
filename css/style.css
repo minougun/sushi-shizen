@@ -2105,6 +2105,7 @@ header .header__image_kv img {
   }
 
   .concept-card {
+    min-width: 0;
     padding: 28px 24px;
     border: 1px solid rgba(199,170,106,0.18);
     background:
@@ -2794,12 +2795,14 @@ header .header__image_kv img {
   }
 
   .concept-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
   }
 
   .concept-card {
-    padding: 22px 20px;
+    min-width: 0;
+    padding: 16px 12px;
   }
 
   .concept-card h3 {
@@ -3180,6 +3183,16 @@ header .header__image_kv img {
     font-size: 1.4rem;
     line-height: 1.72;
     padding-bottom: 50px;
+  }
+
+  .intro__about_committed .concept-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(14px, 2vw, 20px);
+  }
+
+  .intro__about_committed .concept-card {
+    min-width: 0;
   }
 
   .section__committed_shari { padding: 50px 24px; }
@@ -4649,6 +4662,7 @@ header .header__image_kv img,
 }
 
 .concept-card {
+  min-width: 0;
   padding: 26px 0 0;
   background: transparent;
   border: 0;
@@ -6535,13 +6549,16 @@ header .header__image_kv img {
 
 @media (min-width: 1024px) {
   .intro__about_committed .concept-grid {
-    grid-template-columns: 1fr;
-    max-width: 40rem;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-width: none;
+    width: 100%;
     margin-inline: auto;
-    gap: clamp(28px, 3vw, 48px);
+    gap: clamp(20px, 2.4vw, 28px);
   }
 
   .intro__about_committed .concept-card {
+    min-width: 0;
     text-align: left;
   }
 

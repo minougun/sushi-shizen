@@ -5663,10 +5663,11 @@ header .header__image_kv img {
 #reserveSection .access__booking-wrap {
   display: flex;
   flex-direction: column;
-  align-items: stretch;
+  align-items: center;
   width: 100%;
   max-width: min(100%, 480px);
   margin-inline: auto;
+  box-sizing: border-box;
 }
 
 #reserveSection .reserve__meta {
@@ -5713,14 +5714,16 @@ header .header__image_kv img {
   align-items: center;
 }
 
-/* 左罫線は border にしない（レイアウトが左寄りに歪む）。疑似要素で描き、左右パディングを対称にして
-   「公式オンライン予約」行の中央が見出しと揃うようにする */
+/* 左罫線は疑似要素。padding-left で線〜本文の間隔を確保。右は margin-right: 20px */
 #reserveSection .booking-card-block--ruled .booking-card,
 #reserveSection .booking-card-block--ruled .booking-card--reserve {
   position: relative;
   border-left: none;
-  padding: 16px 28px 16px 28px;
-  margin-inline: auto;
+  padding: 16px 28px 16px 40px;
+  margin-left: auto;
+  margin-right: 20px;
+  margin-top: 0;
+  margin-bottom: 0;
   display: flex;
   flex-direction: column;
   align-items: center;

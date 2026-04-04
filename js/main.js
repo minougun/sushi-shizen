@@ -1,5 +1,14 @@
 const STORAGE_KEY = "sushi-zen-language";
 
+const REVIEW_SCORES = { google: "4.8", tabelog: "3.72" };
+
+const TABLECHECK_URLS = {
+  ja: "https://www.tablecheck.com/ja/sushi-zen/reserve/message",
+  en: "https://www.tablecheck.com/en/sushi-zen/reserve/message",
+  ko: "https://www.tablecheck.com/ko/sushi-zen/reserve/message",
+  zh: "https://www.tablecheck.com/zh/sushi-zen/reserve/message",
+};
+
 const translations = {
   ja: {
     lang: "ja",
@@ -26,7 +35,7 @@ const translations = {
     hero_trust_1: "完全予約制・10席のカウンター",
     hero_trust_2: "心斎橋駅から徒歩5分",
     hero_trust_3: "全席禁煙・キャッシュレス対応",
-    hero_trust_ratings: "Google 4.8 ★ / 食べログ 3.72",
+    hero_trust_ratings: `Google ${REVIEW_SCORES.google} ★ / 食べログ ${REVIEW_SCORES.tabelog}`,
     hero_phone_note: "当日のお問い合わせはお電話で",
     hero_quick_1: "心斎橋駅から徒歩5分",
     hero_quick_2: "カード・Alipay・WeChat Pay対応",
@@ -122,7 +131,7 @@ const translations = {
     floating_reserve: "今すぐ予約",
     footer_name: "鮨し禅",
     footer_address: "大阪府大阪市中央区東心斎橋1-14-15 アルスビル 4F",
-    tablecheck_url: "https://www.tablecheck.com/ja/sushi-zen/reserve/message",
+    tablecheck_url: TABLECHECK_URLS.ja,
     footer_copyright: "© 鮨し禅 All rights reserved.",
   },
   en: {
@@ -150,7 +159,7 @@ const translations = {
     hero_trust_1: "Reservation only / 10 counter seats",
     hero_trust_2: "5 minutes from Shinsaibashi Station",
     hero_trust_3: "Non-smoking / cards and QR accepted",
-    hero_trust_ratings: "Google 4.8 ★ / Tabelog 3.72",
+    hero_trust_ratings: `Google ${REVIEW_SCORES.google} ★ / Tabelog ${REVIEW_SCORES.tabelog}`,
     hero_phone_note: "Call for same-day inquiries",
     hero_quick_1: "5 min from Shinsaibashi Station",
     hero_quick_2: "Cards, Alipay & WeChat Pay accepted",
@@ -246,7 +255,7 @@ const translations = {
     floating_reserve: "Reserve now",
     footer_name: "鮨し禅",
     footer_address: "4F Ars Building, 1-14-15 Higashi-Shinsaibashi, Chuo-ku, Osaka",
-    tablecheck_url: "https://www.tablecheck.com/en/sushi-zen/reserve/message",
+    tablecheck_url: TABLECHECK_URLS.en,
     footer_copyright: "© Sushi Zen All rights reserved.",
   },
   ko: {
@@ -274,7 +283,7 @@ const translations = {
     hero_trust_1: "완전 예약제 / 카운터 10석",
     hero_trust_2: "신사이바시역 도보 5분",
     hero_trust_3: "전석 금연 / 카드·QR 결제 가능",
-    hero_trust_ratings: "Google 4.8 ★ / 타베로그 3.72",
+    hero_trust_ratings: `Google ${REVIEW_SCORES.google} ★ / 타베로그 ${REVIEW_SCORES.tabelog}`,
     hero_phone_note: "당일 문의는 전화로 가능합니다",
     hero_quick_1: "신사이바시역 도보 5분",
     hero_quick_2: "카드·Alipay·WeChat Pay 가능",
@@ -369,7 +378,7 @@ const translations = {
     floating_reserve: "지금 예약",
     footer_name: "鮨し禅",
     footer_address: "오사카부 오사카시 주오구 히가시신사이바시 1-14-15 아루스빌딩 4F",
-    tablecheck_url: "https://www.tablecheck.com/ko/sushi-zen/reserve/message",
+    tablecheck_url: TABLECHECK_URLS.ko,
     footer_copyright: "© Sushi Zen All rights reserved.",
   },
   zh: {
@@ -397,7 +406,7 @@ const translations = {
     hero_trust_1: "完全预约制 / 仅10席吧台",
     hero_trust_2: "距心斋桥站步行5分钟",
     hero_trust_3: "全店禁烟 / 支持卡与二维码支付",
-    hero_trust_ratings: "Google 4.8 ★ / Tabelog 3.72",
+    hero_trust_ratings: `Google ${REVIEW_SCORES.google} ★ / Tabelog ${REVIEW_SCORES.tabelog}`,
     hero_phone_note: "当日咨询请直接致电",
     hero_quick_1: "距心斋桥站步行5分钟",
     hero_quick_2: "支持银行卡、Alipay 与 WeChat Pay",
@@ -492,7 +501,7 @@ const translations = {
     floating_reserve: "立即预约",
     footer_name: "鮨し禅",
     footer_address: "大阪府大阪市中央区东心斋桥1-14-15 Ars大厦4F",
-    tablecheck_url: "https://www.tablecheck.com/zh/sushi-zen/reserve/message",
+    tablecheck_url: TABLECHECK_URLS.zh,
     footer_copyright: "© 鮨し禅 All rights reserved.",
   },
 };
@@ -553,6 +562,7 @@ function applyLanguage(lang) {
     });
   }
 
+  window.__SUSHI_ZEN_APPLIED = true;
   localStorage.setItem(STORAGE_KEY, lang);
 }
 
@@ -581,6 +591,11 @@ function detectBrowserLanguage() {
 }
 
 function getInitialLanguage() {
+  // Prefer the boot language set by inline script (single source of truth)
+  const boot = window.__SUSHI_ZEN_BOOT;
+  if (boot && boot.lang && translations[boot.lang]) {
+    return boot.lang;
+  }
   const stored = localStorage.getItem(STORAGE_KEY);
   if (stored && translations[stored]) {
     return stored;

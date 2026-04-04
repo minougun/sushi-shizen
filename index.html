@@ -40,14 +40,6 @@
         }
         document.documentElement.lang = lang;
         window.__SUSHI_ZEN_BOOT = { lang: lang };
-        document.addEventListener("DOMContentLoaded", function() {
-          if (window.__SUSHI_ZEN_APPLIED) return;
-          var tcBase = "https://www.tablecheck.com/" + lang + "/sushi-zen/reserve/message";
-          var links = document.querySelectorAll("[data-tablecheck]");
-          for (var i = 0; i < links.length; i++) {
-            links[i].href = tcBase;
-          }
-        });
       } catch (error) {}
     })();
   </script>

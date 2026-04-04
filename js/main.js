@@ -562,7 +562,6 @@ function applyLanguage(lang) {
     });
   }
 
-  window.__SUSHI_ZEN_APPLIED = true;
   localStorage.setItem(STORAGE_KEY, lang);
 }
 

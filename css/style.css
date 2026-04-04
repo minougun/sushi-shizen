@@ -4485,12 +4485,13 @@ header .header__image_kv img,
 
 .base__map iframe {
   border: 1px solid rgba(179,145,82,0.16);
-  filter: saturate(0.88) sepia(0.06);
+  filter: saturate(0.96) sepia(0.02);
 }
 
 footer {
   border-top: 1px solid rgba(179,145,82,0.14);
-  overflow: hidden;
+  overflow: visible;
+  position: relative;
 }
 
 .content__footer_name {
@@ -4734,7 +4735,10 @@ footer {
 .section__slide_intro .slide__item img {
   aspect-ratio: 1.08 / 1;
   object-fit: cover;
-  filter: sepia(0.08) saturate(0.84) contrast(0.96) brightness(0.94);
+  filter: sepia(0.03) saturate(0.96) contrast(1) brightness(0.99);
+  image-rendering: auto;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 header .header__image_kv,
@@ -4746,9 +4750,12 @@ header .header__image_kv,
 }
 
 header .header__image_kv img {
-  transform: scale(1.2);
+  transform: scale(1.06);
   transform-origin: center center;
-  filter: sepia(0.1) saturate(0.86) contrast(0.95) brightness(0.93);
+  filter: sepia(0.04) saturate(0.96) contrast(1) brightness(0.99);
+  image-rendering: auto;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .section__slide_intro .slide__item img {
@@ -4759,19 +4766,22 @@ header .header__image_kv img {
 .content__type1 .section__image img {
   transform: scale(1);
   transform-origin: center center;
-  filter: sepia(0.08) saturate(0.88) contrast(0.97) brightness(0.94);
+  filter: sepia(0.03) saturate(0.97) contrast(1) brightness(0.99);
+  image-rendering: auto;
 }
 
 .section__chef_story .chef__image img {
   transform: scale(1);
   transform-origin: center center;
-  filter: sepia(0.07) saturate(0.82) contrast(0.96) brightness(0.95);
+  filter: sepia(0.03) saturate(0.96) contrast(1) brightness(0.99);
+  image-rendering: auto;
 }
 
 .section__course_special .section__panel_base .section__panel_image img {
   transform: scale(1);
   transform-origin: center center;
-  filter: sepia(0.09) saturate(0.9) contrast(0.98) brightness(0.95);
+  filter: sepia(0.03) saturate(0.97) contrast(1) brightness(0.99);
+  image-rendering: auto;
 }
 
 .section__contact .section__inner {
@@ -5059,19 +5069,20 @@ header .header__hero {
   z-index: 2;
 }
 
+/* ビューポート右端に固定（section__inner の内側に置かない） */
 .hero-ornament--scroll {
-  position: absolute;
+  position: fixed;
   top: auto;
   left: auto;
-  right: -10px;
-  bottom: -6px;
+  right: 0;
+  bottom: max(0px, env(safe-area-inset-bottom, 0px));
   width: 180px;
   height: 180px;
   background: url("./../images/bg/AdobeStock_54536706122-2.png") no-repeat right bottom;
   background-size: contain;
   opacity: 0.78;
   pointer-events: none;
-  z-index: 2;
+  z-index: 15;
   transform: none !important;
 }
 
@@ -5127,12 +5138,8 @@ header .header__image_kv img {
   }
 
   .hero-ornament--scroll {
-    top: auto;
-    left: auto;
-    right: -8px;
-    bottom: -4px;
-    width: 132px;
-    height: 132px;
+    width: 148px;
+    height: 148px;
   }
 }
 
@@ -5166,12 +5173,10 @@ header .header__image_kv img {
   }
 
   .hero-ornament--scroll {
-    top: auto;
-    left: auto;
-    right: -6px;
-    bottom: -2px;
-    width: 104px;
-    height: 104px;
+    right: 0;
+    bottom: calc(92px + env(safe-area-inset-bottom, 0px));
+    width: 112px;
+    height: 112px;
   }
 
   header .header__image_kv {

@@ -422,11 +422,11 @@
     width: auto;
   }
   .section__slide_intro .slide__inner {
-    aspect-ratio: 1.08 / 1;
-    display: grid;
-    place-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     overflow: visible;
-    background: #223246;
+    background: transparent;
     border: 1px solid rgba(255,255,255,0.14);
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -435,8 +435,8 @@
     display: block;
     width: auto;
     height: auto;
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 70%;
+    max-height: min(72vh, 640px);
     object-fit: contain;
     object-position: center;
   }
@@ -1226,13 +1226,9 @@
   }
 
   .section__slide_intro .slide__inner {
-    background:
-      linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0)),
-      #233244;
-    border: 1px solid rgba(199,170,106,0.16);
-    box-shadow:
-      inset 0 0 0 1px rgba(255,255,255,0.04),
-      0 24px 56px rgba(0,0,0,0.18);
+    background: transparent;
+    border: 0;
+    box-shadow: none;
   }
 
   .intro__about_concept,
@@ -1718,12 +1714,29 @@ header .header__image_kv {
   border: 0;
   align-self: stretch;
   overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+header .header__image_kv > picture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  background: transparent;
+  box-sizing: border-box;
 }
 
 header .header__image_kv img {
   display: block;
-  width: 100%;
+  width: auto;
   height: auto;
+  max-width: 70%;
+  max-height: min(88vh, 920px);
   object-fit: contain;
   object-position: center;
   border-radius: 28px;
@@ -1731,12 +1744,13 @@ header .header__image_kv img {
 
 .section__slide_intro .slide__inner {
   width: 100%;
-  aspect-ratio: 1.08 / 1;
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   min-height: 0;
   overflow: visible;
   box-sizing: border-box;
+  background: transparent;
 }
 
 .section__slide_intro .slide__inner > picture {
@@ -1744,10 +1758,9 @@ header .header__image_kv img {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100%;
   max-width: 100%;
-  max-height: 100%;
   margin: 0;
+  background: transparent;
   box-sizing: border-box;
 }
 
@@ -1756,58 +1769,100 @@ header .header__image_kv img {
   display: block;
   width: auto;
   height: auto;
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 70%;
+  max-height: min(72vh, 640px);
   object-fit: contain;
   object-position: center;
   border-radius: 22px;
-  transform: scale(1);
+  transform: none;
   transform-origin: center;
 }
 
 .content__type1 .section__image:not(.chef__image) {
   overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+.content__type1 .section__image:not(.chef__image) > picture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: transparent;
 }
 
 .content__type1 .section__image:not(.chef__image) img {
   display: block;
-  width: 100%;
+  width: auto;
   height: auto;
+  max-width: 70%;
+  max-height: min(85vh, 900px);
   object-fit: contain;
   object-position: center;
   border-radius: 24px;
-  transform: scale(1);
+  transform: none;
   transform-origin: center;
 }
 
 .section__chef_story .chef__image {
   overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+.section__chef_story .chef__image > picture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: transparent;
 }
 
 .section__chef_story .chef__image img {
   display: block;
-  width: 100%;
+  width: auto;
   height: auto;
+  max-width: 70%;
+  max-height: min(88vh, 960px);
   object-fit: contain;
   object-position: center;
   border-radius: 24px;
-  transform: scale(1);
+  transform: none;
   transform-origin: center;
 }
 
 .section__course_special .section__panel_base .section__panel_image {
   overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+.section__course_special .section__panel_base .section__panel_image > picture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: transparent;
 }
 
 .section__course_special .section__panel_base .section__panel_image img,
 .section__course_special .section__panel_base .section__panel_image picture img {
   display: block;
-  width: 100%;
+  width: auto;
   height: auto;
+  max-width: 70%;
+  max-height: min(85vh, 900px);
   object-fit: contain;
   object-position: center;
   border-radius: 24px;
-  transform: scale(1);
+  transform: none;
   transform-origin: center;
 }
 
@@ -5022,8 +5077,8 @@ footer {
 }
 
 .section__slide_intro .slide__inner {
-  background: rgba(16, 13, 10, 0.8);
-  border-color: rgba(179, 145, 82, 0.12);
+  background: transparent;
+  border-color: transparent;
 }
 
 .section__slide_intro .slide__item img,
@@ -5044,7 +5099,7 @@ header .header__image_kv,
 }
 
 header .header__image_kv img {
-  transform: scale(1.06);
+  transform: none;
   transform-origin: center center;
   filter: sepia(0.04) saturate(0.96) contrast(1) brightness(0.99);
   image-rendering: auto;
@@ -5901,23 +5956,30 @@ html {
 
 header .header__image_kv {
   overflow: visible !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: transparent !important;
 }
 
 header .header__image_kv > picture {
-  display: block !important;
-  width: 70% !important;
-  max-width: 70% !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+  background: transparent !important;
   box-sizing: border-box !important;
 }
 
 header .header__image_kv picture img,
 header .header__image_kv img {
   display: block !important;
-  width: 100% !important;
-  max-width: 100% !important;
+  width: auto !important;
   height: auto !important;
+  max-width: 70% !important;
+  max-height: min(88vh, 920px) !important;
   aspect-ratio: auto !important;
   object-fit: contain !important;
   object-position: center !important;
@@ -5939,13 +6001,14 @@ header .header__image_kv img {
   }
 
   .section__slide_intro .slide__inner {
-    aspect-ratio: 1.08 / 1 !important;
     width: 100% !important;
-    display: grid !important;
-    place-items: center !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
     min-height: 0 !important;
     overflow: visible !important;
     box-sizing: border-box !important;
+    background: transparent !important;
   }
 
   .section__slide_intro .slide__inner > picture {
@@ -5953,19 +6016,18 @@ header .header__image_kv img {
     align-items: center !important;
     justify-content: center !important;
     width: 100% !important;
-    height: 100% !important;
     max-width: 100% !important;
-    max-height: 100% !important;
     margin: 0 !important;
+    background: transparent !important;
     box-sizing: border-box !important;
   }
 
   .section__slide_intro .slide__inner picture img,
   .section__slide_intro .slide__inner > img {
     width: auto !important;
-    max-width: 100% !important;
+    max-width: 70% !important;
     height: auto !important;
-    max-height: 100% !important;
+    max-height: min(72vh, 640px) !important;
     aspect-ratio: auto !important;
     object-fit: contain !important;
     object-position: center !important;
@@ -5978,20 +6040,23 @@ header .header__image_kv img {
 
   .section__chef_story .content__type1 .chef__image > picture,
   .section__chef_story p.section__image.chef__image > picture {
-    display: block !important;
-    width: 60% !important;
-    max-width: 60% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    background: transparent !important;
     box-sizing: border-box !important;
   }
 
   .section__chef_story .chef__image picture img,
   .section__chef_story .chef__image > img {
     display: block !important;
-    width: 100% !important;
-    max-width: 100% !important;
+    width: auto !important;
+    max-width: 70% !important;
     height: auto !important;
+    max-height: min(88vh, 960px) !important;
     transform: none !important;
   }
 }
@@ -5999,27 +6064,39 @@ header .header__image_kv img {
 .content__type1 .section__image:not(.chef__image),
 .section__course_special .section__panel_base .section__panel_image {
   overflow: visible !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: transparent !important;
 }
 
 .section__chef_story .chef__image {
   overflow: visible !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: transparent !important;
 }
 
 .content__type1 .section__image:not(.chef__image) > picture {
-  display: block !important;
-  width: 70% !important;
-  max-width: 70% !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+  background: transparent !important;
   box-sizing: border-box !important;
 }
 
 .section__course_special .section__panel_base .section__panel_image > picture {
-  display: block !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   width: 100% !important;
   max-width: 100% !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
+  margin: 0 auto !important;
+  background: transparent !important;
   box-sizing: border-box !important;
 }
 
@@ -6028,9 +6105,10 @@ header .header__image_kv img {
 .section__course_special .section__panel_base .section__panel_image picture img,
 .section__course_special .section__panel_base .section__panel_image > img {
   display: block !important;
-  width: 100% !important;
-  max-width: 100% !important;
+  width: auto !important;
+  max-width: 70% !important;
   height: auto !important;
+  max-height: min(85vh, 900px) !important;
   aspect-ratio: auto !important;
   object-fit: contain !important;
   object-position: center !important;
@@ -6039,20 +6117,23 @@ header .header__image_kv img {
 
 .section__chef_story .content__type1 .chef__image > picture,
 .section__chef_story p.section__image.chef__image > picture {
-  display: block !important;
-  width: 60% !important;
-  max-width: 60% !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+  background: transparent !important;
   box-sizing: border-box !important;
 }
 
 .section__chef_story .chef__image picture img,
 .section__chef_story .chef__image > img {
   display: block !important;
-  width: 100% !important;
-  max-width: 100% !important;
+  width: auto !important;
+  max-width: 70% !important;
   height: auto !important;
+  max-height: min(88vh, 960px) !important;
   aspect-ratio: auto !important;
   object-fit: contain !important;
   object-position: center !important;
@@ -6091,34 +6172,33 @@ header .header__image_kv img {
   }
 
   .section__slide_intro .slide__inner {
-    aspect-ratio: 1.08 / 1 !important;
     width: 100% !important;
-    display: grid !important;
-    place-items: center !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
     min-height: 0 !important;
     overflow: visible !important;
     box-sizing: border-box !important;
+    background: transparent !important;
   }
 
   .section__slide_intro .slide__inner > picture {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    width: 70% !important;
-    max-width: 70% !important;
-    height: 100% !important;
-    max-height: 100% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    background: transparent !important;
     box-sizing: border-box !important;
   }
 
   .section__slide_intro .slide__inner picture img,
   .section__slide_intro .slide__inner > img {
     width: auto !important;
-    max-width: 100% !important;
+    max-width: 70% !important;
     height: auto !important;
-    max-height: 100% !important;
+    max-height: min(70vh, 560px) !important;
     aspect-ratio: auto !important;
     object-fit: contain !important;
     object-position: center !important;
@@ -6131,20 +6211,23 @@ header .header__image_kv img {
 
   .section__chef_story .content__type1 .chef__image > picture,
   .section__chef_story p.section__image.chef__image > picture {
-    display: block !important;
-    width: 60% !important;
-    max-width: 60% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    background: transparent !important;
     box-sizing: border-box !important;
   }
 
   .section__chef_story .chef__image picture img,
   .section__chef_story .chef__image > img {
     display: block !important;
-    width: 100% !important;
-    max-width: 100% !important;
+    width: auto !important;
+    max-width: 70% !important;
     height: auto !important;
+    max-height: min(82vh, 900px) !important;
     aspect-ratio: auto !important;
     object-fit: contain !important;
     object-position: center !important;
@@ -6199,6 +6282,16 @@ header .header__image_kv img {
     padding-top: max(86px, calc(72px + var(--sz-safe-y))) !important;
     padding-bottom: max(46px, calc(32px + var(--sz-safe-b))) !important;
     box-sizing: border-box !important;
+  }
+
+  .header__hero {
+    column-gap: clamp(20px, 5vw, 48px) !important;
+    row-gap: clamp(16px, 4vw, 28px) !important;
+  }
+
+  header .header__image_kv picture img,
+  header .header__image_kv img {
+    max-height: min(68vh, 480px) !important;
   }
 
   .intro__about_concept .section__inner,

@@ -162,9 +162,10 @@
   header .header__image_kv img {
     display: block;
     width: 100%;
-    -o-object-fit: cover;
-    object-fit: cover;
-    aspect-ratio: 2/1;
+    height: auto;
+    -o-object-fit: contain;
+    object-fit: contain;
+    object-position: center;
   }
 
   header .site__logo {
@@ -424,7 +425,7 @@
     aspect-ratio: 1.08 / 1;
     display: grid;
     place-items: center;
-    overflow: hidden;
+    overflow: visible;
     background: #223246;
     border: 1px solid rgba(255,255,255,0.14);
     -webkit-box-shadow: none;
@@ -482,11 +483,13 @@
     border-radius: 50%;
   }
 
-  .content__type1 .section__image img {
+  .content__type1 .section__image:not(.chef__image) img {
     display: block;
     width: 100%;
-    -o-object-fit: cover;
-    object-fit: cover;
+    height: auto;
+    -o-object-fit: contain;
+    object-fit: contain;
+    object-position: center;
   }
 
   .content__type1 .content__type1_origin .section__text { text-align: justify; }
@@ -504,7 +507,9 @@
   .chef__image img {
     display: block;
     width: 100%;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
     border: 1px solid rgba(255,255,255,0.14);
     background: #243649;
   }
@@ -591,8 +596,10 @@
   .article__committed_shari > section .section__header .section__image img {
     display: block;
     width: 100%;
-    -o-object-fit: cover;
-    object-fit: cover;
+    height: auto;
+    -o-object-fit: contain;
+    object-fit: contain;
+    object-position: center;
   }
   .article__committed_shari > section .section__header .section__title_small {
     position: absolute;
@@ -628,8 +635,9 @@
   }
   .article__committed_wasabi section .section__image img {
     display: block;
-    -o-object-fit: cover;
-    object-fit: cover;
+    -o-object-fit: contain;
+    object-fit: contain;
+    object-position: center;
     border-radius: 100%;
   }
   .article__committed_wasabi section .section__info { -webkit-box-flex: 1; -ms-flex: 1; flex: 1; }
@@ -1236,7 +1244,7 @@
     position: relative;
   }
 
-  .content__type1 .section__image img,
+  .content__type1 .section__image:not(.chef__image) img,
   .section__course_special .section__panel_base .section__panel_image img,
   .article__committed_shari > section .section__header .section__image img,
   .article__committed_wasabi section .section__image img,
@@ -1709,14 +1717,14 @@ header .header__image_kv {
   padding: 0;
   border: 0;
   align-self: stretch;
-  overflow: hidden;
+  overflow: visible;
 }
 
 header .header__image_kv img {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
   object-position: center;
   border-radius: 28px;
 }
@@ -1727,7 +1735,7 @@ header .header__image_kv img {
   display: grid;
   place-items: center;
   min-height: 0;
-  overflow: hidden;
+  overflow: visible;
   box-sizing: border-box;
 }
 
@@ -1757,13 +1765,15 @@ header .header__image_kv img {
   transform-origin: center;
 }
 
-.content__type1 .section__image {
-  overflow: hidden;
+.content__type1 .section__image:not(.chef__image) {
+  overflow: visible;
 }
 
-.content__type1 .section__image img {
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
+.content__type1 .section__image:not(.chef__image) img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
   object-position: center;
   border-radius: 24px;
   transform: scale(1);
@@ -1771,16 +1781,18 @@ header .header__image_kv img {
 }
 
 .section__chef_story .chef__image {
-  overflow: hidden;
+  overflow: visible;
 }
 
 .section__chef_story .chef__image img {
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
-  object-position: center top;
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
   border-radius: 24px;
   transform: scale(1);
-  transform-origin: center top;
+  transform-origin: center;
 }
 
 .section__course_special .section__panel_base .section__panel_image {
@@ -1854,10 +1866,6 @@ header .header__image_kv img {
     width: 100%;
   }
 
-  header .header__image_kv img {
-    aspect-ratio: 4/5;
-  }
-
   /* ===== Navigation ===== */
   .navigation .navigation__inner {
     max-width: 1060px;
@@ -1929,7 +1937,6 @@ header .header__image_kv img {
   }
 
   .content__type1 .section__image { width: 40%; }
-  .content__type1 .section__image img { aspect-ratio: 1/1; }
 
   .content__type1 .content__type1_origin {
     -webkit-box-flex: 1;
@@ -1974,10 +1981,6 @@ header .header__image_kv img {
 
   .section__chef_story .chef__image {
     width: 35%;
-  }
-
-  .section__chef_story .chef__image img {
-    aspect-ratio: 4/5;
   }
 
   .section__chef_story .content__type1_origin {
@@ -2068,10 +2071,6 @@ header .header__image_kv img {
   }
 
   .article__committed_shari > section { width: 30%; }
-
-  .article__committed_shari > section .section__header .section__image img {
-    aspect-ratio: 16/9;
-  }
 
   .article__committed_shari > section .section__header .section__title_small {
     font-size: 2.4rem;
@@ -2416,11 +2415,6 @@ header .header__image_kv img {
     font-size: 0.84rem;
   }
 
-  header .header__image_kv img {
-    aspect-ratio: 4/3;
-    min-height: 0;
-  }
-
   header .header__image_kv {
     margin-top: 24px;
   }
@@ -2490,10 +2484,6 @@ header .header__image_kv img {
     margin-bottom: 20px;
   }
 
-  .content__type1 .section__image img {
-    aspect-ratio: 4/3;
-  }
-
   .content__type1 .content__type1_origin {
     width: 100%;
     max-width: 100%;
@@ -2523,10 +2513,6 @@ header .header__image_kv img {
   .section__chef_story .chef__image {
     width: 100%;
     margin-bottom: 18px;
-  }
-
-  .section__chef_story .chef__image img {
-    aspect-ratio: 4/5;
   }
 
   .chef__eyebrow {
@@ -2572,10 +2558,6 @@ header .header__image_kv img {
   .article__committed_shari > section {
     width: 100%;
     margin-bottom: 30px;
-  }
-
-  .article__committed_shari > section .section__header .section__image img {
-    aspect-ratio: 16/9;
   }
 
   .article__committed_shari > section .section__header .section__title_small {
@@ -2861,10 +2843,6 @@ header .header__image_kv img {
     letter-spacing: 0.12em;
   }
 
-  header .header__image_kv img {
-    min-height: 180px;
-  }
-
   .language-switcher {
     gap: 4px;
   }
@@ -2990,10 +2968,6 @@ header .header__image_kv img {
     width: 100%;
   }
 
-  header .header__image_kv img {
-    aspect-ratio: 4/5;
-  }
-
   .section__slide_intro .slide__marquee {
     padding: 0 24px 14px;
   }
@@ -3057,10 +3031,6 @@ header .header__image_kv img {
     width: 40%;
   }
 
-  .content__type1 .section__image img {
-    aspect-ratio: 1/1;
-  }
-
   .content__type1 .content__type1_origin {
     -webkit-box-flex: 1;
     -ms-flex: 1;
@@ -3099,10 +3069,6 @@ header .header__image_kv img {
 
   .section__chef_story .chef__image {
     width: 38%;
-  }
-
-  .section__chef_story .chef__image img {
-    aspect-ratio: 4/5;
   }
 
   .section__chef_story .content__type1_origin {
@@ -3151,10 +3117,6 @@ header .header__image_kv img {
   }
 
   .article__committed_shari > section { width: 30%; }
-
-  .article__committed_shari > section .section__header .section__image img {
-    aspect-ratio: 16/9;
-  }
 
   .article__committed_shari > section .section__header .section__title_small {
     font-size: 2rem;
@@ -3554,7 +3516,7 @@ header .header__image_kv img {
 
   header .header__image_kv img {
     width: 100%;
-    aspect-ratio: 4 / 5;
+    height: auto;
     border: 1px solid rgba(255,255,255,0.12);
   }
 
@@ -3655,7 +3617,7 @@ header .header__image_kv img {
     width: auto;
   }
 
-  .content__type1 .section__image img,
+  .content__type1 .section__image:not(.chef__image) img,
   .chef__image img,
   .section__course_special .section__panel_base .section__panel_image img {
     border: 1px solid rgba(255,255,255,0.12);
@@ -3943,7 +3905,8 @@ header .header__image_kv img {
   }
 
   header .header__image_kv img {
-    object-position: center 60%;
+    object-fit: contain;
+    object-position: center;
   }
 
   .logo__text {
@@ -4359,7 +4322,7 @@ header .header__hero {
 header .header__image_kv img,
 .section__slide_intro .slide__item img,
 .section__slide_intro .slide__inner picture img,
-.content__type1 .section__image img,
+.content__type1 .section__image:not(.chef__image) img,
 .section__chef_story .chef__image img,
 .section__course_special .section__panel_base .section__panel_image img,
 .section__course_special .section__panel_base .section__panel_image picture img {
@@ -5075,9 +5038,9 @@ footer {
 }
 
 header .header__image_kv,
-.content__type1 .section__image,
+.content__type1 .section__image:not(.chef__image),
 .section__chef_story .chef__image {
-  overflow: hidden;
+  overflow: visible;
 }
 
 header .header__image_kv img {
@@ -5095,7 +5058,7 @@ header .header__image_kv img {
   transform-origin: center center;
 }
 
-.content__type1 .section__image img {
+.content__type1 .section__image:not(.chef__image) img {
   transform: scale(1);
   transform-origin: center center;
   filter: sepia(0.03) saturate(0.97) contrast(1) brightness(0.99);
@@ -5561,7 +5524,8 @@ header .header__image_kv {
 }
 
 header .header__image_kv img {
-  object-position: center 64%;
+  object-fit: contain;
+  object-position: center;
 }
 
 .section__slide_intro {
@@ -5954,6 +5918,10 @@ header .header__image_kv img {
   width: 100% !important;
   max-width: 100% !important;
   height: auto !important;
+  aspect-ratio: auto !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  min-height: 0 !important;
   transform: none !important;
 }
 
@@ -5976,7 +5944,7 @@ header .header__image_kv img {
     display: grid !important;
     place-items: center !important;
     min-height: 0 !important;
-    overflow: hidden !important;
+    overflow: visible !important;
     box-sizing: border-box !important;
   }
 
@@ -6085,7 +6053,17 @@ header .header__image_kv img {
   width: 100% !important;
   max-width: 100% !important;
   height: auto !important;
+  aspect-ratio: auto !important;
+  object-fit: contain !important;
+  object-position: center !important;
   transform: none !important;
+}
+
+.article__committed_shari > section .section__header .section__image img,
+.article__committed_wasabi section .section__image img {
+  aspect-ratio: auto !important;
+  object-fit: contain !important;
+  object-position: center !important;
 }
 
 @media (max-width: 767px) {
@@ -6118,7 +6096,7 @@ header .header__image_kv img {
     display: grid !important;
     place-items: center !important;
     min-height: 0 !important;
-    overflow: hidden !important;
+    overflow: visible !important;
     box-sizing: border-box !important;
   }
 
@@ -6167,6 +6145,9 @@ header .header__image_kv img {
     width: 100% !important;
     max-width: 100% !important;
     height: auto !important;
+    aspect-ratio: auto !important;
+    object-fit: contain !important;
+    object-position: center !important;
     transform: none !important;
   }
 

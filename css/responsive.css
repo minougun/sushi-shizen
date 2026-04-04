@@ -2,6 +2,7 @@
 /**
  * レスポンシブ・画像調整（style.css の後に読み込む）
  * - ヒーロー・本文写真: 全幅で親の 70%・中央
+ * - 大将写真: PC・スマホとも .chef__image 内の picture を 70%（明示的に両メディアで指定）
  * - トップ直下スライダー3枚: 幅768px以上はご予約ブロック相当のまとまり幅／未満は 70%
  */
 
@@ -78,16 +79,42 @@ header .header__image_kv img {
     max-width: 100% !important;
     transform: none !important;
   }
+
+  /* 大将: PC でも親(.chef__image)に対して picture 70%（style.css の width:35% 列内で中央） */
+  .section__chef_story .chef__image {
+    overflow: visible !important;
+  }
+
+  .section__chef_story .content__type1 .chef__image > picture,
+  .section__chef_story p.section__image.chef__image > picture {
+    display: block !important;
+    width: 70% !important;
+    max-width: 70% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+  }
+
+  .section__chef_story .chef__image picture img,
+  .section__chef_story .chef__image > img {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    transform: none !important;
+  }
 }
 
-.content__type1 .section__image,
-.section__chef_story .chef__image,
+.content__type1 .section__image:not(.chef__image),
 .section__course_special .section__panel_base .section__panel_image {
   overflow: visible !important;
 }
 
-.content__type1 .section__image > picture,
-.section__chef_story .chef__image > picture,
+.section__chef_story .chef__image {
+  overflow: visible !important;
+}
+
+.content__type1 .section__image:not(.chef__image) > picture,
 .section__course_special .section__panel_base .section__panel_image > picture {
   display: block !important;
   width: 70% !important;
@@ -97,12 +124,30 @@ header .header__image_kv img {
   box-sizing: border-box !important;
 }
 
-.content__type1 .section__image picture img,
-.content__type1 .section__image > img,
-.section__chef_story .chef__image picture img,
-.section__chef_story .chef__image > img,
+.content__type1 .section__image:not(.chef__image) picture img,
+.content__type1 .section__image:not(.chef__image) > img,
 .section__course_special .section__panel_base .section__panel_image picture img,
 .section__course_special .section__panel_base .section__panel_image > img {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  transform: none !important;
+}
+
+/* 大将: ベース（スマホでも効く）。PC は上の min-width:768 内で再指定 */
+.section__chef_story .content__type1 .chef__image > picture,
+.section__chef_story p.section__image.chef__image > picture {
+  display: block !important;
+  width: 70% !important;
+  max-width: 70% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  box-sizing: border-box !important;
+}
+
+.section__chef_story .chef__image picture img,
+.section__chef_story .chef__image > img {
   display: block !important;
   width: 100% !important;
   max-width: 100% !important;
@@ -153,6 +198,30 @@ header .header__image_kv img {
   .section__slide_intro .slide__inner > img {
     width: 100% !important;
     max-width: 100% !important;
+    transform: none !important;
+  }
+
+  /* 大将: スマホでも picture 70%（列幅100%時も中央） */
+  .section__chef_story .chef__image {
+    overflow: visible !important;
+  }
+
+  .section__chef_story .content__type1 .chef__image > picture,
+  .section__chef_story p.section__image.chef__image > picture {
+    display: block !important;
+    width: 70% !important;
+    max-width: 70% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+  }
+
+  .section__chef_story .chef__image picture img,
+  .section__chef_story .chef__image > img {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
     transform: none !important;
   }
 

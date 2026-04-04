@@ -26,6 +26,7 @@ const translations = {
     hero_lead:
       "旬、温度、間。<br>十席のカウンターで、その日の一貫と向き合う。",
     hero_summary: "完全予約制・カウンター10席。心斎橋駅から徒歩5分。",
+    booking_aria_label: "TableCheckで予約する",
     booking_card_label: "公式オンライン予約",
     hero_cta_secondary: "店舗情報を見る",
     hero_link_map: "Google Mapsで場所を見る",
@@ -150,6 +151,7 @@ const translations = {
     hero_lead:
       "Season, temperature, timing.<br>Ten seats. One omakase rhythm.",
     hero_summary: "Reservation required. 5 minutes from Shinsaibashi Station.",
+    booking_aria_label: "Reserve on TableCheck",
     booking_card_label: "Official Reservation",
     hero_cta_secondary: "View Access & Hours",
     hero_link_map: "Open in Google Maps",
@@ -274,6 +276,7 @@ const translations = {
     hero_lead:
       "제철, 온도, 타이밍.<br>10석 카운터에서 그날의 한 점과 마주합니다.",
     hero_summary: "완전 예약제, 카운터 10석, 신사이바시역 도보 5분.",
+    booking_aria_label: "TableCheck에서 예약하기",
     booking_card_label: "공식 온라인 예약",
     hero_cta_secondary: "매장 정보 보기",
     hero_link_map: "Google 지도에서 위치 보기",
@@ -397,6 +400,7 @@ const translations = {
     hero_lead:
       "时令、温度、分寸。<br>在十席吧台前，遇见当天最好的一贯。",
     hero_summary: "完全预约制，仅设10个柜台席位，距心斋桥站步行5分钟。",
+    booking_aria_label: "在 TableCheck 预约",
     booking_card_label: "官方在线预约",
     hero_cta_secondary: "查看店铺信息",
     hero_link_map: "在 Google Maps 中查看位置",
@@ -562,44 +566,27 @@ function applyLanguage(lang) {
     });
   }
 
-  localStorage.setItem(STORAGE_KEY, lang);
+  safeSetStorage(STORAGE_KEY, lang);
 }
 
-function detectBrowserLanguage() {
-  const languages = Array.isArray(navigator.languages) && navigator.languages.length > 0
-    ? navigator.languages
-    : [navigator.language || "ja"];
+function safeGetStorage(key) {
+  try { return localStorage.getItem(key); } catch (_) { return null; }
+}
 
-  for (const candidate of languages) {
-    const lang = String(candidate).toLowerCase();
-    if (lang.startsWith("ja")) {
-      return "ja";
-    }
-    if (lang.startsWith("ko")) {
-      return "ko";
-    }
-    if (lang.startsWith("zh")) {
-      return "zh";
-    }
-    if (lang.startsWith("en")) {
-      return "en";
-    }
-  }
-
-  return "en";
+function safeSetStorage(key, value) {
+  try { localStorage.setItem(key, value); } catch (_) { /* storage unavailable */ }
 }
 
 function getInitialLanguage() {
-  // Prefer the boot language set by inline script (single source of truth)
   const boot = window.__SUSHI_ZEN_BOOT;
   if (boot && boot.lang && translations[boot.lang]) {
     return boot.lang;
   }
-  const stored = localStorage.getItem(STORAGE_KEY);
+  const stored = safeGetStorage(STORAGE_KEY);
   if (stored && translations[stored]) {
     return stored;
   }
-  return detectBrowserLanguage();
+  return "ja";
 }
 
 function initializeScrollReveal() {

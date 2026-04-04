@@ -4638,6 +4638,68 @@ footer {
   gap: 10px;
 }
 
+.booking-card-block--ruled {
+  border-left: 2px solid rgba(179, 145, 82, 0.58);
+  padding-left: 16px;
+}
+
+.booking-card-block--ruled .booking-card,
+.booking-card-block--ruled .booking-card--reserve {
+  padding-left: 0;
+}
+
+.header__actions--hero-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 22px;
+  margin-bottom: 22px;
+  width: 100%;
+  max-width: 100%;
+}
+
+.header__ghost-as-heading {
+  width: 75%;
+  max-width: 20rem;
+  min-height: 0;
+  padding: 0 0 10px 0;
+  margin: 0;
+  border-bottom: 1px solid rgba(179, 145, 82, 0.48);
+  border-radius: 0;
+  justify-content: flex-start;
+  align-self: flex-start;
+}
+
+.header__hero_copy .header__utility_links--hero-row {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 10px 20px;
+  margin: 0 0 22px;
+}
+
+.header__trust-compact {
+  margin: 0 0 24px;
+  max-width: 38em;
+}
+
+.header__trust-slashes,
+.header__trust-final {
+  margin: 0;
+  color: rgba(226, 212, 183, 0.78);
+  font-size: 0.94rem;
+  line-height: 1.85;
+  letter-spacing: 0.08em;
+}
+
+.header__trust-slashes {
+  margin-bottom: 8px;
+}
+
+.header__trust-slash {
+  color: rgba(179, 145, 82, 0.42);
+}
+
 .booking-card__microcopy {
   margin: 0;
   max-width: 32em;
@@ -4648,7 +4710,7 @@ footer {
 }
 
 .header__access-promo {
-  margin: 0 0 18px;
+  margin: 0 0 22px;
   max-width: 36em;
 }
 
@@ -4718,6 +4780,11 @@ footer {
   align-items: center;
   gap: 14px;
   margin-bottom: 20px;
+}
+
+.header__actions.header__actions--hero-stack {
+  align-items: flex-start;
+  flex-direction: column;
 }
 
 .header__utility_links,
@@ -4801,12 +4868,26 @@ footer {
   color: rgba(226, 214, 191, 0.64);
 }
 
+.header__trust--ratings-row {
+  margin-top: 0;
+}
+
 .header__trust--ratings {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
   gap: 0.2em 0.5em;
   max-width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header__trust--ratings-row .header__trust--ratings {
+  margin: 0;
+  padding: 0;
+  color: #d8b873;
+  font-weight: 600;
 }
 
 .header__trust-link {
@@ -5194,6 +5275,9 @@ body,
 .navigation .navigation__inner ul li a,
 .header__lead,
 .header__summary,
+.header__trust-compact,
+.header__trust-slashes,
+.header__trust-final,
 .booking-card__microcopy,
 .header__access-exit-hint,
 .info__access-exit-hint,

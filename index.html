@@ -70,8 +70,8 @@
   <!-- CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.3.0/dist/css/yakuhanjp.min.css">
   <!-- Page CSS -->
-  <link href="./css/style.css?v=20260404-31" rel="stylesheet" type="text/css" media="screen,print" />
-  <script src="./js/main.js?v=20260404-31" defer></script>
+  <link href="./css/style.css?v=20260404-32" rel="stylesheet" type="text/css" media="screen,print" />
+  <script src="./js/main.js?v=20260404-32" defer></script>
 </head>
 
 <body class="body body__jp">
@@ -99,8 +99,8 @@
             十席のカウンターで、その日の一貫と向き合う。
           </p>
           <p class="header__summary" data-i18n="hero_summary">完全予約制・カウンター10席。心斎橋駅から徒歩5分。</p>
-          <div class="header__actions">
-            <div class="header__booking-wrap">
+          <div class="header__actions header__actions--hero-stack">
+            <div class="header__booking-wrap booking-card-block--ruled">
               <a href="https://www.tablecheck.com/ja/sushi-zen/reserve/message" data-tablecheck target="_blank" rel="noopener noreferrer" class="booking-card" data-i18n-attrs="aria-label:booking_aria_label">
                 <span class="booking-card__label" data-i18n="booking_card_label">公式オンライン予約</span>
                 <span class="booking-card__cta">
@@ -111,21 +111,24 @@
               </a>
               <p class="booking-card__microcopy" data-i18n="booking_microcopy">お食事の目安は約2時間／変更・キャンセルは前日まで（当日は100%）</p>
             </div>
-            <a href="#informationSection" class="header__button header__button--ghost" data-i18n="hero_cta_secondary">店舗情報を見る</a>
+            <a href="#informationSection" class="header__button header__button--ghost header__ghost-as-heading" data-i18n="hero_cta_secondary">店舗情報を見る</a>
+          </div>
+          <ul class="header__utility_links header__utility_links--hero-row">
+            <li><a href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E9%98%AA%E5%BA%9C%E5%A4%A7%E9%98%AA%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E6%9D%B1%E5%BF%83%E6%96%8E%E6%A9%8B1-14-15%20%E3%82%A2%E3%83%AB%E3%82%B9%E3%83%93%E3%83%AB%204F" target="_blank" rel="noopener noreferrer" data-google-maps-link data-i18n="hero_link_map">Google Mapsで場所を見る</a></li>
+            <li><a href="tel:07045678080" data-i18n="hero_link_call">電話で確認する</a></li>
+            <li><a href="#informationSection" data-i18n="hero_link_hours">営業時間を確認する</a></li>
+          </ul>
+          <div class="header__trust-compact">
+            <p class="header__trust-slashes">
+              <span data-i18n="hero_trust_1">完全予約制・10席のカウンター</span><span class="header__trust-slash" aria-hidden="true"> / </span><span data-i18n="hero_trust_2">心斎橋駅から徒歩5分</span><span class="header__trust-slash" aria-hidden="true"> /</span>
+            </p>
+            <p class="header__trust-final" data-i18n="hero_trust_3">全席禁煙・キャッシュレス対応</p>
           </div>
           <div class="header__access-promo">
             <a href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E9%98%AA%E5%BA%9C%E5%A4%A7%E9%98%AA%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E6%9D%B1%E5%BF%83%E6%96%8E%E6%A9%8B1-14-15%20%E3%82%A2%E3%83%AB%E3%82%B9%E3%83%93%E3%83%AB%204F" class="header__map-cta" id="hero-map-cta" target="_blank" rel="noopener noreferrer" data-google-maps-link data-i18n="maps_primary_cta">Google Mapsで道順を開く</a>
             <p class="header__access-exit-hint" data-i18n="access_exit_hint">心斎橋駅から徒歩約5分・アルスビル4階</p>
           </div>
-          <ul class="header__utility_links">
-            <li><a href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E9%98%AA%E5%BA%9C%E5%A4%A7%E9%98%AA%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E6%9D%B1%E5%BF%83%E6%96%8E%E6%A9%8B1-14-15%20%E3%82%A2%E3%83%AB%E3%82%B9%E3%83%93%E3%83%AB%204F" target="_blank" rel="noopener noreferrer" data-google-maps-link data-i18n="hero_link_map">Google Mapsで場所を見る</a></li>
-            <li><a href="tel:07045678080" data-i18n="hero_link_call">電話で確認する</a></li>
-            <li><a href="#informationSection" data-i18n="hero_link_hours">営業時間を確認する</a></li>
-          </ul>
-          <ul class="header__trust">
-            <li data-i18n="hero_trust_1">完全予約制・10席のカウンター</li>
-            <li data-i18n="hero_trust_2">心斎橋駅から徒歩5分</li>
-            <li data-i18n="hero_trust_3">全席禁煙・キャッシュレス対応</li>
+          <ul class="header__trust header__trust--ratings-row">
             <li class="header__trust--ratings">
               <a class="header__trust-link" id="trust-google-link" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%A4%A7%E9%98%AA%E5%BA%9C%E5%A4%A7%E9%98%AA%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E6%9D%B1%E5%BF%83%E6%96%8E%E6%A9%8B1-14-15%20%E3%82%A2%E3%83%AB%E3%82%B9%E3%83%93%E3%83%AB%204F" target="_blank" rel="noopener noreferrer" data-google-maps-link data-i18n-attrs="aria-label:trust_google_aria">
                 <span data-i18n="trust_google_label">Google</span>
@@ -196,7 +199,7 @@
               <li>
                 <section class="access access--primary">
                   <div class="access__net">
-                    <div class="access__booking-wrap">
+                    <div class="access__booking-wrap booking-card-block--ruled">
                       <a href="https://www.tablecheck.com/ja/sushi-zen/reserve/message" data-tablecheck target="_blank" rel="noopener noreferrer" class="booking-card booking-card--reserve" data-i18n-attrs="aria-label:booking_aria_label">
                         <span class="booking-card__label" data-i18n="booking_card_label">公式オンライン予約</span>
                         <span class="booking-card__cta">

@@ -4197,19 +4197,45 @@ header .header__hero {
   max-width: 420px;
   padding: 18px 24px;
   background: transparent;
-  border: none;
+  border: 1px solid transparent;
   border-radius: 8px;
   box-shadow: none;
-  transition: opacity 0.25s ease;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    opacity 0.2s ease;
 }
 
 .booking-card:hover,
 .booking-card:focus-visible {
-  opacity: 0.92;
-  transform: none;
-  background: transparent;
-  border: none;
-  box-shadow: none;
+  opacity: 1;
+  transform: translateY(-1px);
+  background: linear-gradient(180deg, #d9c38c 0%, #b39152 100%);
+  border: 1px solid rgba(120, 95, 48, 0.35);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
+  outline: none;
+}
+
+.booking-card:hover .booking-card__label,
+.booking-card:focus-visible .booking-card__label {
+  color: rgba(21, 17, 12, 0.72);
+}
+
+.booking-card:hover .booking-card__cta,
+.booking-card:focus-visible .booking-card__cta {
+  color: #15110c;
+}
+
+.booking-card:hover .booking-card__arrow,
+.booking-card:focus-visible .booking-card__arrow {
+  color: #15110c;
+}
+
+.booking-card:hover .booking-card__brand,
+.booking-card:focus-visible .booking-card__brand {
+  color: rgba(21, 17, 12, 0.55);
 }
 
 .booking-card__label {
@@ -4793,11 +4819,32 @@ footer {
 
 .booking-card--reserve:hover,
 .booking-card--reserve:focus-visible {
-  opacity: 0.92;
-  transform: none;
-  background: transparent;
-  border: none;
-  box-shadow: none;
+  opacity: 1;
+  transform: translateY(-1px);
+  background: linear-gradient(180deg, #d9c38c 0%, #b39152 100%);
+  border: 1px solid rgba(120, 95, 48, 0.35);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
+  outline: none;
+}
+
+.booking-card--reserve:hover .booking-card__label,
+.booking-card--reserve:focus-visible .booking-card__label {
+  color: rgba(21, 17, 12, 0.72);
+}
+
+.booking-card--reserve:hover .booking-card__cta,
+.booking-card--reserve:focus-visible .booking-card__cta {
+  color: #15110c;
+}
+
+.booking-card--reserve:hover .booking-card__arrow,
+.booking-card--reserve:focus-visible .booking-card__arrow {
+  color: #15110c;
+}
+
+.booking-card--reserve:hover .booking-card__brand,
+.booking-card--reserve:focus-visible .booking-card__brand {
+  color: rgba(21, 17, 12, 0.55);
 }
 
 .header__button--ghost {
@@ -5640,6 +5687,117 @@ header .header__image_kv img {
 #reserveSection .reserve__call_note {
   text-align: center;
   max-width: 40em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ご予約: 左罫線ラッパーだと視覚重心が右にズレるため、罫線はカード本体に付けて中央配置 */
+#reserveSection .booking-card-block--ruled {
+  border-left: none;
+  padding-left: 0;
+  align-items: center;
+}
+
+#reserveSection .booking-card-block--ruled .booking-card,
+#reserveSection .booking-card-block--ruled .booking-card--reserve {
+  border-left: 2px solid rgba(179, 145, 82, 0.58);
+  padding-left: 18px;
+  padding-right: 18px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: fit-content;
+  max-width: min(100%, 420px);
+  box-sizing: border-box;
+}
+
+#reserveSection .booking-card-block--ruled .booking-card__cta {
+  justify-content: center;
+  gap: 10px;
+}
+
+#reserveSection .reserve__support_list {
+  justify-content: center;
+}
+
+#reserveSection .reserve__support_list li {
+  text-align: center;
+}
+
+/* ご案内: 要望どおり見出し〜地図前まで本文を中央寄せ */
+#informationSection .section__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#informationSection .title__type1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+}
+
+#informationSection .info__summary {
+  width: 100%;
+  max-width: 42em;
+  text-align: center;
+}
+
+#informationSection .info__access-promo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+#informationSection .info__map-cta {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#informationSection .info__access-exit-hint {
+  text-align: center;
+}
+
+#informationSection .info__list {
+  width: 100%;
+  max-width: 40em;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+#informationSection .info__list > dt {
+  text-align: center;
+}
+
+#informationSection .info__list > dd {
+  text-align: center;
+}
+
+#informationSection .info__booking_flow {
+  width: 100%;
+  max-width: 42em;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  border-left: none;
+  border-top: 1px solid rgba(179, 145, 82, 0.32);
+  padding: 18px 16px 0;
+  margin-top: 8px;
+}
+
+#informationSection .base__map {
+  width: 100%;
+  max-width: 720px;
   margin-left: auto;
   margin-right: auto;
 }

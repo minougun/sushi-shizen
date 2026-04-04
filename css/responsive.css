@@ -1,8 +1,7 @@
 @charset "UTF-8";
 /**
- * レスポンシブ最終レイヤー（style.css の後に読み込む）
- * - ヒーロー等の transform: scale() + overflow:hidden が 70% 指定を打ち消す問題を解消
- * - 横スクロール抑制・地図の可変高さ
+ * レスポンシブ・画像調整（style.css の後に読み込む）
+ * - 主要コンテンツ画像は全ビューポートで親幅の 70%・中央（国旗・装飾 SVG は対象外）
  */
 
 *,
@@ -15,20 +14,92 @@ html {
   overflow-x: clip;
 }
 
-/* メイン本文のメディアは親幅を超えない（国旗アイコン等は既存クラスで寸法指定） */
-.content__inner img,
+/* メイン本文のメディアは親幅を超えない（国旗は header 内で別指定） */
+.content__inner img:not(.language-switcher__flag),
 .content__inner video {
   max-width: 100%;
   height: auto;
 }
 
-/* スマホ */
+/* ----- サイト共通: ヒーロー・スライダー・本文の写真を 70% ----- */
+header .header__image_kv {
+  overflow: visible !important;
+}
+
+header .header__image_kv > picture {
+  display: block !important;
+  width: 70% !important;
+  max-width: 70% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  box-sizing: border-box !important;
+}
+
+header .header__image_kv picture img,
+header .header__image_kv img {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  transform: none !important;
+}
+
+.section__slide_intro .slide__inner {
+  overflow: visible !important;
+}
+
+.section__slide_intro .slide__inner > picture {
+  display: block !important;
+  width: 70% !important;
+  max-width: 70% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  box-sizing: border-box !important;
+}
+
+.section__slide_intro .slide__inner picture img,
+.section__slide_intro .slide__inner > img {
+  width: 100% !important;
+  max-width: 100% !important;
+  transform: none !important;
+}
+
+.content__type1 .section__image,
+.section__chef_story .chef__image,
+.section__course_special .section__panel_base .section__panel_image {
+  overflow: visible !important;
+}
+
+.content__type1 .section__image > picture,
+.section__chef_story .chef__image > picture,
+.section__course_special .section__panel_base .section__panel_image > picture {
+  display: block !important;
+  width: 70% !important;
+  max-width: 70% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  box-sizing: border-box !important;
+}
+
+.content__type1 .section__image picture img,
+.content__type1 .section__image > img,
+.section__chef_story .chef__image picture img,
+.section__chef_story .chef__image > img,
+.section__course_special .section__panel_base .section__panel_image picture img,
+.section__course_special .section__panel_base .section__panel_image > img {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  transform: none !important;
+}
+
+/* ----- 狭い画面のみ ----- */
 @media (max-width: 767px) {
   .body__wrap {
     min-width: 0;
   }
 
-  /* Google → 食べログ 縦並び（確実に上書き） */
   .header__trust.header__trust--ratings-row {
     overflow-x: visible !important;
     -webkit-overflow-scrolling: auto;
@@ -48,77 +119,6 @@ html {
     display: none !important;
   }
 
-  /* 画像 70%: scale(1.06) を無効化しないと見た目が変わらない */
-  header .header__image_kv {
-    overflow: visible !important;
-  }
-
-  header .header__image_kv > picture {
-    display: block !important;
-    width: 70% !important;
-    max-width: 70% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-
-  header .header__image_kv picture img,
-  header .header__image_kv img {
-    display: block !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-    transform: none !important;
-  }
-
-  .section__slide_intro .slide__inner {
-    overflow: visible !important;
-  }
-
-  .section__slide_intro .slide__inner > picture {
-    display: block !important;
-    width: 70% !important;
-    max-width: 70% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-
-  .section__slide_intro .slide__inner picture img,
-  .section__slide_intro .slide__inner > img {
-    width: 100% !important;
-    max-width: 100% !important;
-    transform: none !important;
-  }
-
-  .content__type1 .section__image,
-  .section__chef_story .chef__image,
-  .section__course_special .section__panel_base .section__panel_image {
-    overflow: visible !important;
-  }
-
-  .content__type1 .section__image > picture,
-  .section__chef_story .chef__image > picture,
-  .section__course_special .section__panel_base .section__panel_image > picture {
-    display: block !important;
-    width: 70% !important;
-    max-width: 70% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-
-  .content__type1 .section__image picture img,
-  .content__type1 .section__image > img,
-  .section__chef_story .chef__image picture img,
-  .section__chef_story .chef__image > img,
-  .section__course_special .section__panel_base .section__panel_image picture img,
-  .section__course_special .section__panel_base .section__panel_image > img {
-    display: block !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-    transform: none !important;
-  }
-
-  /* 埋め込み地図: 高さ固定をやめてビューポートに追従 */
   .base__map {
     position: relative;
     width: 100%;

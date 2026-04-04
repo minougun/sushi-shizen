@@ -37,7 +37,6 @@ const translations = {
     language_switcher_label: "言語切り替え",
     language_switcher_caption: "Language 言語",
     hero_visitor_hint_aria: "来店前のご案内",
-    hero_lang_quick_aria: "英語で表示する",
     hero_eyebrow: "大阪・東心斎橋 / 完全予約制",
     logo_text: "鮨し禅",
     hero_lead:
@@ -181,7 +180,6 @@ const translations = {
     language_switcher_label: "Language selector",
     language_switcher_caption: "Language",
     hero_visitor_hint_aria: "Before you visit",
-    hero_lang_quick_aria: "Switch to English",
     hero_eyebrow: "Shinsaibashi, Osaka",
     logo_text: "Sushi Zen",
     hero_lead:
@@ -325,7 +323,6 @@ const translations = {
     language_switcher_label: "언어 선택",
     language_switcher_caption: "언어 Language",
     hero_visitor_hint_aria: "방문 전 안내",
-    hero_lang_quick_aria: "영어로 보기",
     hero_eyebrow: "오사카 오마카세 / 예약제",
     logo_text: "鮨し禅",
     hero_lead:
@@ -468,7 +465,6 @@ const translations = {
     language_switcher_label: "语言切换",
     language_switcher_caption: "语言 Language",
     hero_visitor_hint_aria: "到店前提示",
-    hero_lang_quick_aria: "切换为英语",
     hero_eyebrow: "大阪主厨推荐 / 预约制",
     logo_text: "鮨し禅",
     hero_lead:
@@ -656,11 +652,6 @@ function applyLanguage(lang) {
   }
 
   safeSetStorage(STORAGE_KEY, lang);
-
-  const langQuick = document.querySelector(".header__lang_quick_en");
-  if (langQuick) {
-    langQuick.hidden = lang !== "ja";
-  }
 }
 
 function safeGetStorage(key) {
@@ -950,12 +941,4 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  document.querySelectorAll("[data-set-lang]").forEach((node) => {
-    node.addEventListener("click", () => {
-      const next = node.dataset.setLang;
-      if (next && translations[next]) {
-        applyLanguage(next);
-      }
-    });
-  });
 });

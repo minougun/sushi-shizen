@@ -4629,34 +4629,6 @@ footer {
   line-height: 1.96;
 }
 
-.header__lang_quick_en {
-  margin: 0 0 10px;
-}
-
-.header__lang_quick_btn {
-  -webkit-appearance: none;
-  appearance: none;
-  margin: 0;
-  padding: 6px 14px;
-  min-height: 40px;
-  border: 1px solid rgba(179, 145, 82, 0.42);
-  border-radius: 2px;
-  background: rgba(20, 18, 14, 0.55);
-  color: rgba(240, 230, 212, 0.92);
-  font-size: 1.02rem;
-  letter-spacing: 0.12em;
-  cursor: pointer;
-  transition: color 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
-}
-
-.header__lang_quick_btn:hover,
-.header__lang_quick_btn:focus-visible {
-  color: #f5eede;
-  border-color: rgba(179, 145, 82, 0.72);
-  background: rgba(30, 26, 20, 0.72);
-  outline: none;
-}
-
 .header__visitor_hint_list {
   margin: 0 0 22px;
   padding-left: 1.2em;
@@ -5178,7 +5150,6 @@ body,
 .header__value_line,
 .header__visitor_hint_list,
 .header__visitor_hint_list li,
-.header__lang_quick_btn,
 .header__trust-note,
 .header__utility_links a,
 .reserve__utility_links a,

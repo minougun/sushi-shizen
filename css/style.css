@@ -5665,7 +5665,7 @@ header .header__image_kv img {
   flex-direction: column;
   align-items: stretch;
   width: 100%;
-  max-width: min(100%, 720px);
+  max-width: min(100%, 480px);
   margin-inline: auto;
 }
 
@@ -5724,36 +5724,31 @@ header .header__image_kv img {
   align-items: center;
   text-align: center;
   width: auto;
-  max-width: min(100%, 720px);
+  max-width: min(100%, 480px);
   box-sizing: border-box;
 }
 
-/* ラベル＋CTA を1行・中央（ご予約ブロックのみ） */
+/* ラベル1行目・CTA2行目・ともに中央（ご予約ブロックのみ） */
 #reserveSection .booking-card__reserve-line {
-  display: inline-flex;
-  flex-wrap: nowrap;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: clamp(8px, 2vw, 16px);
+  gap: 10px;
   width: 100%;
   max-width: 100%;
-  white-space: nowrap;
+  text-align: center;
 }
 
 #reserveSection .booking-card__reserve-line .booking-card__label {
-  flex: 0 1 auto;
+  display: block;
   white-space: nowrap;
-  font-size: clamp(0.68rem, 0.52rem + 1.05vw, 0.96rem);
-  letter-spacing: clamp(0.12em, 0.14em + 0.1vw, 0.22em);
 }
 
 #reserveSection .booking-card__reserve-line .booking-card__cta {
-  flex: 0 1 auto;
   justify-content: center;
   gap: 0.35em;
   white-space: nowrap;
-  font-size: clamp(0.92rem, 0.72rem + 1.35vw, 1.64rem);
-  letter-spacing: clamp(0.04em, 0.06em + 0.08vw, 0.08em);
 }
 
 #reserveSection .reserve__support_list {

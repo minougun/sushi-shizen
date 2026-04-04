@@ -4182,18 +4182,19 @@ header .header__hero {
 }
 
 .header__lead {
-  max-width: min(100%, 42rem);
+  max-width: 100%;
   color: rgba(246,240,229,0.92);
   font-size: 1.5rem;
   line-height: 2.06;
   letter-spacing: 0.12em;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
 }
 
+/* 2行目を常に1行・横スクロールなし。狭い幅は字詰め＋可変フォントで収める */
 .header__lead-nowrap {
+  display: block;
   white-space: nowrap;
+  font-size: clamp(0.62rem, 0.5rem + 3.4vw, 1.5rem);
+  letter-spacing: clamp(0.02em, 0.04em + 0.12vw, 0.12em);
 }
 
 .header__actions {
@@ -4208,47 +4209,45 @@ header .header__hero {
   border-radius: 8px;
   box-shadow: none;
   transition:
-    transform 0.2s ease,
-    background 0.2s ease,
-    border-color 0.2s ease,
-    box-shadow 0.2s ease,
+    color 0.2s ease,
     opacity 0.2s ease;
 }
 
 .booking-card:hover,
 .booking-card:focus-visible {
   opacity: 1;
-  transform: translateY(-1px);
-  background: linear-gradient(180deg, #f0d4b0 0%, #e8b88a 55%, #deb078 100%);
-  border: 1px solid rgba(200, 140, 80, 0.45);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+  transform: none;
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
   outline: none;
 }
 
 .booking-card:hover .booking-card__label,
 .booking-card:focus-visible .booking-card__label {
-  color: rgba(21, 17, 12, 0.72);
+  color: rgba(242, 210, 170, 0.92);
 }
 
 .booking-card:hover .booking-card__cta,
 .booking-card:focus-visible .booking-card__cta {
-  color: #15110c;
+  color: #f0c896;
 }
 
 .booking-card:hover .booking-card__arrow,
 .booking-card:focus-visible .booking-card__arrow {
-  color: #15110c;
+  color: #e8b878;
 }
 
 .booking-card:hover .booking-card__brand,
 .booking-card:focus-visible .booking-card__brand {
-  color: rgba(21, 17, 12, 0.55);
+  color: rgba(235, 195, 140, 0.78);
 }
 
 .booking-card__label {
   color: rgba(228, 213, 183, 0.72);
   font-size: 0.96rem;
   letter-spacing: 0.22em;
+  transition: color 0.2s ease;
 }
 
 .booking-card__cta {
@@ -4260,16 +4259,19 @@ header .header__hero {
   color: #f6f0e5;
   font-size: 1.64rem;
   letter-spacing: 0.08em;
+  transition: color 0.2s ease;
 }
 
 .booking-card__arrow {
   color: #d8b873;
+  transition: color 0.2s ease;
 }
 
 .booking-card__brand {
   color: rgba(215, 194, 150, 0.58);
   font-size: 0.94rem;
   letter-spacing: 0.12em;
+  transition: color 0.2s ease;
 }
 
 .header__button {
@@ -4647,7 +4649,7 @@ footer {
 }
 
 .header__lead {
-  max-width: 19em;
+  max-width: 100%;
   margin-bottom: 14px;
 }
 
@@ -4832,31 +4834,31 @@ footer {
 .booking-card--reserve:hover,
 .booking-card--reserve:focus-visible {
   opacity: 1;
-  transform: translateY(-1px);
-  background: linear-gradient(180deg, #f0d4b0 0%, #e8b88a 55%, #deb078 100%);
-  border: 1px solid rgba(200, 140, 80, 0.45);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+  transform: none;
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
   outline: none;
 }
 
 .booking-card--reserve:hover .booking-card__label,
 .booking-card--reserve:focus-visible .booking-card__label {
-  color: rgba(21, 17, 12, 0.72);
+  color: rgba(242, 210, 170, 0.92);
 }
 
 .booking-card--reserve:hover .booking-card__cta,
 .booking-card--reserve:focus-visible .booking-card__cta {
-  color: #15110c;
+  color: #f0c896;
 }
 
 .booking-card--reserve:hover .booking-card__arrow,
 .booking-card--reserve:focus-visible .booking-card__arrow {
-  color: #15110c;
+  color: #e8b878;
 }
 
 .booking-card--reserve:hover .booking-card__brand,
 .booking-card--reserve:focus-visible .booking-card__brand {
-  color: rgba(21, 17, 12, 0.55);
+  color: rgba(235, 195, 140, 0.78);
 }
 
 .header__button--ghost {

@@ -188,18 +188,48 @@
   z-index: 20;
   top: 24px;
   right: 24px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    gap: 10px;
-    padding: 0;
-    border: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  gap: 8px;
+  padding: 0;
+  border: none;
   background: transparent;
   -webkit-box-shadow: none;
   box-shadow: none;
   isolation: isolate;
   pointer-events: auto;
   opacity: 0.96;
+}
+
+.language-switcher__caption {
+  margin: 0;
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(236, 228, 210, 0.52);
+  line-height: 1.2;
+  text-align: right;
+}
+
+.language-switcher__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  gap: 10px;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
 }
 
 .language-switcher__button {
@@ -215,7 +245,8 @@
     align-items: center;
     gap: 6px;
     min-width: 0;
-  min-height: 36px;
+  min-height: 44px;
+  min-width: 44px;
   padding: 0 10px;
   border: 1px solid rgba(255,255,255,0.12);
   background: rgba(20, 23, 26, 0.28);
@@ -4038,7 +4069,9 @@ header > .language-switcher {
   top: 24px !important;
   right: 24px !important;
   left: auto !important;
-  justify-content: flex-end !important;
+  flex-direction: column !important;
+  align-items: flex-end !important;
+  justify-content: flex-start !important;
   margin-left: auto !important;
   z-index: 40 !important;
 }
@@ -4596,13 +4629,51 @@ footer {
   line-height: 1.96;
 }
 
-.header__visitor_hint {
+.header__lang_quick_en {
+  margin: 0 0 10px;
+}
+
+.header__lang_quick_btn {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+  padding: 6px 14px;
+  min-height: 40px;
+  border: 1px solid rgba(179, 145, 82, 0.42);
+  border-radius: 2px;
+  background: rgba(20, 18, 14, 0.55);
+  color: rgba(240, 230, 212, 0.92);
+  font-size: 1.02rem;
+  letter-spacing: 0.12em;
+  cursor: pointer;
+  transition: color 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.header__lang_quick_btn:hover,
+.header__lang_quick_btn:focus-visible {
+  color: #f5eede;
+  border-color: rgba(179, 145, 82, 0.72);
+  background: rgba(30, 26, 20, 0.72);
+  outline: none;
+}
+
+.header__visitor_hint_list {
   margin: 0 0 22px;
+  padding-left: 1.2em;
   max-width: 38em;
   color: rgba(218, 206, 182, 0.7);
   font-size: 1.12rem;
   letter-spacing: 0.08em;
   line-height: 1.82;
+  list-style: disc;
+}
+
+.header__visitor_hint_list li {
+  margin-bottom: 0.4em;
+}
+
+.header__visitor_hint_list li:last-child {
+  margin-bottom: 0;
 }
 
 .header__value_line {
@@ -4668,14 +4739,23 @@ footer {
 .booking-card,
 .booking-card--reserve {
   min-height: 88px;
+  min-width: min(100%, 280px);
+  box-sizing: border-box;
 }
 
 .header__button--ghost {
-  padding-inline: 0;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 8px 4px;
   border: 0;
   border-bottom: 1px solid rgba(179, 145, 82, 0.42);
   border-radius: 0;
-  min-height: auto;
+  min-height: 48px;
+  box-sizing: border-box;
   background: transparent;
   color: rgba(233, 225, 210, 0.78);
   letter-spacing: 0.12em;
@@ -4717,6 +4797,45 @@ footer {
   border-bottom: 1px solid rgba(179, 145, 82, 0.35);
   padding-bottom: 1px;
   transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.header__trust-link--tabelog {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  gap: 4px;
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.header__trust-link__primary {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+  gap: 0.12em;
+  border-bottom: 1px solid rgba(179, 145, 82, 0.35);
+  padding-bottom: 1px;
+}
+
+.header__trust-link--tabelog:hover .header__trust-link__primary,
+.header__trust-link--tabelog:focus-visible .header__trust-link__primary {
+  border-bottom-color: rgba(179, 145, 82, 0.72);
+}
+
+.header__trust-sublabel {
+  display: block;
+  max-width: 16em;
+  font-size: 0.88em;
+  letter-spacing: 0.06em;
+  line-height: 1.45;
+  color: rgba(200, 188, 165, 0.62);
 }
 
 .header__trust-link:hover,
@@ -4957,10 +5076,23 @@ header .header__image_kv img {
     margin-bottom: 12px;
   }
 
-  .header__visitor_hint {
+  .header__visitor_hint_list {
     font-size: 1.04rem;
     line-height: 1.78;
     margin-bottom: 18px;
+  }
+
+  .header__actions {
+    width: 100%;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .header__actions .booking-card {
+    min-height: 104px;
+    width: 100%;
+    max-width: 100%;
+    padding: 18px 20px;
   }
 
   .header__value_line {
@@ -4970,11 +5102,6 @@ header .header__image_kv img {
 
   .header__trust-note {
     font-size: 0.92rem;
-  }
-
-  .header__actions {
-    align-items: flex-start;
-    gap: 12px;
   }
 
   .header__utility_links,
@@ -5010,7 +5137,7 @@ header .header__image_kv img {
   .floating-reserve {
     left: 14px;
     right: auto;
-    bottom: 14px;
+    bottom: max(14px, env(safe-area-inset-bottom, 0px));
     max-width: min(340px, calc(100vw - 28px));
     flex-direction: row;
     display: grid;
@@ -5026,7 +5153,7 @@ header .header__image_kv img {
   }
 
   footer {
-    padding-bottom: 88px;
+    padding-bottom: max(96px, calc(88px + env(safe-area-inset-bottom, 0px)));
   }
 }
 
@@ -5049,7 +5176,9 @@ body,
 .header__lead,
 .header__summary,
 .header__value_line,
-.header__visitor_hint,
+.header__visitor_hint_list,
+.header__visitor_hint_list li,
+.header__lang_quick_btn,
 .header__trust-note,
 .header__utility_links a,
 .reserve__utility_links a,

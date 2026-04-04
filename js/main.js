@@ -35,6 +35,9 @@ const translations = {
       "鮨し禅は大阪・東心斎橋の隠れ家にあるカウンター10席の割烹寿司店です。旬の食材を活かしたおまかせ鮨をご堪能ください。",
     ogSiteName: "鮨し禅｜大阪心斎橋の隠れ家鮨",
     language_switcher_label: "言語切り替え",
+    language_switcher_caption: "Language 言語",
+    hero_visitor_hint_aria: "来店前のご案内",
+    hero_lang_quick_aria: "英語で表示する",
     hero_eyebrow: "大阪・東心斎橋 / 完全予約制",
     logo_text: "鮨し禅",
     hero_lead:
@@ -56,10 +59,13 @@ const translations = {
     trust_tabelog_aria: "食べログの店舗ページを開く",
     trust_google_label: "Google",
     trust_tabelog_label: "食べログ",
+    trust_tabelog_sublabel: "国内最大級のグルメサイト（独自の5段階評価）",
     trust_tabelog_note:
       "※食べログの評価は独自の5段階です。3.5点台でも高水準店に多いスコアです。",
-    hero_visitor_hint:
-      "夜は2回転の入替制です（18:00〜20:00／20:30〜23:00）。お食事はおおよそ2時間程度を想定しています。表示価格は税別のため、目安として税込（10%）で約¥16,500〜。スマートカジュアルでお越しください。",
+    hero_visitor_hint_1: "夜は2回転の入替制です（18:00〜20:00／20:30〜23:00）。",
+    hero_visitor_hint_2: "お食事はおおよそ2時間程度を想定しています。",
+    hero_visitor_hint_3: "表示価格は税別です。目安として税込（10%）で約¥16,500〜。",
+    hero_visitor_hint_4: "スマートカジュアルでお越しください。",
     hero_phone_note: "当日のお問い合わせはお電話で",
     hero_quick_1: "心斎橋駅から徒歩5分",
     hero_quick_2: "カード・Alipay・WeChat Pay対応",
@@ -173,6 +179,9 @@ const translations = {
       "A 10-seat omakase counter in Higashi-Shinsaibashi, Osaka.",
     ogSiteName: "Sushi Zen",
     language_switcher_label: "Language selector",
+    language_switcher_caption: "Language",
+    hero_visitor_hint_aria: "Before you visit",
+    hero_lang_quick_aria: "Switch to English",
     hero_eyebrow: "Shinsaibashi, Osaka",
     logo_text: "Sushi Zen",
     hero_lead:
@@ -194,10 +203,13 @@ const translations = {
     trust_tabelog_aria: "Open the Tabelog restaurant page",
     trust_google_label: "Google",
     trust_tabelog_label: "Tabelog",
+    trust_tabelog_sublabel: "Japan restaurant guide · 5-point scale",
     trust_tabelog_note:
-      "※Tabelog uses Japan's own 5-point scale; mid-3 scores can still mean excellent fine dining here.",
-    hero_visitor_hint:
-      "Dinner is served in two seatings (18:00–20:00 and 20:30–23:00). Allow about two hours. Prices exclude tax; with 10% consumption tax, evening omakase from about JPY 16,500. Smart casual attire is appreciated.",
+      "Tabelog uses Japan's own 5-point scale; mid-3 scores can still reflect excellent fine dining here.",
+    hero_visitor_hint_1: "Dinner has two seatings: 18:00–20:00 and 20:30–23:00.",
+    hero_visitor_hint_2: "Please allow about two hours for the meal.",
+    hero_visitor_hint_3: "Prices exclude tax; with 10% consumption tax, evening omakase from about JPY 16,500.",
+    hero_visitor_hint_4: "Smart casual attire is appreciated.",
     hero_phone_note: "Call for same-day inquiries",
     hero_quick_1: "5 min from Shinsaibashi Station",
     hero_quick_2: "Cards, Alipay & WeChat Pay accepted",
@@ -311,6 +323,9 @@ const translations = {
       "오사카 히가시신사이바시에 자리한 10석 규모의 프라이빗 오마카세 스시 카운터.",
     ogSiteName: "스시 시젠",
     language_switcher_label: "언어 선택",
+    language_switcher_caption: "언어 Language",
+    hero_visitor_hint_aria: "방문 전 안내",
+    hero_lang_quick_aria: "영어로 보기",
     hero_eyebrow: "오사카 오마카세 / 예약제",
     logo_text: "鮨し禅",
     hero_lead:
@@ -332,10 +347,13 @@ const translations = {
     trust_tabelog_aria: "타베로그 매장 페이지 열기",
     trust_google_label: "Google",
     trust_tabelog_label: "타베로그",
+    trust_tabelog_sublabel: "일본 맛집 가이드 · 자체 5점 만점",
     trust_tabelog_note:
       "※타베로그는 일본 독자의 5점 만점입니다. 3점대 중반도 고급점에서 흔히 보는 높은 점수입니다.",
-    hero_visitor_hint:
-      "저녁은 2회전(18:00–20:00 / 20:30–23:00)입니다. 식사는 약 2시간을 가정해 주세요. 표시 가격은 세금 별도이며, 소비세 10% 포함 시 저녁 오마카세 약 ¥16,500~. 스마트 캐주얼 차림을 권장합니다.",
+    hero_visitor_hint_1: "저녁은 2회전입니다 (18:00–20:00 / 20:30–23:00).",
+    hero_visitor_hint_2: "식사는 약 2시간을 가정해 주세요.",
+    hero_visitor_hint_3: "표시 가격은 세금 별도이며, 소비세 10% 포함 시 저녁 오마카세 약 ¥16,500~.",
+    hero_visitor_hint_4: "스마트 캐주얼 차림을 권장합니다.",
     hero_phone_note: "당일 문의는 전화로 가능합니다",
     hero_quick_1: "신사이바시역 도보 5분",
     hero_quick_2: "카드·Alipay·WeChat Pay 가능",
@@ -448,6 +466,9 @@ const translations = {
       "大阪东心斋桥的10席私密寿司吧台，以当季食材和细致手艺呈现主厨推荐套餐。",
     ogSiteName: "鮨し禅",
     language_switcher_label: "语言切换",
+    language_switcher_caption: "语言 Language",
+    hero_visitor_hint_aria: "到店前提示",
+    hero_lang_quick_aria: "切换为英语",
     hero_eyebrow: "大阪主厨推荐 / 预约制",
     logo_text: "鮨し禅",
     hero_lead:
@@ -469,10 +490,13 @@ const translations = {
     trust_tabelog_aria: "打开食べログ店铺页面",
     trust_google_label: "Google",
     trust_tabelog_label: "食べログ",
+    trust_tabelog_sublabel: "日本美食指南 · 5 分制",
     trust_tabelog_note:
       "※食べログ为日本自有的 5 分制；3.5 分左右在高级店中也可能是很高的评价。",
-    hero_visitor_hint:
-      "晚餐分两个时段（18:00–20:00 / 20:30–23:00），请预留约两小时。标价不含税，含 10% 消费税后晚间主厨推荐套餐约 ¥16,500 起。建议 smart casual 着装。",
+    hero_visitor_hint_1: "晚餐分两个时段（18:00–20:00 / 20:30–23:00）。",
+    hero_visitor_hint_2: "请预留约两小时用餐。",
+    hero_visitor_hint_3: "标价不含税；含 10% 消费税后，晚间主厨推荐套餐约 ¥16,500 起。",
+    hero_visitor_hint_4: "建议 smart casual 着装。",
     hero_phone_note: "当日咨询请直接致电",
     hero_quick_1: "距心斋桥站步行5分钟",
     hero_quick_2: "支持银行卡、Alipay 与 WeChat Pay",
@@ -632,6 +656,11 @@ function applyLanguage(lang) {
   }
 
   safeSetStorage(STORAGE_KEY, lang);
+
+  const langQuick = document.querySelector(".header__lang_quick_en");
+  if (langQuick) {
+    langQuick.hidden = lang !== "ja";
+  }
 }
 
 function safeGetStorage(key) {
@@ -918,6 +947,15 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".language-switcher__button").forEach((button) => {
     button.addEventListener("click", () => {
       applyLanguage(button.dataset.lang);
+    });
+  });
+
+  document.querySelectorAll("[data-set-lang]").forEach((node) => {
+    node.addEventListener("click", () => {
+      const next = node.dataset.setLang;
+      if (next && translations[next]) {
+        applyLanguage(next);
+      }
     });
   });
 });

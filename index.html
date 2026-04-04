@@ -24,11 +24,22 @@
       try {
         var key = "sushi-zen-language";
         var supported = { ja: 1, en: 1, ko: 1, zh: 1 };
-        var lang = localStorage.getItem(key) || "";
-        if (!supported[lang]) { lang = "ja"; }
+        var stored = localStorage.getItem(key);
+        var lang = (stored && supported[stored]) ? stored : null;
+        if (!lang) {
+          var nav = (navigator.language || "").toLowerCase();
+          if (nav.indexOf("zh") === 0) { lang = "zh"; }
+          else if (nav.indexOf("ko") === 0) { lang = "ko"; }
+          else if (nav.indexOf("en") === 0) { lang = "en"; }
+          else if (nav.indexOf("ja") === 0) { lang = "ja"; }
+          else { lang = "ja"; }
+        }
         document.documentElement.lang = lang;
         window.__SUSHI_ZEN_BOOT = { lang: lang };
-      } catch (error) {}
+      } catch (error) {
+        document.documentElement.lang = "ja";
+        window.__SUSHI_ZEN_BOOT = { lang: "ja" };
+      }
     })();
   </script>
   <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
@@ -38,8 +49,8 @@
   <!-- CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.3.0/dist/css/yakuhanjp.min.css">
   <!-- Page CSS -->
-  <link href="./css/style.css?v=20260404-27" rel="stylesheet" type="text/css" media="screen,print" />
-  <script src="./js/main.js?v=20260404-25" defer></script>
+  <link href="./css/style.css?v=20260404-28" rel="stylesheet" type="text/css" media="screen,print" />
+  <script src="./js/main.js?v=20260404-28" defer></script>
 </head>
 
 <body class="body body__jp">
@@ -48,14 +59,22 @@
     <!-- ヘッダー -->
     <header>
       <div class="language-switcher" data-i18n-attrs="aria-label:language_switcher_label">
-        <button class="language-switcher__button" type="button" data-lang="ja" aria-pressed="true"><img class="language-switcher__flag" src="./images/flags/jp.svg" alt="" aria-hidden="true"><span class="language-switcher__label">JP</span></button>
-        <button class="language-switcher__button" type="button" data-lang="en" aria-pressed="false"><img class="language-switcher__flag" src="./images/flags/us.svg" alt="" aria-hidden="true"><span class="language-switcher__label">EN</span></button>
-        <button class="language-switcher__button" type="button" data-lang="ko" aria-pressed="false"><img class="language-switcher__flag" src="./images/flags/kr.svg" alt="" aria-hidden="true"><span class="language-switcher__label">KR</span></button>
-        <button class="language-switcher__button" type="button" data-lang="zh" aria-pressed="false"><img class="language-switcher__flag" src="./images/flags/cn.svg" alt="" aria-hidden="true"><span class="language-switcher__label">CN</span></button>
+        <p class="language-switcher__caption" data-i18n="language_switcher_caption">Language 言語</p>
+        <div class="language-switcher__buttons">
+          <button class="language-switcher__button" type="button" data-lang="ja" aria-pressed="true"><img class="language-switcher__flag" src="./images/flags/jp.svg" alt="" aria-hidden="true"><span class="language-switcher__label">JP</span></button>
+          <button class="language-switcher__button" type="button" data-lang="en" aria-pressed="false"><img class="language-switcher__flag" src="./images/flags/us.svg" alt="" aria-hidden="true"><span class="language-switcher__label">EN</span></button>
+          <button class="language-switcher__button" type="button" data-lang="ko" aria-pressed="false"><img class="language-switcher__flag" src="./images/flags/kr.svg" alt="" aria-hidden="true"><span class="language-switcher__label">KR</span></button>
+          <button class="language-switcher__button" type="button" data-lang="zh" aria-pressed="false"><img class="language-switcher__flag" src="./images/flags/cn.svg" alt="" aria-hidden="true"><span class="language-switcher__label">CN</span></button>
+        </div>
       </div>
       <div class="header__hero section__inner">
         <div class="header__hero_copy">
           <p class="header__eyebrow" data-i18n="hero_eyebrow">大阪・東心斎橋</p>
+          <p class="header__lang_quick_en" hidden>
+            <button type="button" class="header__lang_quick_btn" data-set-lang="en" data-i18n-attrs="aria-label:hero_lang_quick_aria">
+              English
+            </button>
+          </p>
           <h1 class="site__logo">
             <span class="logo__text" data-i18n="logo_text">鮨し禅</span>
           </h1>
@@ -67,9 +86,12 @@
           <p class="header__value_line" data-i18n="hero_value_line">
             カウンター10席のみ。名店で研鑽を重ねた大将が、その日のおまかせでお迎えします。
           </p>
-          <p class="header__visitor_hint" data-i18n="hero_visitor_hint">
-            夜は2回転の入替制です（18:00〜20:00／20:30〜23:00）。お食事はおおよそ2時間程度を想定しています。表示価格は税別のため、目安として税込（10%）で約¥16,500〜。スマートカジュアルでお越しください。
-          </p>
+          <ul class="header__visitor_hint_list" data-i18n-attrs="aria-label:hero_visitor_hint_aria">
+            <li data-i18n="hero_visitor_hint_1">夜は2回転の入替制です（18:00〜20:00／20:30〜23:00）。</li>
+            <li data-i18n="hero_visitor_hint_2">お食事はおおよそ2時間程度を想定しています。</li>
+            <li data-i18n="hero_visitor_hint_3">表示価格は税別です。目安として税込（10%）で約¥16,500〜。</li>
+            <li data-i18n="hero_visitor_hint_4">スマートカジュアルでお越しください。</li>
+          </ul>
           <div class="header__actions">
             <a href="https://www.tablecheck.com/ja/sushi-zen/reserve/message" data-tablecheck target="_blank" rel="noopener noreferrer" class="booking-card" data-i18n-attrs="aria-label:booking_aria_label">
               <span class="booking-card__label" data-i18n="booking_card_label">公式オンライン予約</span>
@@ -97,10 +119,13 @@
                 <span class="header__trust-star" aria-hidden="true">★</span>
               </a>
               <span class="header__trust-sep" aria-hidden="true">/</span>
-              <a class="header__trust-link" id="trust-tabelog-link" href="https://tabelog.com/osaka/A2701/A270201/27152697/" target="_blank" rel="noopener noreferrer" data-i18n-attrs="aria-label:trust_tabelog_aria">
-                <span data-i18n="trust_tabelog_label">食べログ</span>
-                <span class="header__trust-score" data-review-score="tabelog" data-review-decimals="2">3.72</span>
-                <span class="header__trust-star" aria-hidden="true">★</span>
+              <a class="header__trust-link header__trust-link--tabelog" id="trust-tabelog-link" href="https://tabelog.com/osaka/A2701/A270201/27152697/" target="_blank" rel="noopener noreferrer" data-i18n-attrs="aria-label:trust_tabelog_aria">
+                <span class="header__trust-link__primary">
+                  <span data-i18n="trust_tabelog_label">食べログ</span>
+                  <span class="header__trust-score" data-review-score="tabelog" data-review-decimals="2">3.72</span>
+                  <span class="header__trust-star" aria-hidden="true">★</span>
+                </span>
+                <span class="header__trust-sublabel" data-i18n="trust_tabelog_sublabel">国内最大級のグルメサイト（独自の5段階評価）</span>
               </a>
             </li>
           </ul>
@@ -109,7 +134,7 @@
           </p>
         </div>
           <p class="header__image_kv">
-            <img src="./images/photo/concept-counter.jpg" alt="鮨し禅｜大阪心斎橋の隠れ家鮨" data-i18n-attrs="alt:hero_alt">
+            <img src="./images/photo/sushi-photo-0.png" alt="鮨し禅｜大阪心斎橋の隠れ家鮨" data-i18n-attrs="alt:hero_alt" width="420" height="467">
           </p>
       </div>
     </header>

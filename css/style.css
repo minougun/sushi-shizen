@@ -5238,3 +5238,96 @@ header .header__image_kv img {
     margin-right: 0;
   }
 }
+
+/* ===== 2026-04-26 コンテンツ写真は原寸（ビューポートを超えないよう max-width:100% のみ）===== */
+header .header__image_kv,
+.section__slide_intro .slide__inner,
+.content__type1 .section__image,
+.section__chef_story .chef__image,
+.section__course_special .section__panel_base .section__panel_image {
+  overflow: visible !important;
+}
+
+header .header__image_kv {
+  width: auto !important;
+  max-width: 100% !important;
+}
+
+header .header__image_kv img {
+  display: block !important;
+  width: auto !important;
+  height: auto !important;
+  max-width: 100% !important;
+  transform: none !important;
+  -o-object-fit: unset !important;
+  object-fit: unset !important;
+  aspect-ratio: auto !important;
+}
+
+.section__slide_intro .slide__inner img,
+.section__slide_intro .slide__item img {
+  width: auto !important;
+  height: auto !important;
+  max-width: 100% !important;
+  aspect-ratio: unset !important;
+  -o-object-fit: unset !important;
+  object-fit: unset !important;
+  transform: none !important;
+}
+
+.content__type1 .section__image img,
+.section__chef_story .chef__image img,
+.section__course_special .section__panel_base .section__panel_image img,
+.article__committed_shari > section .section__header .section__image img,
+.article__committed_wasabi section .section__image img {
+  width: auto !important;
+  height: auto !important;
+  max-width: 100% !important;
+  aspect-ratio: unset !important;
+  -o-object-fit: unset !important;
+  object-fit: unset !important;
+  transform: none !important;
+}
+
+.section__course_special .section__panel_base .section__panel_image {
+  flex: 0 0 auto !important;
+  width: auto !important;
+  max-width: min(100%, 100vw - 48px) !important;
+}
+
+@media (min-width: 1024px) {
+  .intro__about_concept .content__type1,
+  .section__chef_story .content__type1:not(.content__image_right) {
+    grid-template-columns: auto minmax(0, 1fr) !important;
+  }
+
+  .content__type1.content__image_right {
+    grid-template-columns: minmax(0, 1fr) auto !important;
+  }
+
+  .content__type1 .section__image {
+    width: auto !important;
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 1180px) {
+  .section__course_special .section__panel_base .section__panel_image {
+    width: auto !important;
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 1023px) {
+  header .header__image_kv {
+    width: auto !important;
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 767px) {
+  header .header__image_kv {
+    width: auto !important;
+    max-width: 100% !important;
+  }
+}

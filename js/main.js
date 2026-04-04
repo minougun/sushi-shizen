@@ -139,7 +139,7 @@ const translations = {
     craft_image_alt: "鮨し禅の床の間と設え",
     thought_title: "鮨し禅の想い",
     thought_text:
-      "余分を削ぎ落とし、温度と間で一貫を整える。<br>鮨と酒を、落ち着いた会話とともに楽しむための店です。",
+      "鮨し禅が目指すのは、華美な演出ではなく、削ぎ落とした先にだけ宿る本質の美です。<br>一貫の温度、口へ運ぶまでの間、香りの立ち上がり、余韻の消え方。<br>そのすべてが静かに調和してこそ、鮨は深く心に残るものになると考えています。<br><br>道頓堀という街の賑わいの中にありながら、店内に一歩足を踏み入れた瞬間、空気がやわらぎ、心が整っていく。<br>鮨し禅は、そんな静けさを味わっていただくための場所です。<br>喧騒からわずかに距離を置き、落ち着いた会話とともに鮨を味わい、酒を傾ける。<br>その何気ないひとときが、かけがえのない時間になるよう、一席一席を丁寧に整えています。<br><br>私たちが大切にしているのは、素材そのものの力を見極め、職人の手仕事によってその魅力を最も美しく引き出すこと。<br>過度に飾ることなく、しかし細部に一切妥協せず、器、所作、間、空間に至るまで、静かな緊張感をもって積み重ねる。<br>そうして生まれる一貫には、派手さでは語れない品格が宿ると信じています。<br><br>鮨し禅は、ただ食事をするための店ではありません。<br>鮨と酒を愉しみながら、感覚を澄ませ、心をほどき、自分自身を静かに満たしていく。<br>この場所で過ごす時間そのものが、上質であること。<br>それこそが、鮨し禅の目指すもてなしです。",
     chef_image_alt: "大将 抑野和彦",
     chef_label: "大将",
     chef_name: "抑野 和彦（そもの かずひこ）",
@@ -275,7 +275,7 @@ const translations = {
     craft_image_alt: "Tokonoma and interior details at Sushi Zen",
     thought_title: "Our Philosophy",
     thought_text:
-      "Every piece is shaped around temperature, timing, and balance.<br>Quiet service, sake, and conversation complete the room.",
+      "At Sushi Zen, we pursue not theatrical flourish, but an essential beauty found only after everything unnecessary is stripped away—the temperature of each piece, the moment before it reaches your lips, how aroma rises, how the finish fades.<br>We believe sushi lingers in memory only when all of these quietly harmonize.<br><br>Amid the bustle of Dotonbori, the air softens the moment you step inside; your mind steadies.<br>Sushi Zen exists for you to savor that stillness.<br>A slight distance from the noise, with calm conversation, sushi, and sake—we tend each seat so those unassuming moments become time you cannot replace.<br><br>What we cherish is reading each ingredient on its own terms and drawing out its beauty through the craftsman's hands—never overdressed, yet never slack in the details: vessels, gesture, rhythm, and space, layered with a quiet tension.<br>We trust the pieces born from that carry a grace no spectacle can explain.<br><br>Sushi Zen is not merely a place to dine.<br>While you enjoy sushi and sake, your senses clear, your mind loosens, and you fill yourself in stillness.<br>That the hours spent here are, in themselves, refined—this is the hospitality we mean to offer.",
     chef_image_alt: "Chef Kazuhiko Somono",
     chef_label: "Chef",
     chef_name: "Kazuhiko Somono",
@@ -411,7 +411,7 @@ const translations = {
     craft_image_alt: "스시 시젠의 도코노마와 공간 디테일",
     thought_title: "스시 시젠의 마음",
     thought_text:
-      "불필요한 것을 덜고, 온도와 타이밍으로 한 점을 완성합니다.<br>스시와 술을 차분한 대화와 함께 즐기기 위한 공간입니다.",
+      "스시 시젠이 지향하는 것은 화려한 연출이 아니라, 불필요한 것을 덜어낸 끝에만 머무는 본질의 아름다움입니다.<br>한 점의 온도, 입에 닿기까지의 간격, 향이 피어오르는 방식, 여운이 사라지는 방식.<br>이 모든 것이 고요히 어우러질 때 비로소 스시는 깊이 마음에 남는다고 믿습니다.<br><br>도톤보리의 번잡 속에 있으면서도, 가게 안으로 한 걸음 들어서는 순간 공기가 부드러워지고 마음이 가라앉습니다.<br>스시 시젠은 그런 고요함을 느끼실 수 있는 곳입니다.<br>소란과 약간의 거리를 두고, 차분한 대화와 함께 스시와 술을 즐기시는, 그 평범해 보이는 순간들이 대체 불가한 시간이 되도록 한 석 한 석을 정성껏 준비합니다.<br><br>우리가 중시하는 것은 재료 자체의 힘을 꿰뚫어 보고, 장인의 손길로 그 매력을 가장 아름답게 끌어내는 일입니다.<br>과하게 꾸미지 않되, 세부에는 한 치의 타협도 없이 그릇, 동작, 간, 공간에 이르기까지 고요한 긴장감을 쌓아 올립니다.<br>그렇게 태어난 한 점에는 화려함으로는 말할 수 없는 품격이 깃든다고 믿습니다.<br><br>스시 시젠은 단순히 식사를 하는 가게가 아닙니다.<br>스시와 술을 즐기는 동안 감각을 맑게 하고, 마음을 풀고, 조용히 스스로를 채워 가는 곳.<br>이곳에서 보내는 시간 그 자체가 고급스러운 것.<br>그것이 바로 스시 시젠이 지향하는 환대입니다.",
     chef_image_alt: "대장 소모노 카즈히코",
     chef_label: "대장",
     chef_name: "소모노 카즈히코",
@@ -546,7 +546,7 @@ const translations = {
     craft_image_alt: "鮨し禅的床之间与空间细节",
     thought_title: "鮨し禅的理念",
     thought_text:
-      "去掉多余，只留下温度、节奏与平衡。<br>这是一家适合安静品尝寿司与酒的店。",
+      "鮨し禅所追求的，不是华丽的表演，而是删繁就简之后才能留存的本真之美。<br>一贯的温度、送入口前的那一段距离、香气的升起、余韵的消散。<br>我们相信，唯有当这一切在静谧中彼此调和，寿司才能真正留在心底。<br><br>身处道顿堀的喧嚣之中，踏入店内的一刻，空气会柔和下来，心绪也随之沉静。<br>鮨し禅，正是为了让您品味这样的静谧而存在。<br>与嘈杂保持一点距离，在从容的交谈中品尝寿司、小酌美酒；我们细心布置每一席，愿那些看似平常的时光，成为无可替代的记忆。<br><br>我们所珍视的，是读懂每一种食材本身的力量，并以匠人之手将其魅力最优美地呈现。<br>不过度装饰，却在细节上绝不妥协——从器物、动作、节奏到空间，都以克制的张力层层叠加。<br>我们相信，由此诞生的一贯，承载着语言难以形容的品格。<br><br>鮨し禅不只是用餐的场所。<br>在享受寿司与酒的同时，让感官澄明、心绪舒展，在安静中被温柔填满。<br>在这里度过的时光本身，就是上好的体验。<br>这正是鮨し禅所追求的款待。",
     chef_image_alt: "大将抑野和彦",
     chef_label: "大将",
     chef_name: "抑野和彦",

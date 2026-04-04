@@ -97,7 +97,7 @@ const translations = {
     hero_eyebrow: "大阪・東心斎橋 / 完全予約制",
     logo_text: "鮨し禅",
     hero_lead:
-      "旬、温度、間。<br>十席のカウンターで、その日の一貫と向き合う。",
+      '旬、温度、間。<br><span class="header__lead-nowrap">十席のカウンターで、その日の一貫と向き合う。</span>',
     hero_summary: "完全予約制・カウンター10席。心斎橋駅から徒歩5分。",
     booking_aria_label: "TableCheckで予約する",
     booking_card_label: "公式オンライン予約",
@@ -233,7 +233,7 @@ const translations = {
     hero_eyebrow: "Shinsaibashi, Osaka",
     logo_text: "Sushi Zen",
     hero_lead:
-      "Season, temperature, timing.<br>Ten seats. One omakase rhythm.",
+      'Season, temperature, timing.<br><span class="header__lead-nowrap">Ten seats. One omakase rhythm.</span>',
     hero_summary: "Reservation required. 5 minutes from Shinsaibashi Station.",
     booking_aria_label: "Reserve on TableCheck",
     booking_card_label: "Official Reservation",
@@ -369,7 +369,7 @@ const translations = {
     hero_eyebrow: "오사카 오마카세 / 예약제",
     logo_text: "鮨し禅",
     hero_lead:
-      "제철, 온도, 타이밍.<br>10석 카운터에서 그날의 한 점과 마주합니다.",
+      '제철, 온도, 타이밍.<br><span class="header__lead-nowrap">10석 카운터에서 그날의 한 점과 마주합니다.</span>',
     hero_summary: "완전 예약제, 카운터 10석, 신사이바시역 도보 5분.",
     booking_aria_label: "TableCheck에서 예약하기",
     booking_card_label: "공식 온라인 예약",
@@ -504,7 +504,7 @@ const translations = {
     hero_eyebrow: "大阪主厨推荐 / 预约制",
     logo_text: "鮨し禅",
     hero_lead:
-      "时令、温度、分寸。<br>在十席吧台前，遇见当天最好的一贯。",
+      '时令、温度、分寸。<br><span class="header__lead-nowrap">在十席吧台前，遇见当天最好的一贯。</span>',
     hero_summary: "完全预约制，仅设10个柜台席位，距心斋桥站步行5分钟。",
     booking_aria_label: "在 TableCheck 预约",
     booking_card_label: "官方在线预约",

@@ -4182,11 +4182,18 @@ header .header__hero {
 }
 
 .header__lead {
-  max-width: 13.5em;
+  max-width: min(100%, 42rem);
   color: rgba(246,240,229,0.92);
   font-size: 1.5rem;
   line-height: 2.06;
   letter-spacing: 0.12em;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+.header__lead-nowrap {
+  white-space: nowrap;
 }
 
 .header__actions {
@@ -4212,9 +4219,9 @@ header .header__hero {
 .booking-card:focus-visible {
   opacity: 1;
   transform: translateY(-1px);
-  background: linear-gradient(180deg, #d9c38c 0%, #b39152 100%);
-  border: 1px solid rgba(120, 95, 48, 0.35);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
+  background: linear-gradient(180deg, #f0d4b0 0%, #e8b88a 55%, #deb078 100%);
+  border: 1px solid rgba(200, 140, 80, 0.45);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
   outline: none;
 }
 
@@ -4245,6 +4252,11 @@ header .header__hero {
 }
 
 .booking-card__cta {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 0.35em;
+  white-space: nowrap;
   color: #f6f0e5;
   font-size: 1.64rem;
   letter-spacing: 0.08em;
@@ -4821,9 +4833,9 @@ footer {
 .booking-card--reserve:focus-visible {
   opacity: 1;
   transform: translateY(-1px);
-  background: linear-gradient(180deg, #d9c38c 0%, #b39152 100%);
-  border: 1px solid rgba(120, 95, 48, 0.35);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
+  background: linear-gradient(180deg, #f0d4b0 0%, #e8b88a 55%, #deb078 100%);
+  border: 1px solid rgba(200, 140, 80, 0.45);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
   outline: none;
 }
 
@@ -4894,7 +4906,7 @@ footer {
 .header__trust--ratings {
   display: flex;
   flex-wrap: nowrap;
-  align-items: baseline;
+  align-items: flex-start;
   gap: 0.2em 0.5em;
   max-width: 100%;
   list-style: none;
@@ -4952,7 +4964,8 @@ footer {
 
 .header__trust-sublabel {
   display: block;
-  max-width: 16em;
+  white-space: nowrap;
+  max-width: none;
   font-size: 0.88em;
   letter-spacing: 0.06em;
   line-height: 1.45;

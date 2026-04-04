@@ -50,7 +50,7 @@ const mockTranslations = {
     concept_label: "こだわり",
     concept_heading: "静かな高揚だけを残す、<br>10席のための鮨。",
     concept_card_1_title: "温度で魅せる",
-    concept_card_1_text: "温度まで設計して、一口の輪郭を整えます。",
+    concept_card_1_text: "温度まで繊細に演出し、一口の輪郭を整えます。",
     concept_card_2_title: "過度に飾らない",
     concept_card_2_text: "飾りすぎず、素材の美しさを前に出します。",
     concept_card_3_title: "会話も一皿のうち",

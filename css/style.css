@@ -5293,7 +5293,7 @@ body,
   font-family: var(--font-kirimon-serif);
 }
 
-/* @media all 側の header 背景画像を打ち消し、.page-bg-parallax の3層のみ使う */
+/* @media all 側の header 背景画像を打ち消し、.page-bg-parallax の2層（円弧PNG＋ベースJPEG）のみ */
 header {
   background: transparent;
   background-image: none;
@@ -5311,12 +5311,12 @@ header {
   pointer-events: none;
   background-color: #0f1114;
   background-image:
-    url("./../images/bg/AdobeStock_5453670612.png"),
     url("./../images/bg/AdobeStock_54536706122.png"),
     url("./../images/bg/AdobeStock_401925665.jpeg");
-  background-repeat: no-repeat, no-repeat, no-repeat;
-  background-position: left -8rem top -1rem, center top -2rem, center;
-  background-size: 34rem auto, 74rem auto, cover;
+  background-repeat: no-repeat, no-repeat;
+  /* 上の円弧装飾は左端ビタ付け。青海波に見えていた左ストリップ(0612)は撤去済み */
+  background-position: left top, center center;
+  background-size: min(100vw, 86rem) auto, cover;
   will-change: transform;
   transform: translate3d(0, 0, 0);
 }
@@ -5402,8 +5402,8 @@ header .header__image_kv img {
 
 @media (max-width: 1023px) {
   .page-bg-parallax {
-    background-position: left -12rem top -2rem, center top 0, center;
-    background-size: 28rem auto, 52rem auto, cover;
+    background-position: left top, center center;
+    background-size: min(100vw, 52rem) auto, cover;
   }
 
   header::before {
@@ -5437,8 +5437,8 @@ header .header__image_kv img {
   }
 
   .page-bg-parallax {
-    background-position: left -10rem top 0, center top 1rem, center;
-    background-size: 24rem auto, 36rem auto, cover;
+    background-position: left top, center center;
+    background-size: min(100vw, 40rem) auto, cover;
   }
 
   header::before {

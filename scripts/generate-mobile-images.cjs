@@ -28,6 +28,7 @@ async function main() {
   await outWebp("images/slider/slide-1.png", "slide-1-900w.webp", 900);
   await outWebp("images/slider/slide-2.png", "slide-2-900w.webp", 900);
   await outWebp("images/slider/slide-3.png", "slide-3-900w.webp", 900);
+  await outWebp("images/photo/sushi-photo-5.png", "sushi-photo-5-900w.webp", 900);
   await outWebp("images/photo/craft-hand.jpg", "craft-hand-800w.webp", 800);
   await outWebp("images/photo/concept-counter.jpg", "concept-counter-800w.webp", 800);
   await outWebp("images/photo/chef-somono.jpg", "chef-somono-800w.webp", 800);

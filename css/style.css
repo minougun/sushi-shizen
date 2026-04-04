@@ -1908,7 +1908,7 @@ header .header__image_kv img {
   /* ===== Header ===== */
   header .header__hero {
     display: grid;
-    grid-template-columns: minmax(0, 0.92fr) minmax(480px, 1.12fr);
+    grid-template-columns: minmax(0, 0.95fr) minmax(420px, 0.76fr);
     gap: 56px;
     align-items: end;
     padding-top: 72px;
@@ -1945,7 +1945,7 @@ header .header__image_kv img {
     min-width: 220px;
   }
 
-  header .header__images_kv {
+  header .header__image_kv {
     width: 100%;
   }
 
@@ -3963,10 +3963,10 @@ header .header__image_kv img {
     padding-bottom: 64px;
   }
 
-  header .header__images_kv {
+  header .header__image_kv {
     justify-self: center;
-    width: min(92vw, 640px);
-    max-width: 640px;
+    width: min(58vw, 380px);
+    max-width: 380px;
     margin-inline: auto;
   }
 
@@ -4014,13 +4014,13 @@ header .header__image_kv img {
     max-width: none;
   }
 
-  header .header__images_kv {
+  header .header__image_kv {
     justify-self: center;
-    width: min(94vw, 400px);
+    width: min(82vw, 360px);
     margin-inline: auto;
   }
 
-  header .header__images_kv .header__image_kv img {
+  header .header__image_kv img {
     object-fit: contain;
     object-position: center;
   }
@@ -5708,29 +5708,11 @@ header .header__hero {
   opacity: 0.92;
 }
 
-header .header__images_kv {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-end;
-  gap: clamp(10px, 1.8vw, 22px);
-  align-self: center;
-  justify-self: end;
-  width: min(68vw, 920px);
-  max-width: 100%;
-  margin-right: clamp(12px, 2vw, 32px);
-  box-sizing: border-box;
-}
-
-header .header__images_kv .header__image_kv {
-  flex: 1 1 0;
-  min-width: 0;
-  margin: 0;
-}
-
 header .header__image_kv {
   align-self: center;
   justify-self: end;
+  width: min(35vw, 500px);
+  margin-right: clamp(12px, 2vw, 32px);
 }
 
 header .header__image_kv img {
@@ -6116,23 +6098,6 @@ html {
   height: auto;
 }
 
-header .header__images_kv {
-  overflow: visible !important;
-  display: flex !important;
-  flex-direction: row !important;
-  flex-wrap: nowrap !important;
-  align-items: center !important;
-  justify-content: flex-end !important;
-  gap: clamp(10px, 1.8vw, 22px) !important;
-  background: transparent !important;
-}
-
-header .header__images_kv .header__image_kv {
-  flex: 1 1 0 !important;
-  min-width: 0 !important;
-  margin: 0 !important;
-}
-
 header .header__image_kv {
   overflow: visible !important;
   display: flex !important;
@@ -6492,7 +6457,7 @@ header .header__image_kv img {
 
   header .header__image_kv picture img,
   header .header__image_kv img {
-    max-height: min(58vh, 420px) !important;
+    max-height: min(68vh, 480px) !important;
   }
 
   .intro__about_concept .section__inner,

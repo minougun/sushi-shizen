@@ -6,10 +6,10 @@
   <meta id="metaDescription" name="description"
     content="鮨し禅は大阪・東心斎橋の隠れ家にあるカウンター10席の割烹寿司店です。旬の食材を活かしたおまかせ鮨をご堪能ください。心斎橋駅徒歩5分。">
   <meta id="metaKeywords" name="Keywords" content="鮨し禅,心斎橋,大阪,寿司,鮨,おまかせ" />
-  <title id="pageTitle">Sushi Zen | Hidden Sushi Counter in Osaka Shinsaibashi</title>
+  <title id="pageTitle">Sushi Zen | Shinsaibashi, Osaka</title>
   <!-- OGP -->
-  <meta id="metaOgTitle" property="og:title" content="Sushi Zen | Hidden Sushi Counter in Osaka Shinsaibashi">
-  <meta id="metaOgDescription" property="og:description" content="鮨し禅は大阪・東心斎橋の隠れ家にあるカウンター10席の割烹寿司店です。旬の食材を活かしたおまかせ鮨をご堪能ください。">
+  <meta id="metaOgTitle" property="og:title" content="Sushi Zen | Shinsaibashi, Osaka">
+  <meta id="metaOgDescription" property="og:description" content="鮨し禅は大阪・東心斎橋にあるカウンター10席のおまかせ鮨店です。">
   <meta property="og:type" content="website">
   <meta id="metaOgSiteName" property="og:site_name" content="Sushi Zen">
   <meta property="og:image" content="/images/ogp-sushi-zen.png">
@@ -19,6 +19,29 @@
   <meta name="twitter:image" content="/images/ogp-sushi-zen.png">
   <meta name="theme-color" content="#131820">
   <meta name="theme-color" content="#131820" media="(prefers-color-scheme: dark)">
+  <script>
+    (function () {
+      try {
+        var key = "sushi-zen-language";
+        var supported = { ja: 1, en: 1, ko: 1, zh: 1 };
+        var lang = localStorage.getItem(key) || "";
+        if (!supported[lang]) {
+          var candidates = navigator.languages && navigator.languages.length
+            ? navigator.languages
+            : [navigator.language || "ja"];
+          lang = "en";
+          for (var index = 0; index < candidates.length; index += 1) {
+            var candidate = String(candidates[index]).toLowerCase();
+            if (candidate.indexOf("ja") === 0) { lang = "ja"; break; }
+            if (candidate.indexOf("ko") === 0) { lang = "ko"; break; }
+            if (candidate.indexOf("zh") === 0) { lang = "zh"; break; }
+            if (candidate.indexOf("en") === 0) { lang = "en"; break; }
+          }
+        }
+        document.documentElement.lang = lang;
+      } catch (error) {}
+    })();
+  </script>
   <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
   <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,8 +49,8 @@
   <!-- CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.3.0/dist/css/yakuhanjp.min.css">
   <!-- Page CSS -->
-  <link href="./css/style.css" rel="stylesheet" type="text/css" media="screen,print" />
-  <script src="./js/main.js" defer></script>
+  <link href="./css/style.css?v=20260404-14" rel="stylesheet" type="text/css" media="screen,print" />
+  <script src="./js/main.js?v=20260404-6" defer></script>
 </head>
 
 <body class="body body__jp">
@@ -50,19 +73,33 @@
             旬、温度、間。<br>
             十席のカウンターで、その日の一貫と向き合う。
           </p>
+          <p class="header__summary" data-i18n="hero_summary">完全予約制・カウンター10席。心斎橋駅から徒歩5分。</p>
           <div class="header__actions">
-            <a href="https://tabelog.com/osaka/A2701/A270201/27152697/dtlreserve/" target="_blank" rel="noopener noreferrer" class="header__button header__button--primary" data-i18n="reserve_button">食べログから予約する</a>
+            <a href="https://www.tablecheck.com/ja/sushi-zen/reserve/message" data-tablecheck target="_blank" rel="noopener noreferrer" class="booking-card" aria-label="TableCheck reservation">
+              <span class="booking-card__label" data-i18n="booking_card_label">公式オンライン予約</span>
+              <span class="booking-card__cta">
+                <span data-i18n="reserve_button">TableCheckで予約する</span>
+                <span class="booking-card__arrow" aria-hidden="true">→</span>
+              </span>
+              <span class="booking-card__brand">TableCheck</span>
+            </a>
             <a href="#informationSection" class="header__button header__button--ghost" data-i18n="hero_cta_secondary">店舗情報を見る</a>
           </div>
-          <p class="header__meta" data-i18n-html="hero_meta">¥15,000〜 / 10席 / 心斎橋駅5分 / 完全予約制</p>
-          <p class="header__phone">
-            <a href="tel:07045678080" class="header__phone_link">070-4567-8080</a>
-            <span class="header__phone_note" data-i18n="hero_phone_note">当日のお問い合わせはお電話で</span>
-          </p>
+          <ul class="header__utility_links">
+            <li><a href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E9%98%AA%E5%BA%9C%E5%A4%A7%E9%98%AA%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E6%9D%B1%E5%BF%83%E6%96%8E%E6%A9%8B1-14-15%20%E3%82%A2%E3%83%AB%E3%82%B9%E3%83%93%E3%83%AB%204F" target="_blank" rel="noopener noreferrer" data-i18n="hero_link_map">Google Mapsで場所を見る</a></li>
+            <li><a href="tel:07045678080" data-i18n="hero_link_call">電話で確認する</a></li>
+            <li><a href="#informationSection" data-i18n="hero_link_hours">営業時間を確認する</a></li>
+          </ul>
+          <ul class="header__trust">
+            <li data-i18n="hero_trust_1">完全予約制・10席のカウンター</li>
+            <li data-i18n="hero_trust_2">心斎橋駅から徒歩5分</li>
+            <li data-i18n="hero_trust_3">全席禁煙・キャッシュレス対応</li>
+            <li class="header__trust--ratings" data-i18n="hero_trust_ratings">Google 4.8 ★ / 食べログ 3.72</li>
+          </ul>
         </div>
-        <p class="header__image_kv">
-          <img src="./images/photo/hero-kv.svg" alt="鮨し禅｜大阪心斎橋の隠れ家鮨" data-i18n-attrs="alt:hero_alt">
-        </p>
+          <p class="header__image_kv">
+            <img src="./images/photo/concept-counter.jpg" alt="鮨し禅｜大阪心斎橋の隠れ家鮨" data-i18n-attrs="alt:hero_alt">
+          </p>
       </div>
     </header>
     <!-- /ヘッダー -->
@@ -89,18 +126,9 @@
           <div class="slide__marquee">
             <div class="slide__track">
               <div class="slide__set">
-                <figure class="slide__item"><div class="slide__inner"><img src="./images/slider/slide-1.svg" alt="おまかせの握り盛り合わせ" data-i18n-attrs="alt:slide_1_alt" /></div></figure>
-                <figure class="slide__item"><div class="slide__inner"><img src="./images/slider/slide-2.svg" alt="季節の食材を用いた一皿" data-i18n-attrs="alt:slide_2_alt" /></div></figure>
-                <figure class="slide__item"><div class="slide__inner"><img src="./images/slider/slide-3.svg" alt="職人の技を表現した一皿" data-i18n-attrs="alt:slide_3_alt" /></div></figure>
-                <figure class="slide__item"><div class="slide__inner"><img src="./images/slider/slide-4.svg" alt="カウンターで味わう鮨の時間" data-i18n-attrs="alt:slide_4_alt" /></div></figure>
-                <figure class="slide__item"><div class="slide__inner"><img src="./images/slider/slide-5.svg" alt="ご予約で楽しむ季節のおまかせ" data-i18n-attrs="alt:slide_5_alt" /></div></figure>
-              </div>
-              <div class="slide__set" aria-hidden="true">
-                <figure class="slide__item"><div class="slide__inner"><img src="./images/slider/slide-1.svg" alt="" /></div></figure>
-                <figure class="slide__item"><div class="slide__inner"><img src="./images/slider/slide-2.svg" alt="" /></div></figure>
-                <figure class="slide__item"><div class="slide__inner"><img src="./images/slider/slide-3.svg" alt="" /></div></figure>
-                <figure class="slide__item"><div class="slide__inner"><img src="./images/slider/slide-4.svg" alt="" /></div></figure>
-                <figure class="slide__item"><div class="slide__inner"><img src="./images/slider/slide-5.svg" alt="" /></div></figure>
+                <figure class="slide__item"><div class="slide__inner"><img src="./images/slider/slide-1.png" alt="おまかせの握り盛り合わせ" data-i18n-attrs="alt:slide_1_alt" loading="lazy" /></div></figure>
+                <figure class="slide__item"><div class="slide__inner"><img src="./images/slider/slide-2.png" alt="季節の食材を用いた一皿" data-i18n-attrs="alt:slide_2_alt" loading="lazy" /></div></figure>
+                <figure class="slide__item"><div class="slide__inner"><img src="./images/slider/slide-3.png" alt="職人の技を表現した一皿" data-i18n-attrs="alt:slide_3_alt" loading="lazy" /></div></figure>
               </div>
             </div>
           </div>
@@ -114,24 +142,37 @@
               <span class="section__main" data-i18n="reserve_title_main">ご予約</span>
               <span class="section__sub" data-i18n="reserve_title_sub">ご予約案内</span>
             </h2>
-            <ul class="content__list_contact">
+            <ul class="content__list_contact content__list_contact--single">
               <li>
-                <section class="access">
-                  <div class="access__tel">
-                    <p class="access__tel_number"><a href="tel:07045678080" class="access__link__large">070-4567-8080</a></p>
-                    <p class="access__tel_note" data-i18n="reserve_tel_note_short">前日までにご予約ください</p>
-                  </div>
-                </section>
-              </li>
-              <li>
-                <section class="access">
+                <section class="access access--primary">
                   <div class="access__net">
-                    <a href="https://tabelog.com/osaka/A2701/A270201/27152697/dtlreserve/" target="_blank" rel="noopener noreferrer" class="button1"><span data-i18n="reserve_button">食べログから予約する</span></a>
+                    <a href="https://www.tablecheck.com/ja/sushi-zen/reserve/message" data-tablecheck target="_blank" rel="noopener noreferrer" class="booking-card booking-card--reserve" aria-label="TableCheck reservation">
+                      <span class="booking-card__label" data-i18n="booking_card_label">公式オンライン予約</span>
+                      <span class="booking-card__cta">
+                        <span data-i18n="reserve_button">TableCheckで予約する</span>
+                        <span class="booking-card__arrow" aria-hidden="true">→</span>
+                      </span>
+                      <span class="booking-card__brand">TableCheck</span>
+                    </a>
                   </div>
                 </section>
               </li>
             </ul>
-            <p class="reserve__support" data-i18n="reserve_support_short">当日キャンセル100% / 全席禁煙 / カード・電子マネー・QR決済対応</p>
+            <p class="reserve__meta" data-i18n="hero_meta">夜のおまかせ ¥15,000〜 / 完全予約制</p>
+            <ul class="reserve__support_list">
+              <li data-i18n="reserve_support_1">心斎橋駅から徒歩5分</li>
+              <li data-i18n="reserve_support_2">全席禁煙</li>
+              <li data-i18n="reserve_support_3">カード・電子マネー・QR決済対応</li>
+            </ul>
+            <ul class="reserve__utility_links">
+              <li><a href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E9%98%AA%E5%BA%9C%E5%A4%A7%E9%98%AA%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E6%9D%B1%E5%BF%83%E6%96%8E%E6%A9%8B1-14-15%20%E3%82%A2%E3%83%AB%E3%82%B9%E3%83%93%E3%83%AB%204F" target="_blank" rel="noopener noreferrer" data-i18n="reserve_link_map">Google Mapsで場所を見る</a></li>
+              <li><a href="#informationSection" data-i18n="reserve_link_hours">営業時間を確認する</a></li>
+            </ul>
+            <p class="reserve__policy_note" data-i18n="reserve_policy_note">ご予約の変更・キャンセルは前日までにご連絡ください。当日は100%を頂戴します。</p>
+            <p class="reserve__call_note">
+              <span data-i18n="reserve_call_note">当日の空席確認はお電話で承ります</span>
+              <a href="tel:07045678080" class="access__link__small">070-4567-8080</a>
+            </p>
           </div>
         </section>
         <!-- /ご予約 -->
@@ -143,7 +184,7 @@
           <div class="section__inner">
             <div class="content__type1">
               <p class="section__image">
-                <img src="./images/photo/concept-counter.svg" alt="鮨し禅のカウンターをイメージしたビジュアル" data-i18n-attrs="alt:concept_image_alt">
+                <img src="./images/photo/concept-counter.jpg" alt="鮨し禅のカウンター" data-i18n-attrs="alt:concept_image_alt" loading="lazy">
               </p>
               <div class="content__type1_origin">
                 <h2 class="section__title" data-i18n="about_title">鮨し禅について</h2>
@@ -157,7 +198,7 @@
             </div>
             <div class="content__type1 content__image_right">
               <p class="section__image">
-                <img src="./images/photo/craft-hand.svg" alt="鮨し禅の職人技をイメージしたビジュアル" data-i18n-attrs="alt:craft_image_alt">
+                <img src="./images/photo/craft-hand.jpg" alt="鮨し禅の床の間と設え" data-i18n-attrs="alt:craft_image_alt" loading="lazy">
               </p>
               <div class="content__type1_origin">
                 <h2 class="section__title" data-i18n="thought_title">鮨し禅の想い</h2>
@@ -177,16 +218,17 @@
           <div class="section__inner">
             <div class="content__type1">
               <p class="section__image chef__image">
-                <img src="./images/photo/chef-somono.svg" alt="大将 抑野和彦のイメージビジュアル" data-i18n-attrs="alt:chef_image_alt">
+                <img src="./images/photo/chef-somono.jpg" alt="大将 抑野和彦" data-i18n-attrs="alt:chef_image_alt" loading="lazy">
               </p>
               <div class="content__type1_origin">
                 <p class="chef__eyebrow" data-i18n="chef_label">大将</p>
-                <h2 class="chef__name" data-i18n="chef_name">抑野和彦（そものかずひこ）</h2>
-                <p class="chef__credential" data-i18n="chef_cred">東心斎橋の10席カウンターで、その日の最良を静かに整える大将。</p>
+                <h2 class="chef__name" data-i18n="chef_name">抑野 和彦（そもの かずひこ）</h2>
+                <p class="chef__credential" data-i18n="chef_cred">数々の名店で研鑽を積み、ミシュラン星付きの日本料理店や著名な寿司店でも豊富な経験を重ねてきた職人、抑野和彦。</p>
                 <div class="section__text">
                   <p data-i18n-html="chef_text">
-                    大将 抑野和彦が、温度と流れを整えながらその日の最良をお出しします。<br>
-                    肩肘張らず、記憶に残る一席を目指しています。
+                    日本料理で培った繊細な技術と、寿司の世界で磨き上げた感性を併せ持ち、その一皿には長年の修業でしか辿り着けない深みが宿ります。<br><br>
+                    華やかな経歴に裏打ちされた確かな技。だけど抑野が本当に大切にしているのは、目の前のお客様に、今日この瞬間だけの感動を届けること。素材、季節、温度、空気感、そのすべてに心を配りながら、一貫一皿に誠実な仕事を重ねています。<br><br>
+                    基本に忠実に、しかし型にはまらず。経験に裏打ちされた揺るぎない技と、一期一会を大切にする心で、記憶に残るひとときを生み出します。
                   </p>
                 </div>
               </div>
@@ -201,56 +243,20 @@
             <p class="section__copy" data-i18n="commitment_copy">
               シャリ、酢、醤油、わさび、ネタ。その重なりが最も美しくなる瞬間を大切にしています。
             </p>
-
-            <!-- シャリ・お酢・醤油 -->
-            <div class="section__committed_shari">
-              <h3 class="section__title_medium" data-i18n="shari_title">シャリへのこだわり</h3>
-              <div class="article__committed_shari">
-                <section>
-                  <div class="section__header">
-                    <p class="section__image"><img src="./images/photo/ingredient-rice.svg" alt="シャリ" data-i18n-attrs="alt:rice_alt"></p>
-                    <p class="section__title_small"><span class="section__title_under" data-i18n="rice_badge">舎利</span></p>
-                  </div>
-                  <p class="section__text_under" data-i18n="rice_text">米を選び、温度と握りでネタの旨みを引き立てます。</p>
-                </section>
-                <section>
-                  <div class="section__header">
-                    <p class="section__image"><img src="./images/photo/ingredient-vinegar.svg" alt="お酢" data-i18n-attrs="alt:vinegar_alt"></p>
-                    <p class="section__title_small"><span class="section__title_under" data-i18n="vinegar_badge">お酢</span></p>
-                  </div>
-                  <p class="section__text_under" data-i18n="vinegar_text">米酢と赤酢を使い分け、シャリに奥行きを持たせます。</p>
-                </section>
-                <section>
-                  <div class="section__header">
-                    <p class="section__image"><img src="./images/photo/ingredient-soy.svg" alt="醤油" data-i18n-attrs="alt:soy_alt"></p>
-                    <p class="section__title_small"><span class="section__title_under" data-i18n="soy_badge">醤油</span></p>
-                  </div>
-                  <p class="section__text_under" data-i18n="soy_text">食材ごとに複数の醤油を厳選。一つ一つの素材の個性が最大限に輝くよう、醤油で味を整えます。</p>
-                </section>
-              </div>
+            <div class="concept-grid">
+              <article class="concept-card">
+                <h3 data-i18n="concept_card_1_title">温度で魅せる</h3>
+                <p data-i18n="concept_card_1_text">温度まで設計して、一口の輪郭を整えます。</p>
+              </article>
+              <article class="concept-card">
+                <h3 data-i18n="concept_card_2_title">過度に飾らない</h3>
+                <p data-i18n="concept_card_2_text">飾りすぎず、素材の美しさを前に出します。</p>
+              </article>
+              <article class="concept-card">
+                <h3 data-i18n="concept_card_3_title">会話も一皿のうち</h3>
+                <p data-i18n="concept_card_3_text">季節と酒も、簡潔にご案内します。</p>
+              </article>
             </div>
-            <!-- /シャリ -->
-
-            <!-- わさび・ネタ -->
-            <div class="section__committed_wasabi">
-              <div class="article__committed_wasabi">
-                <section>
-                  <p class="section__image"><img src="./images/photo/ingredient-wasabi.svg" alt="わさび" data-i18n-attrs="alt:wasabi_alt"></p>
-                  <div class="section__info">
-                    <h3 class="section__title_medium" data-i18n="wasabi_title">わさびにこだわる</h3>
-                    <p class="section__text" data-i18n="wasabi_text">産地にこだわった新鮮なわさびを手おろしで使用。ネタの種類に合わせて量と風味を使い分け、最高の一体感を生み出します。</p>
-                  </div>
-                </section>
-                <section class="content__image_right">
-                  <p class="section__image"><img src="./images/photo/ingredient-fish.svg" alt="ネタ" data-i18n-attrs="alt:fish_alt"></p>
-                  <div class="section__info">
-                    <h3 class="section__title_medium" data-i18n="fish_title">ネタにこだわる</h3>
-                    <p class="section__text" data-i18n="fish_text">全国の信頼できる仲買人から直送される旬の魚介類を使用。鮮度と品質へのこだわりが、握りの一瞬に広がる極上の旨みを演出します。</p>
-                  </div>
-                </section>
-              </div>
-            </div>
-            <!-- /わさび・ネタ -->
           </div>
         </section>
         <!-- /こだわり -->
@@ -283,7 +289,7 @@
                 </div>
               </div>
               <div class="section__panel_image">
-                <img src="./images/photo/course-omakase.svg" alt="おまかせコース" data-i18n-attrs="alt:course_image_alt">
+                <img src="./images/photo/course-omakase.jpg" alt="おまかせコース" data-i18n-attrs="alt:course_image_alt" loading="lazy">
               </div>
             </div>
           </div>
@@ -297,6 +303,7 @@
               <span class="section__main" data-i18n="info_title_main">ご案内</span>
               <span class="section__sub" data-i18n="info_title_sub">店舗のご案内</span>
             </h2>
+            <p class="info__summary" data-i18n="info_summary">心斎橋駅から徒歩5分。完全予約制・カウンター10席・各種キャッシュレス決済対応です。</p>
             <dl class="info__list">
               <dt data-i18n="address_dt">住所</dt>
               <dd data-i18n-html="address_access_dd">大阪府大阪市中央区東心斎橋1-14-15 アルスビル 4F<br>心斎橋駅 徒歩5分</dd>
@@ -321,9 +328,15 @@
     </div>
     <!-- /コンテンツ -->
 
+    <div class="floating-reserve" aria-label="Quick reservation actions" data-i18n-attrs="aria-label:floating_reserve_label">
+      <a href="tel:07045678080" class="floating-reserve__link floating-reserve__link--call" data-i18n="floating_call">電話</a>
+      <a href="https://www.tablecheck.com/ja/sushi-zen/reserve/message" data-tablecheck target="_blank" rel="noopener noreferrer" class="floating-reserve__link floating-reserve__link--reserve" data-i18n="floating_reserve">今すぐ予約</a>
+    </div>
+
     <!-- フッター -->
     <footer>
       <div class="content__footer section__inner">
+        <span class="hero-ornament hero-ornament--scroll" aria-hidden="true"></span>
         <p class="content__footer_name" data-i18n="footer_name">鮨し禅</p>
         <p class="content__footer_address" data-i18n-html="footer_address">大阪府大阪市中央区東心斎橋1-14-15 アルスビル 4F</p>
         <p class="content__footer_copyright" data-i18n="footer_copyright">&copy; 鮨し禅 All rights reserved.</p>

@@ -5740,9 +5740,12 @@ header .header__image_kv img {
   text-align: center;
 }
 
+/* letter-spacing の行末分でボックスが右に伸び、中央でも文字が右寄りに見えるため補正（値は .booking-card__label に合わせる） */
 #reserveSection .booking-card__reserve-line .booking-card__label {
-  display: block;
+  display: inline-block;
   white-space: nowrap;
+  margin-right: -0.22em;
+  text-align: center;
 }
 
 #reserveSection .booking-card__reserve-line .booking-card__cta {

@@ -122,6 +122,7 @@ const translations = {
     floating_reserve: "今すぐ予約",
     footer_name: "鮨し禅",
     footer_address: "大阪府大阪市中央区東心斎橋1-14-15 アルスビル 4F",
+    tablecheck_url: "https://www.tablecheck.com/ja/sushi-zen/reserve/message",
     footer_copyright: "© 鮨し禅 All rights reserved.",
   },
   en: {
@@ -245,6 +246,7 @@ const translations = {
     floating_reserve: "Reserve now",
     footer_name: "鮨し禅",
     footer_address: "4F Ars Building, 1-14-15 Higashi-Shinsaibashi, Chuo-ku, Osaka",
+    tablecheck_url: "https://www.tablecheck.com/en/sushi-zen/reserve/message",
     footer_copyright: "© Sushi Zen All rights reserved.",
   },
   ko: {
@@ -367,6 +369,7 @@ const translations = {
     floating_reserve: "지금 예약",
     footer_name: "鮨し禅",
     footer_address: "오사카부 오사카시 주오구 히가시신사이바시 1-14-15 아루스빌딩 4F",
+    tablecheck_url: "https://www.tablecheck.com/ko/sushi-zen/reserve/message",
     footer_copyright: "© Sushi Zen All rights reserved.",
   },
   zh: {
@@ -489,6 +492,7 @@ const translations = {
     floating_reserve: "立即预约",
     footer_name: "鮨し禅",
     footer_address: "大阪府大阪市中央区东心斋桥1-14-15 Ars大厦4F",
+    tablecheck_url: "https://www.tablecheck.com/zh/sushi-zen/reserve/message",
     footer_copyright: "© 鮨し禅 All rights reserved.",
   },
 };
@@ -542,15 +546,12 @@ function applyLanguage(lang) {
     button.setAttribute("aria-pressed", String(isActive));
   });
 
-  // TableCheck links: switch /ja/ to the appropriate language path
-  const tcLangMap = { ja: "ja", en: "en", ko: "ko", zh: "zh" };
-  const tcLang = tcLangMap[lang] || "en";
-  document.querySelectorAll("[data-tablecheck]").forEach((link) => {
-    link.href = link.href.replace(
-      /tablecheck\.com\/[a-z]{2}\//,
-      "tablecheck.com/" + tcLang + "/"
-    );
-  });
+  // TableCheck links: set href from translation dict
+  if (dict.tablecheck_url) {
+    document.querySelectorAll("[data-tablecheck]").forEach((link) => {
+      link.href = dict.tablecheck_url;
+    });
+  }
 
   localStorage.setItem(STORAGE_KEY, lang);
 }

@@ -39,6 +39,18 @@
           }
         }
         document.documentElement.lang = lang;
+        var tcUrls = {
+          ja: "https://www.tablecheck.com/ja/sushi-zen/reserve/message",
+          en: "https://www.tablecheck.com/en/sushi-zen/reserve/message",
+          ko: "https://www.tablecheck.com/ko/sushi-zen/reserve/message",
+          zh: "https://www.tablecheck.com/zh/sushi-zen/reserve/message"
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+          var links = document.querySelectorAll("[data-tablecheck]");
+          for (var i = 0; i < links.length; i++) {
+            links[i].href = tcUrls[lang] || tcUrls.en;
+          }
+        });
       } catch (error) {}
     })();
   </script>
@@ -49,8 +61,8 @@
   <!-- CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.3.0/dist/css/yakuhanjp.min.css">
   <!-- Page CSS -->
-  <link href="./css/style.css?v=20260404-14" rel="stylesheet" type="text/css" media="screen,print" />
-  <script src="./js/main.js?v=20260404-6" defer></script>
+  <link href="./css/style.css?v=20260404-15" rel="stylesheet" type="text/css" media="screen,print" />
+  <script src="./js/main.js?v=20260404-7" defer></script>
 </head>
 
 <body class="body body__jp">

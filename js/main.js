@@ -657,11 +657,44 @@ function initializeHeroOrnamentMotion() {
   };
 }
 
+/** トップ背景レイヤーをスクロール量に連動してわずかに移動（視差）。 */
+function initializeHeaderBgParallax() {
+  const layer = document.querySelector(".header__bg-parallax");
+  if (!layer) {
+    return;
+  }
+
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    layer.style.willChange = "auto";
+    return;
+  }
+
+  const factor = 0.22;
+  let ticking = false;
+
+  function applyParallax() {
+    ticking = false;
+    const y = window.scrollY || window.pageYOffset || 0;
+    layer.style.transform = `translate3d(0, ${y * factor}px, 0)`;
+  }
+
+  function onScroll() {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(applyParallax);
+    }
+  }
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  applyParallax();
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const initialLanguage = getInitialLanguage();
   applyLanguage(initialLanguage);
   initializeScrollReveal();
   initializeHeroOrnamentMotion();
+  initializeHeaderBgParallax();
 
   document.querySelectorAll(".language-switcher__button").forEach((button) => {
     button.addEventListener("click", () => {

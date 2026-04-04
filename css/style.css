@@ -3360,25 +3360,12 @@ header .header__image_kv img {
   }
 
   body::before {
-    background:
-      linear-gradient(
-        90deg,
-        transparent 0,
-        transparent calc(50% - 620px),
-        rgba(255,255,255,0.08) calc(50% - 620px),
-        rgba(255,255,255,0.08) calc(50% - 619px),
-        transparent calc(50% - 619px),
-        transparent calc(50% + 619px),
-        rgba(255,255,255,0.08) calc(50% + 619px),
-        rgba(255,255,255,0.08) calc(50% + 620px),
-        transparent calc(50% + 620px)
-      );
-    opacity: 0.34;
+    background: none;
+    opacity: 0;
   }
 
   header::after {
-    background:
-      linear-gradient(90deg, rgba(9,12,15,0.82) 0%, rgba(9,12,15,0.48) 44%, rgba(9,12,15,0.18) 100%);
+    background: linear-gradient(180deg, rgba(9, 12, 15, 0.08), rgba(9, 12, 15, 0.22));
   }
 
   header .header__hero {
@@ -4145,8 +4132,8 @@ body {
 }
 
 body::before {
+  /* 左右の細い縦ライン（1240px付近で目立つ帯）を撤去し、紙筋＋淡い円のみ */
   background:
-    linear-gradient(90deg, transparent 0, transparent calc(50% - 560px), rgba(179,145,82,0.08) calc(50% - 560px), transparent calc(50% - 559px), transparent calc(50% + 559px), rgba(179,145,82,0.08) calc(50% + 559px), transparent calc(50% + 560px)),
     repeating-linear-gradient(180deg, rgba(255,255,255,0.016) 0 1px, transparent 1px 9px),
     radial-gradient(circle at 20% 30%, rgba(255,255,255,0.035), transparent 28%);
   opacity: 0.42;
@@ -4167,15 +4154,11 @@ header {
 }
 
 header::after {
-  background:
-    linear-gradient(90deg, rgba(8, 7, 6, 0.84) 0%, rgba(8, 7, 6, 0.56) 38%, rgba(8, 7, 6, 0.12) 100%),
-    linear-gradient(180deg, rgba(18,15,12,0.08), rgba(18,15,12,0.22));
+  background: linear-gradient(180deg, rgba(18,15,12,0.06), rgba(18,15,12,0.2));
 }
 
 header .header__hero {
-  background:
-    linear-gradient(90deg, rgba(179,145,82,0.06), transparent 16%),
-    linear-gradient(180deg, rgba(9, 8, 7, 0.08), rgba(9, 8, 7, 0));
+  background: none;
 }
 
 .header__eyebrow {
@@ -5329,9 +5312,8 @@ header::after {
   content: "";
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(90deg, rgba(10, 12, 15, 0.88) 0%, rgba(10, 12, 15, 0.74) 46%, rgba(10, 12, 15, 0.38) 100%),
-    linear-gradient(180deg, rgba(8, 9, 11, 0.08), rgba(8, 9, 11, 0.26));
+  /* 左端の横グラデーションは撤去（トップ全体の帯状に見えるのを防ぐ） */
+  background: linear-gradient(180deg, rgba(8, 9, 11, 0.06), rgba(8, 9, 11, 0.2));
   pointer-events: none;
   z-index: 1;
 }
@@ -5569,6 +5551,20 @@ header .header__image_kv img {
     width: auto;
     max-width: none;
   }
+}
+
+/* ヒーロー: section__inner 由来の max-width:1240px 制限を外す（トップの帯・「枠」感の原因） */
+header .header__hero.section__inner {
+  max-width: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* フッター背景はベース真黒 */
+footer {
+  background: #000000;
+  background-color: #000000;
+  background-image: none;
 }
 
 /* 大将ストーリー: 資格文・本文を純白で統一（他セクションの .section__text 色指定より後勝ち） */

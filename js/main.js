@@ -1,4 +1,5 @@
 const STORAGE_KEY = "sushi-zen-language";
+const STRIP_DISMISS_KEY = "sushi-zen-lang-strip-dismissed";
 
 const REVIEW_DEFAULTS = {
   google: {
@@ -36,6 +37,14 @@ const translations = {
     ogSiteName: "鮨し禅｜大阪心斎橋の隠れ家鮨",
     language_switcher_label: "言語切り替え",
     language_switcher_caption: "Language 言語",
+    hero_lang_strip_label: "表示言語",
+    hero_lang_strip_aria: "ページの表示言語を選ぶ",
+    booking_microcopy:
+      "お食事の目安は約2時間／変更・キャンセルは前日まで（当日は100%）",
+    maps_primary_cta: "Google Mapsで道順を開く",
+    access_exit_hint: "心斎橋駅から徒歩約5分・アルスビル4階",
+    trust_google_kicker: "口コミ・評価",
+    trust_google_hint: "地図とレビューを見る",
     hero_visitor_hint_aria: "来店前のご案内",
     hero_eyebrow: "大阪・東心斎橋 / 完全予約制",
     logo_text: "鮨し禅",
@@ -179,6 +188,14 @@ const translations = {
     ogSiteName: "Sushi Zen",
     language_switcher_label: "Language selector",
     language_switcher_caption: "Language",
+    hero_lang_strip_label: "Language",
+    hero_lang_strip_aria: "Choose page language",
+    booking_microcopy:
+      "~2 hrs dining · Cancel by the day before (same day: charged in full)",
+    maps_primary_cta: "Open directions in Google Maps",
+    access_exit_hint: "~5 min walk from Shinsaibashi Station · 4F Ars Building",
+    trust_google_kicker: "Reviews",
+    trust_google_hint: "See map & guest reviews",
     hero_visitor_hint_aria: "Before you visit",
     hero_eyebrow: "Shinsaibashi, Osaka",
     logo_text: "Sushi Zen",
@@ -322,6 +339,14 @@ const translations = {
     ogSiteName: "스시 시젠",
     language_switcher_label: "언어 선택",
     language_switcher_caption: "언어 Language",
+    hero_lang_strip_label: "언어",
+    hero_lang_strip_aria: "표시 언어 선택",
+    booking_microcopy:
+      "식사 약 2시간 예상 / 변경·취소는 전날까지 (당일 100%)",
+    maps_primary_cta: "Google 지도에서 길 찾기",
+    access_exit_hint: "신사이바시역 도보 약 5분 · 아루스빌딩 4층",
+    trust_google_kicker: "리뷰·평점",
+    trust_google_hint: "지도와 리뷰 보기",
     hero_visitor_hint_aria: "방문 전 안내",
     hero_eyebrow: "오사카 오마카세 / 예약제",
     logo_text: "鮨し禅",
@@ -464,6 +489,14 @@ const translations = {
     ogSiteName: "鮨し禅",
     language_switcher_label: "语言切换",
     language_switcher_caption: "语言 Language",
+    hero_lang_strip_label: "显示语言",
+    hero_lang_strip_aria: "选择页面显示语言",
+    booking_microcopy:
+      "用餐约2小时／变更或取消请提前一天联系（当日将收取100%费用）",
+    maps_primary_cta: "在 Google 地图中打开路线",
+    access_exit_hint: "距心斋桥站步行约5分钟 · Ars大厦4楼",
+    trust_google_kicker: "评价",
+    trust_google_hint: "查看地图与评价",
     hero_visitor_hint_aria: "到店前提示",
     hero_eyebrow: "大阪主厨推荐 / 预约制",
     logo_text: "鮨し禅",
@@ -602,6 +635,48 @@ function setMetaContent(selector, value) {
   }
 }
 
+function syncLangQueryParam(lang) {
+  if (!translations[lang]) {
+    return;
+  }
+  try {
+    const u = new URL(window.location.href);
+    u.searchParams.set("lang", lang);
+    history.replaceState({}, "", `${u.pathname}${u.search}${u.hash}`);
+  } catch (_) {
+    /* ignore */
+  }
+}
+
+function dismissHeroLangStrip() {
+  safeSetStorage(STRIP_DISMISS_KEY, "1");
+  const strip = document.getElementById("hero-lang-strip");
+  if (strip) {
+    strip.hidden = true;
+  }
+}
+
+function initializeHeroLangStrip() {
+  const strip = document.getElementById("hero-lang-strip");
+  if (!strip) {
+    return;
+  }
+  if (safeGetStorage(STRIP_DISMISS_KEY)) {
+    strip.hidden = true;
+    return;
+  }
+  strip.hidden = false;
+  strip.querySelectorAll("[data-hero-lang]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const next = btn.dataset.heroLang;
+      if (next && translations[next]) {
+        dismissHeroLangStrip();
+        applyLanguage(next);
+      }
+    });
+  });
+}
+
 
 function applyLanguage(lang) {
   const dict = translations[lang] || translations.ja;
@@ -652,6 +727,7 @@ function applyLanguage(lang) {
   }
 
   safeSetStorage(STORAGE_KEY, lang);
+  syncLangQueryParam(lang);
 }
 
 function safeGetStorage(key) {
@@ -846,16 +922,17 @@ async function fetchReviewScoresPayload() {
 }
 
 function applyReviewScoresToDom(payload) {
-  const googleLink = document.getElementById("trust-google-link");
   const tabelogLink = document.getElementById("trust-tabelog-link");
   const googleEl = document.querySelector('[data-review-score="google"]');
   const tabelogEl = document.querySelector('[data-review-score="tabelog"]');
-  if (!googleLink || !tabelogLink || !googleEl || !tabelogEl) {
+  if (!tabelogLink || !googleEl || !tabelogEl) {
     return;
   }
 
   const p = payload || normalizeReviewPayload({});
-  googleLink.href = p.google.url;
+  document.querySelectorAll("[data-google-maps-link]").forEach((el) => {
+    el.href = p.google.url;
+  });
   tabelogLink.href = p.tabelog.url;
 
   const gDec = Number(googleEl.dataset.reviewDecimals) || 1;
@@ -865,8 +942,7 @@ function applyReviewScoresToDom(payload) {
 }
 
 function initializeReviewScores() {
-  const googleLink = document.getElementById("trust-google-link");
-  if (!googleLink) {
+  if (!document.querySelector('[data-review-score="google"]')) {
     return;
   }
 
@@ -930,6 +1006,7 @@ function initializePageBgParallax() {
 document.addEventListener("DOMContentLoaded", () => {
   const initialLanguage = getInitialLanguage();
   applyLanguage(initialLanguage);
+  initializeHeroLangStrip();
   initializeScrollReveal();
   initializeHeroOrnamentMotion();
   initializePageBgParallax();
@@ -937,6 +1014,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.querySelectorAll(".language-switcher__button").forEach((button) => {
     button.addEventListener("click", () => {
+      dismissHeroLangStrip();
       applyLanguage(button.dataset.lang);
     });
   });

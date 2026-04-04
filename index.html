@@ -24,8 +24,30 @@
       try {
         var key = "sushi-zen-language";
         var supported = { ja: 1, en: 1, ko: 1, zh: 1 };
-        var stored = localStorage.getItem(key);
-        var lang = (stored && supported[stored]) ? stored : null;
+        var lang = null;
+        var search = window.location.search || "";
+        var q = {};
+        if (search.length > 1) {
+          search.slice(1).split("&").forEach(function (pair) {
+            var i = pair.indexOf("=");
+            var k = decodeURIComponent(i < 0 ? pair : pair.slice(0, i)).toLowerCase();
+            var v = decodeURIComponent(i < 0 ? "" : pair.slice(i + 1)).toLowerCase();
+            q[k] = v;
+          });
+        }
+        var qLang = q.lang || "";
+        if (qLang === "zh-cn" || qLang === "zh-tw" || qLang === "zh_hans" || qLang === "zh_hant") {
+          qLang = "zh";
+        }
+        if (qLang && supported[qLang]) {
+          lang = qLang;
+          localStorage.setItem(key, lang);
+          localStorage.setItem("sushi-zen-lang-strip-dismissed", "1");
+        }
+        if (!lang) {
+          var stored = localStorage.getItem(key);
+          lang = (stored && supported[stored]) ? stored : null;
+        }
         if (!lang) {
           var nav = (navigator.language || "").toLowerCase();
           if (nav.indexOf("zh") === 0) { lang = "zh"; }
@@ -49,8 +71,8 @@
   <!-- CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.3.0/dist/css/yakuhanjp.min.css">
   <!-- Page CSS -->
-  <link href="./css/style.css?v=20260404-29" rel="stylesheet" type="text/css" media="screen,print" />
-  <script src="./js/main.js?v=20260404-29" defer></script>
+  <link href="./css/style.css?v=20260404-30" rel="stylesheet" type="text/css" media="screen,print" />
+  <script src="./js/main.js?v=20260404-30" defer></script>
 </head>
 
 <body class="body body__jp">
@@ -70,6 +92,18 @@
       <div class="header__hero section__inner">
         <div class="header__hero_copy">
           <p class="header__eyebrow" data-i18n="hero_eyebrow">大阪・東心斎橋</p>
+          <div class="hero-lang-strip" id="hero-lang-strip" hidden data-i18n-attrs="aria-label:hero_lang_strip_aria">
+            <span class="hero-lang-strip__label" data-i18n="hero_lang_strip_label">表示言語</span>
+            <span class="hero-lang-strip__choices" role="group">
+              <button type="button" class="hero-lang-strip__btn" data-hero-lang="ja">日本語</button>
+              <span class="hero-lang-strip__dot" aria-hidden="true">·</span>
+              <button type="button" class="hero-lang-strip__btn" data-hero-lang="en">English</button>
+              <span class="hero-lang-strip__dot" aria-hidden="true">·</span>
+              <button type="button" class="hero-lang-strip__btn" data-hero-lang="ko">한국어</button>
+              <span class="hero-lang-strip__dot" aria-hidden="true">·</span>
+              <button type="button" class="hero-lang-strip__btn" data-hero-lang="zh">中文</button>
+            </span>
+          </div>
           <h1 class="site__logo">
             <span class="logo__text" data-i18n="logo_text">鮨し禅</span>
           </h1>
@@ -88,18 +122,25 @@
             <li data-i18n="hero_visitor_hint_4">スマートカジュアルでお越しください。</li>
           </ul>
           <div class="header__actions">
-            <a href="https://www.tablecheck.com/ja/sushi-zen/reserve/message" data-tablecheck target="_blank" rel="noopener noreferrer" class="booking-card" data-i18n-attrs="aria-label:booking_aria_label">
-              <span class="booking-card__label" data-i18n="booking_card_label">公式オンライン予約</span>
-              <span class="booking-card__cta">
-                <span data-i18n="reserve_button">TableCheckで予約する</span>
-                <span class="booking-card__arrow" aria-hidden="true">→</span>
-              </span>
-              <span class="booking-card__brand">TableCheck</span>
-            </a>
+            <div class="header__booking-wrap">
+              <a href="https://www.tablecheck.com/ja/sushi-zen/reserve/message" data-tablecheck target="_blank" rel="noopener noreferrer" class="booking-card" data-i18n-attrs="aria-label:booking_aria_label">
+                <span class="booking-card__label" data-i18n="booking_card_label">公式オンライン予約</span>
+                <span class="booking-card__cta">
+                  <span data-i18n="reserve_button">TableCheckで予約する</span>
+                  <span class="booking-card__arrow" aria-hidden="true">→</span>
+                </span>
+                <span class="booking-card__brand">TableCheck</span>
+              </a>
+              <p class="booking-card__microcopy" data-i18n="booking_microcopy">お食事の目安は約2時間／変更・キャンセルは前日まで（当日は100%）</p>
+            </div>
             <a href="#informationSection" class="header__button header__button--ghost" data-i18n="hero_cta_secondary">店舗情報を見る</a>
           </div>
+          <div class="header__access-promo">
+            <a href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E9%98%AA%E5%BA%9C%E5%A4%A7%E9%98%AA%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E6%9D%B1%E5%BF%83%E6%96%8E%E6%A9%8B1-14-15%20%E3%82%A2%E3%83%AB%E3%82%B9%E3%83%93%E3%83%AB%204F" class="header__map-cta" id="hero-map-cta" target="_blank" rel="noopener noreferrer" data-google-maps-link data-i18n="maps_primary_cta">Google Mapsで道順を開く</a>
+            <p class="header__access-exit-hint" data-i18n="access_exit_hint">心斎橋駅から徒歩約5分・アルスビル4階</p>
+          </div>
           <ul class="header__utility_links">
-            <li><a href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E9%98%AA%E5%BA%9C%E5%A4%A7%E9%98%AA%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E6%9D%B1%E5%BF%83%E6%96%8E%E6%A9%8B1-14-15%20%E3%82%A2%E3%83%AB%E3%82%B9%E3%83%93%E3%83%AB%204F" target="_blank" rel="noopener noreferrer" data-i18n="hero_link_map">Google Mapsで場所を見る</a></li>
+            <li><a href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E9%98%AA%E5%BA%9C%E5%A4%A7%E9%98%AA%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E6%9D%B1%E5%BF%83%E6%96%8E%E6%A9%8B1-14-15%20%E3%82%A2%E3%83%AB%E3%82%B9%E3%83%93%E3%83%AB%204F" target="_blank" rel="noopener noreferrer" data-google-maps-link data-i18n="hero_link_map">Google Mapsで場所を見る</a></li>
             <li><a href="tel:07045678080" data-i18n="hero_link_call">電話で確認する</a></li>
             <li><a href="#informationSection" data-i18n="hero_link_hours">営業時間を確認する</a></li>
           </ul>
@@ -108,25 +149,32 @@
             <li data-i18n="hero_trust_2">心斎橋駅から徒歩5分</li>
             <li data-i18n="hero_trust_3">全席禁煙・キャッシュレス対応</li>
             <li class="header__trust--ratings">
-              <a class="header__trust-link" id="trust-google-link" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%A4%A7%E9%98%AA%E5%BA%9C%E5%A4%A7%E9%98%AA%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E6%9D%B1%E5%BF%83%E6%96%8E%E6%A9%8B1-14-15%20%E3%82%A2%E3%83%AB%E3%82%B9%E3%83%93%E3%83%AB%204F" target="_blank" rel="noopener noreferrer" data-i18n-attrs="aria-label:trust_google_aria">
-                <span data-i18n="trust_google_label">Google</span>
-                <span class="header__trust-score" data-review-score="google" data-review-decimals="1">4.8</span>
-                <span class="header__trust-star" aria-hidden="true">★</span>
-              </a>
-              <span class="header__trust-sep" aria-hidden="true">/</span>
-              <a class="header__trust-link header__trust-link--tabelog" id="trust-tabelog-link" href="https://tabelog.com/osaka/A2701/A270201/27152697/" target="_blank" rel="noopener noreferrer" data-i18n-attrs="aria-label:trust_tabelog_aria">
-                <span class="header__trust-link__primary">
-                  <span data-i18n="trust_tabelog_label">食べログ</span>
-                  <span class="header__trust-score" data-review-score="tabelog" data-review-decimals="2">3.72</span>
-                  <span class="header__trust-star" aria-hidden="true">★</span>
-                </span>
-                <span class="header__trust-sublabel" data-i18n="trust_tabelog_sublabel">国内最大級のグルメサイト（独自の5段階評価）</span>
-              </a>
+              <div class="header__trust-ratings-stack">
+                <a class="header__trust-google-card" id="trust-google-link" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%A4%A7%E9%98%AA%E5%BA%9C%E5%A4%A7%E9%98%AA%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E6%9D%B1%E5%BF%83%E6%96%8E%E6%A9%8B1-14-15%20%E3%82%A2%E3%83%AB%E3%82%B9%E3%83%93%E3%83%AB%204F" target="_blank" rel="noopener noreferrer" data-google-maps-link data-i18n-attrs="aria-label:trust_google_aria">
+                  <span class="header__trust-google-kicker" data-i18n="trust_google_kicker">口コミ・評価</span>
+                  <span class="header__trust-google-row">
+                    <span class="header__trust-google-name" data-i18n="trust_google_label">Google</span>
+                    <span class="header__trust-score header__trust-score--lg" data-review-score="google" data-review-decimals="1">4.8</span>
+                    <span class="header__trust-star" aria-hidden="true">★</span>
+                  </span>
+                  <span class="header__trust-google-hint" data-i18n="trust_google_hint">地図とレビューを見る</span>
+                </a>
+                <div class="header__trust-tabelog-secondary">
+                  <a class="header__trust-link header__trust-link--tabelog" id="trust-tabelog-link" href="https://tabelog.com/osaka/A2701/A270201/27152697/" target="_blank" rel="noopener noreferrer" data-i18n-attrs="aria-label:trust_tabelog_aria">
+                    <span class="header__trust-link__primary">
+                      <span data-i18n="trust_tabelog_label">食べログ</span>
+                      <span class="header__trust-score" data-review-score="tabelog" data-review-decimals="2">3.72</span>
+                      <span class="header__trust-star" aria-hidden="true">★</span>
+                    </span>
+                    <span class="header__trust-sublabel" data-i18n="trust_tabelog_sublabel">国内最大級のグルメサイト（独自の5段階評価）</span>
+                  </a>
+                  <p class="header__trust-note header__trust-note--tabelog" data-i18n="trust_tabelog_note">
+                    ※食べログの評価は独自の5段階です。3.5点台でも高水準店に多いスコアです。
+                  </p>
+                </div>
+              </div>
             </li>
           </ul>
-          <p class="header__trust-note" data-i18n="trust_tabelog_note">
-            ※食べログの評価は独自の5段階です。3.5点台でも高水準店に多いスコアです。
-          </p>
         </div>
           <p class="header__image_kv">
             <img src="./images/photo/sushi-photo-0.png" alt="鮨し禅｜大阪心斎橋の隠れ家鮨" data-i18n-attrs="alt:hero_alt" width="420" height="467">
@@ -177,14 +225,17 @@
               <li>
                 <section class="access access--primary">
                   <div class="access__net">
-                    <a href="https://www.tablecheck.com/ja/sushi-zen/reserve/message" data-tablecheck target="_blank" rel="noopener noreferrer" class="booking-card booking-card--reserve" data-i18n-attrs="aria-label:booking_aria_label">
-                      <span class="booking-card__label" data-i18n="booking_card_label">公式オンライン予約</span>
-                      <span class="booking-card__cta">
-                        <span data-i18n="reserve_button">TableCheckで予約する</span>
-                        <span class="booking-card__arrow" aria-hidden="true">→</span>
-                      </span>
-                      <span class="booking-card__brand">TableCheck</span>
-                    </a>
+                    <div class="access__booking-wrap">
+                      <a href="https://www.tablecheck.com/ja/sushi-zen/reserve/message" data-tablecheck target="_blank" rel="noopener noreferrer" class="booking-card booking-card--reserve" data-i18n-attrs="aria-label:booking_aria_label">
+                        <span class="booking-card__label" data-i18n="booking_card_label">公式オンライン予約</span>
+                        <span class="booking-card__cta">
+                          <span data-i18n="reserve_button">TableCheckで予約する</span>
+                          <span class="booking-card__arrow" aria-hidden="true">→</span>
+                        </span>
+                        <span class="booking-card__brand">TableCheck</span>
+                      </a>
+                      <p class="booking-card__microcopy" data-i18n="booking_microcopy">お食事の目安は約2時間／変更・キャンセルは前日まで（当日は100%）</p>
+                    </div>
                   </div>
                 </section>
               </li>
@@ -199,7 +250,7 @@
               <li data-i18n="reserve_support_3">カード・電子マネー・QR決済対応</li>
             </ul>
             <ul class="reserve__utility_links">
-              <li><a href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E9%98%AA%E5%BA%9C%E5%A4%A7%E9%98%AA%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E6%9D%B1%E5%BF%83%E6%96%8E%E6%A9%8B1-14-15%20%E3%82%A2%E3%83%AB%E3%82%B9%E3%83%93%E3%83%AB%204F" target="_blank" rel="noopener noreferrer" data-i18n="reserve_link_map">Google Mapsで場所を見る</a></li>
+              <li><a href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E9%98%AA%E5%BA%9C%E5%A4%A7%E9%98%AA%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E6%9D%B1%E5%BF%83%E6%96%8E%E6%A9%8B1-14-15%20%E3%82%A2%E3%83%AB%E3%82%B9%E3%83%93%E3%83%AB%204F" target="_blank" rel="noopener noreferrer" data-google-maps-link data-i18n="reserve_link_map">Google Mapsで場所を見る</a></li>
               <li><a href="#informationSection" data-i18n="reserve_link_hours">営業時間を確認する</a></li>
             </ul>
             <p class="reserve__policy_note" data-i18n="reserve_policy_note">ご予約の変更・キャンセルは前日までにご連絡ください。当日は100%を頂戴します。</p>
@@ -338,6 +389,10 @@
               <span class="section__sub" data-i18n="info_title_sub">店舗のご案内</span>
             </h2>
             <p class="info__summary" data-i18n="info_summary">心斎橋駅から徒歩5分。完全予約制・カウンター10席・各種キャッシュレス決済対応です。</p>
+            <div class="info__access-promo">
+              <a href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E9%98%AA%E5%BA%9C%E5%A4%A7%E9%98%AA%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E6%9D%B1%E5%BF%83%E6%96%8E%E6%A9%8B1-14-15%20%E3%82%A2%E3%83%AB%E3%82%B9%E3%83%93%E3%83%AB%204F" class="info__map-cta" target="_blank" rel="noopener noreferrer" data-google-maps-link data-i18n="maps_primary_cta">Google Mapsで道順を開く</a>
+              <p class="info__access-exit-hint" data-i18n="access_exit_hint">心斎橋駅から徒歩約5分・アルスビル4階</p>
+            </div>
             <dl class="info__list">
               <dt data-i18n="address_dt">住所</dt>
               <dd data-i18n-html="address_access_dd">大阪府大阪市中央区東心斎橋1-14-15 アルスビル 4F<br>心斎橋駅 徒歩5分</dd>

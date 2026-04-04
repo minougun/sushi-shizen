@@ -5463,75 +5463,110 @@ header .header__image_kv img {
   }
 }
 
-/* ご予約: 見出しサイズ・左揃え（コンポ参照。ご案内の title__type1 とは切り離し） */
+/* ご予約: スクリーンショット 2026-04-04 212713 準拠（中央・主見出し＋下線・金枠の副題） */
 #reserveSection .title__type1 {
-  text-align: left;
+  text-align: center;
   display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: flex-start;
-  gap: 0.2em 1em;
-  margin-bottom: 18px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  margin-bottom: 22px;
 }
 
 #reserveSection .title__type1 .section__main {
-  display: inline-block;
-  padding-bottom: 10px;
+  display: block;
+  width: 100%;
+  padding-bottom: 14px;
   margin-bottom: 0;
-  font-size: clamp(2.35rem, 4vw, 3.15rem);
-  line-height: 1.22;
-  letter-spacing: 0.12em;
-  text-align: left;
+  font-size: clamp(2.7rem, 5.2vw, 3.6rem);
+  line-height: 1.18;
+  letter-spacing: 0.14em;
+  text-align: center;
+  color: #f5f2eb;
 }
 
 #reserveSection .title__type1 .section__main::after {
-  left: 0;
-  transform: none;
-  width: 52px;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 68px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(199, 170, 106, 0.12), rgba(199, 170, 106, 0.88) 50%, rgba(199, 170, 106, 0.12));
 }
 
 #reserveSection .title__type1 .section__sub {
   display: inline-block;
-  padding: 0;
-  border: 0;
+  margin-top: 18px;
+  padding: 9px 24px;
+  border: 1px solid rgba(199, 170, 106, 0.52);
+  border-radius: 2px;
   background: transparent;
-  font-size: 1.16rem;
-  line-height: 1.45;
-  letter-spacing: 0.22em;
-  color: rgba(213, 191, 147, 0.62);
-  vertical-align: baseline;
+  font-size: 1.08rem;
+  line-height: 1.5;
+  letter-spacing: 0.28em;
+  color: rgba(245, 242, 235, 0.94);
+  vertical-align: middle;
 }
 
 #reserveSection .content__list_contact {
-  margin-top: 6px;
-  justify-content: flex-start;
+  margin-top: 8px;
+  width: 100%;
+  justify-content: center;
 }
 
 #reserveSection .content__list_contact > li,
 #reserveSection .content__list_contact > li .access {
-  text-align: left;
-  align-items: flex-start;
-  justify-content: flex-start;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+#reserveSection .access__net,
+#reserveSection .access__booking-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  max-width: 400px;
+  margin-inline: auto;
 }
 
 #reserveSection .reserve__meta {
-  margin-left: 0;
+  margin-left: auto;
   margin-right: auto;
-  text-align: left;
-  font-size: 1.34rem;
-  letter-spacing: 0.1em;
-  line-height: 1.75;
+  text-align: center;
+  font-size: 1.26rem;
+  letter-spacing: 0.08em;
+  line-height: 1.72;
+  max-width: 40em;
+  color: rgba(238, 232, 218, 0.92);
 }
 
-#reserveSection .reserve__support_list,
+#reserveSection .reserve__support_list {
+  justify-content: center;
+}
+
 #reserveSection .reserve__utility_links {
-  justify-content: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
-#reserveSection .reserve__policy_note,
+#reserveSection .reserve__policy_note {
+  text-align: center;
+  max-width: 38em;
+  margin-left: auto;
+  margin-right: auto;
+  color: rgba(168, 162, 152, 0.78);
+}
+
 #reserveSection .reserve__call_note {
-  text-align: left;
-  max-width: 42em;
+  text-align: center;
+  max-width: 40em;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media (max-width: 767px) {

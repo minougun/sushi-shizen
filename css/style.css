@@ -4709,11 +4709,6 @@ footer {
   color: rgba(200, 188, 165, 0.72);
 }
 
-.header__access-promo {
-  margin: 0 0 22px;
-  max-width: 36em;
-}
-
 .header__map-cta,
 .info__map-cta {
   display: inline-flex;
@@ -5470,4 +5465,11 @@ header .header__image_kv img {
     width: min(74vw, 420px);
     margin-right: 0;
   }
+}
+
+/* 大将ストーリー: 資格文・本文を純白で統一（他セクションの .section__text 色指定より後勝ち） */
+.section__chef_story .chef__credential,
+.section__chef_story .content__type1_origin .section__text,
+.section__chef_story .content__type1_origin .section__text p {
+  color: #ffffff;
 }

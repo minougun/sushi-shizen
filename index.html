@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preload" as="image" href="./images/opt/hero-sushi-720w.webp" type="image/webp" media="(max-width: 767px)">
   <meta id="metaDescription" name="description"
     content="鮨し禅は大阪・東心斎橋の隠れ家にあるカウンター10席の割烹寿司店です。旬の食材を活かしたおまかせ鮨をご堪能ください。心斎橋駅徒歩5分。">
   <meta id="metaKeywords" name="Keywords" content="鮨し禅,心斎橋,大阪,寿司,鮨,おまかせ" />
@@ -71,7 +72,7 @@
   <!-- CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.3.0/dist/css/yakuhanjp.min.css">
   <!-- Page CSS -->
-  <link href="./css/style.css?v=20260404-51" rel="stylesheet" type="text/css" media="screen,print" />
+  <link href="./css/style.css?v=20260404-52" rel="stylesheet" type="text/css" media="screen,print" />
   <script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.4/dist/purify.min.js" crossorigin="anonymous" defer></script>
   <script src="./js/main.js?v=20260404-44" defer></script>
 </head>
@@ -148,7 +149,10 @@
           </p>
         </div>
           <figure class="header__image_kv">
-            <img src="./images/photo/sushi-photo-0.png" alt="鮨し禅｜大阪心斎橋の隠れ家鮨" data-i18n-attrs="alt:hero_alt" width="420" height="467">
+            <picture>
+              <source type="image/webp" media="(max-width: 767px)" srcset="./images/opt/hero-sushi-720w.webp">
+              <img src="./images/photo/sushi-photo-0.png" alt="鮨し禅｜大阪心斎橋の隠れ家鮨" data-i18n-attrs="alt:hero_alt" width="420" height="467" fetchpriority="high" decoding="async">
+            </picture>
           </figure>
       </div>
     </header>
@@ -176,9 +180,9 @@
           <div class="slide__marquee">
             <div class="slide__track">
               <div class="slide__set">
-                <figure class="slide__item"><div class="slide__inner"><img src="./images/slider/slide-1.png" alt="おまかせの握り盛り合わせ" data-i18n-attrs="alt:slide_1_alt" loading="lazy" /></div></figure>
-                <figure class="slide__item"><div class="slide__inner"><img src="./images/slider/slide-2.png" alt="季節の食材を用いた一皿" data-i18n-attrs="alt:slide_2_alt" loading="lazy" /></div></figure>
-                <figure class="slide__item"><div class="slide__inner"><img src="./images/slider/slide-3.png" alt="職人の技を表現した一皿" data-i18n-attrs="alt:slide_3_alt" loading="lazy" /></div></figure>
+                <figure class="slide__item"><div class="slide__inner"><picture><source type="image/webp" media="(max-width: 767px)" srcset="./images/opt/slide-1-900w.webp"><img src="./images/slider/slide-1.png" alt="おまかせの握り盛り合わせ" data-i18n-attrs="alt:slide_1_alt" loading="lazy" decoding="async" /></picture></div></figure>
+                <figure class="slide__item"><div class="slide__inner"><picture><source type="image/webp" media="(max-width: 767px)" srcset="./images/opt/slide-2-900w.webp"><img src="./images/slider/slide-2.png" alt="季節の食材を用いた一皿" data-i18n-attrs="alt:slide_2_alt" loading="lazy" decoding="async" /></picture></div></figure>
+                <figure class="slide__item"><div class="slide__inner"><picture><source type="image/webp" media="(max-width: 767px)" srcset="./images/opt/slide-3-900w.webp"><img src="./images/slider/slide-3.png" alt="職人の技を表現した一皿" data-i18n-attrs="alt:slide_3_alt" loading="lazy" decoding="async" /></picture></div></figure>
               </div>
             </div>
           </div>
@@ -236,7 +240,10 @@
           <div class="section__inner">
             <div class="content__type1">
               <p class="section__image">
-                <img src="./images/photo/craft-hand.jpg" alt="鮨し禅の床の間と設え" data-i18n-attrs="alt:craft_image_alt" loading="lazy">
+                <picture>
+                  <source type="image/webp" media="(max-width: 767px)" srcset="./images/opt/craft-hand-800w.webp">
+                  <img src="./images/photo/craft-hand.jpg" alt="鮨し禅の床の間と設え" data-i18n-attrs="alt:craft_image_alt" loading="lazy" decoding="async">
+                </picture>
               </p>
               <div class="content__type1_origin">
                 <h2 class="section__title" data-i18n="about_title">鮨し禅について</h2>
@@ -250,7 +257,10 @@
             </div>
             <div class="content__type1 content__image_right">
               <p class="section__image">
-                <img src="./images/photo/concept-counter.jpg" alt="鮨し禅のカウンター" data-i18n-attrs="alt:concept_image_alt" loading="lazy">
+                <picture>
+                  <source type="image/webp" media="(max-width: 767px)" srcset="./images/opt/concept-counter-800w.webp">
+                  <img src="./images/photo/concept-counter.jpg" alt="鮨し禅のカウンター" data-i18n-attrs="alt:concept_image_alt" loading="lazy" decoding="async">
+                </picture>
               </p>
               <div class="content__type1_origin">
                 <h2 class="section__title" data-i18n="thought_title">鮨し禅の想い</h2>
@@ -270,7 +280,10 @@
           <div class="section__inner">
             <div class="content__type1">
               <p class="section__image chef__image">
-                <img src="./images/photo/chef-somono.jpg" alt="大将 抑野和彦" data-i18n-attrs="alt:chef_image_alt" loading="lazy">
+                <picture>
+                  <source type="image/webp" media="(max-width: 767px)" srcset="./images/opt/chef-somono-800w.webp">
+                  <img src="./images/photo/chef-somono.jpg" alt="大将 抑野和彦" data-i18n-attrs="alt:chef_image_alt" loading="lazy" decoding="async">
+                </picture>
               </p>
               <div class="content__type1_origin">
                 <p class="chef__eyebrow" data-i18n="chef_label">大将</p>
@@ -341,7 +354,10 @@
                 </div>
               </div>
               <div class="section__panel_image">
-                <img src="./images/photo/course-omakase.jpg" alt="おまかせコース" data-i18n-attrs="alt:course_image_alt" loading="lazy">
+                <picture>
+                  <source type="image/webp" media="(max-width: 767px)" srcset="./images/opt/course-omakase-800w.webp">
+                  <img src="./images/photo/course-omakase.jpg" alt="おまかせコース" data-i18n-attrs="alt:course_image_alt" loading="lazy" decoding="async">
+                </picture>
               </div>
             </div>
           </div>

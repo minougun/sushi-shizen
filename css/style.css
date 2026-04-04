@@ -5544,8 +5544,30 @@ header .header__image_kv img {
 
 @media (max-width: 1023px) {
   .page-bg-parallax {
-    background-position: left top, center center;
-    background-size: min(100vw, 52rem) auto, cover;
+    background-image:
+      linear-gradient(180deg, rgba(0, 0, 0, 0.52) 0%, rgba(0, 0, 0, 0.38) 28%, rgba(0, 0, 0, 0.22) 55%, rgba(0, 0, 0, 0.12) 100%),
+      radial-gradient(circle at 14% 24%, rgba(255, 255, 255, 0.02) 0%, transparent 42%),
+      radial-gradient(ellipse 105% 92% at 50% 48%, transparent 28%, rgba(0, 0, 0, 0.58) 100%),
+      linear-gradient(180deg, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0.45) 38%, rgba(0, 0, 0, 0.18) 62%, transparent 78%),
+      linear-gradient(90deg, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.42) 22%, rgba(0, 0, 0, 0.15) 42%, transparent 58%),
+      url("./../images/opt/parallax-arc-960w.webp"),
+      url("./../images/opt/parallax-base-1400w.webp");
+    background-position:
+      center center,
+      center center,
+      center center,
+      center center,
+      center center,
+      left top,
+      center center;
+    background-size:
+      100% 100%,
+      100% 100%,
+      100% 100%,
+      100% 100%,
+      100% 100%,
+      min(100vw, 52rem) auto,
+      cover;
   }
 
   header::before {
@@ -5579,8 +5601,14 @@ header .header__image_kv img {
   }
 
   .page-bg-parallax {
-    background-position: left top, center center;
-    background-size: min(100vw, 40rem) auto, cover;
+    background-size:
+      100% 100%,
+      100% 100%,
+      100% 100%,
+      100% 100%,
+      100% 100%,
+      min(100vw, 40rem) auto,
+      cover;
   }
 
   header::before {

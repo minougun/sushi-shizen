@@ -4926,6 +4926,14 @@ header .header__image_kv img {
   font-weight: 600;
 }
 
+/* 左固定の予約バーと本文が被りにくいよう、狭〜中幅で main に左余白 */
+@media (min-width: 768px) and (max-width: 1200px) {
+  .content__inner > main {
+    padding-left: calc(24px + min(220px, 30vw));
+    box-sizing: border-box;
+  }
+}
+
 @media (max-width: 1023px) {
   .header__hero {
     row-gap: 30px;
@@ -4937,6 +4945,12 @@ header .header__image_kv img {
 }
 
 @media (max-width: 767px) {
+  .content__inner > main {
+    padding-left: max(12px, env(safe-area-inset-left, 0px));
+    padding-right: max(12px, env(safe-area-inset-right, 0px));
+    box-sizing: border-box;
+  }
+
   .header__summary {
     font-size: 1.2rem;
     line-height: 1.82;

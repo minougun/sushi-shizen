@@ -1,7 +1,8 @@
 @charset "UTF-8";
 /**
  * レスポンシブ・画像調整（style.css の後に読み込む）
- * - 主要コンテンツ画像は全ビューポートで親幅の 70%・中央（国旗・装飾 SVG は対象外）
+ * - ヒーロー・本文写真: 全幅で親の 70%・中央
+ * - トップ直下スライダー3枚: 幅768px以上はご予約ブロック相当のまとまり幅／未満は 70%
  */
 
 *,
@@ -44,24 +45,39 @@ header .header__image_kv img {
   transform: none !important;
 }
 
-.section__slide_intro .slide__inner {
-  overflow: visible !important;
-}
+/* スライダー: デスクトップ＝セルいっぱい、行全体をご予約付近のコンテンツ幅に制限 */
+@media (min-width: 768px) {
+  .section__slide_intro .slide__marquee {
+    max-width: min(860px, 90vw) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+  }
 
-.section__slide_intro .slide__inner > picture {
-  display: block !important;
-  width: 70% !important;
-  max-width: 70% !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  box-sizing: border-box !important;
-}
+  .section__slide_intro .slide__set {
+    max-width: 100%;
+    margin-inline: auto;
+  }
 
-.section__slide_intro .slide__inner picture img,
-.section__slide_intro .slide__inner > img {
-  width: 100% !important;
-  max-width: 100% !important;
-  transform: none !important;
+  .section__slide_intro .slide__inner {
+    overflow: visible !important;
+  }
+
+  .section__slide_intro .slide__inner > picture {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+  }
+
+  .section__slide_intro .slide__inner picture img,
+  .section__slide_intro .slide__inner > img {
+    width: 100% !important;
+    max-width: 100% !important;
+    transform: none !important;
+  }
 }
 
 .content__type1 .section__image,
@@ -117,6 +133,27 @@ header .header__image_kv img {
 
   header .header__trust.header__trust--ratings-row > li.header__trust--ratings > .header__trust-sep {
     display: none !important;
+  }
+
+  /* スライダー3枚: スマホのみ親幅の 70% */
+  .section__slide_intro .slide__inner {
+    overflow: visible !important;
+  }
+
+  .section__slide_intro .slide__inner > picture {
+    display: block !important;
+    width: 70% !important;
+    max-width: 70% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+  }
+
+  .section__slide_intro .slide__inner picture img,
+  .section__slide_intro .slide__inner > img {
+    width: 100% !important;
+    max-width: 100% !important;
+    transform: none !important;
   }
 
   .base__map {

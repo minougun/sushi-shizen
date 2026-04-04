@@ -42,7 +42,6 @@
         if (qLang && supported[qLang]) {
           lang = qLang;
           localStorage.setItem(key, lang);
-          localStorage.setItem("sushi-zen-lang-strip-dismissed", "1");
         }
         if (!lang) {
           var stored = localStorage.getItem(key);
@@ -71,8 +70,8 @@
   <!-- CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.3.0/dist/css/yakuhanjp.min.css">
   <!-- Page CSS -->
-  <link href="./css/style.css?v=20260404-30" rel="stylesheet" type="text/css" media="screen,print" />
-  <script src="./js/main.js?v=20260404-30" defer></script>
+  <link href="./css/style.css?v=20260404-31" rel="stylesheet" type="text/css" media="screen,print" />
+  <script src="./js/main.js?v=20260404-31" defer></script>
 </head>
 
 <body class="body body__jp">
@@ -92,18 +91,6 @@
       <div class="header__hero section__inner">
         <div class="header__hero_copy">
           <p class="header__eyebrow" data-i18n="hero_eyebrow">大阪・東心斎橋</p>
-          <div class="hero-lang-strip" id="hero-lang-strip" hidden data-i18n-attrs="aria-label:hero_lang_strip_aria">
-            <span class="hero-lang-strip__label" data-i18n="hero_lang_strip_label">表示言語</span>
-            <span class="hero-lang-strip__choices" role="group">
-              <button type="button" class="hero-lang-strip__btn" data-hero-lang="ja">日本語</button>
-              <span class="hero-lang-strip__dot" aria-hidden="true">·</span>
-              <button type="button" class="hero-lang-strip__btn" data-hero-lang="en">English</button>
-              <span class="hero-lang-strip__dot" aria-hidden="true">·</span>
-              <button type="button" class="hero-lang-strip__btn" data-hero-lang="ko">한국어</button>
-              <span class="hero-lang-strip__dot" aria-hidden="true">·</span>
-              <button type="button" class="hero-lang-strip__btn" data-hero-lang="zh">中文</button>
-            </span>
-          </div>
           <h1 class="site__logo">
             <span class="logo__text" data-i18n="logo_text">鮨し禅</span>
           </h1>
@@ -112,15 +99,6 @@
             十席のカウンターで、その日の一貫と向き合う。
           </p>
           <p class="header__summary" data-i18n="hero_summary">完全予約制・カウンター10席。心斎橋駅から徒歩5分。</p>
-          <p class="header__value_line" data-i18n="hero_value_line">
-            カウンター10席のみ。名店で研鑽を重ねた大将が、その日のおまかせでお迎えします。
-          </p>
-          <ul class="header__visitor_hint_list" data-i18n-attrs="aria-label:hero_visitor_hint_aria">
-            <li data-i18n="hero_visitor_hint_1">夜は2回転の入替制です（18:00〜20:00／20:30〜23:00）。</li>
-            <li data-i18n="hero_visitor_hint_2">お食事はおおよそ2時間程度を想定しています。</li>
-            <li data-i18n="hero_visitor_hint_3">表示価格は税別です。目安として税込（10%）で約¥16,500〜。</li>
-            <li data-i18n="hero_visitor_hint_4">スマートカジュアルでお越しください。</li>
-          </ul>
           <div class="header__actions">
             <div class="header__booking-wrap">
               <a href="https://www.tablecheck.com/ja/sushi-zen/reserve/message" data-tablecheck target="_blank" rel="noopener noreferrer" class="booking-card" data-i18n-attrs="aria-label:booking_aria_label">
@@ -149,32 +127,25 @@
             <li data-i18n="hero_trust_2">心斎橋駅から徒歩5分</li>
             <li data-i18n="hero_trust_3">全席禁煙・キャッシュレス対応</li>
             <li class="header__trust--ratings">
-              <div class="header__trust-ratings-stack">
-                <a class="header__trust-google-card" id="trust-google-link" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%A4%A7%E9%98%AA%E5%BA%9C%E5%A4%A7%E9%98%AA%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E6%9D%B1%E5%BF%83%E6%96%8E%E6%A9%8B1-14-15%20%E3%82%A2%E3%83%AB%E3%82%B9%E3%83%93%E3%83%AB%204F" target="_blank" rel="noopener noreferrer" data-google-maps-link data-i18n-attrs="aria-label:trust_google_aria">
-                  <span class="header__trust-google-kicker" data-i18n="trust_google_kicker">口コミ・評価</span>
-                  <span class="header__trust-google-row">
-                    <span class="header__trust-google-name" data-i18n="trust_google_label">Google</span>
-                    <span class="header__trust-score header__trust-score--lg" data-review-score="google" data-review-decimals="1">4.8</span>
-                    <span class="header__trust-star" aria-hidden="true">★</span>
-                  </span>
-                  <span class="header__trust-google-hint" data-i18n="trust_google_hint">地図とレビューを見る</span>
-                </a>
-                <div class="header__trust-tabelog-secondary">
-                  <a class="header__trust-link header__trust-link--tabelog" id="trust-tabelog-link" href="https://tabelog.com/osaka/A2701/A270201/27152697/" target="_blank" rel="noopener noreferrer" data-i18n-attrs="aria-label:trust_tabelog_aria">
-                    <span class="header__trust-link__primary">
-                      <span data-i18n="trust_tabelog_label">食べログ</span>
-                      <span class="header__trust-score" data-review-score="tabelog" data-review-decimals="2">3.72</span>
-                      <span class="header__trust-star" aria-hidden="true">★</span>
-                    </span>
-                    <span class="header__trust-sublabel" data-i18n="trust_tabelog_sublabel">国内最大級のグルメサイト（独自の5段階評価）</span>
-                  </a>
-                  <p class="header__trust-note header__trust-note--tabelog" data-i18n="trust_tabelog_note">
-                    ※食べログの評価は独自の5段階です。3.5点台でも高水準店に多いスコアです。
-                  </p>
-                </div>
-              </div>
+              <a class="header__trust-link" id="trust-google-link" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%A4%A7%E9%98%AA%E5%BA%9C%E5%A4%A7%E9%98%AA%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E6%9D%B1%E5%BF%83%E6%96%8E%E6%A9%8B1-14-15%20%E3%82%A2%E3%83%AB%E3%82%B9%E3%83%93%E3%83%AB%204F" target="_blank" rel="noopener noreferrer" data-google-maps-link data-i18n-attrs="aria-label:trust_google_aria">
+                <span data-i18n="trust_google_label">Google</span>
+                <span class="header__trust-score" data-review-score="google" data-review-decimals="1">4.8</span>
+                <span class="header__trust-star" aria-hidden="true">★</span>
+              </a>
+              <span class="header__trust-sep" aria-hidden="true">/</span>
+              <a class="header__trust-link header__trust-link--tabelog" id="trust-tabelog-link" href="https://tabelog.com/osaka/A2701/A270201/27152697/" target="_blank" rel="noopener noreferrer" data-i18n-attrs="aria-label:trust_tabelog_aria">
+                <span class="header__trust-link__primary">
+                  <span data-i18n="trust_tabelog_label">食べログ</span>
+                  <span class="header__trust-score" data-review-score="tabelog" data-review-decimals="2">3.72</span>
+                  <span class="header__trust-star" aria-hidden="true">★</span>
+                </span>
+                <span class="header__trust-sublabel" data-i18n="trust_tabelog_sublabel">国内最大級のグルメサイト（独自の5段階評価）</span>
+              </a>
             </li>
           </ul>
+          <p class="header__trust-note" data-i18n="trust_tabelog_note">
+            ※食べログの評価は独自の5段階です。3.5点台でも高水準店に多いスコアです。
+          </p>
         </div>
           <p class="header__image_kv">
             <img src="./images/photo/sushi-photo-0.png" alt="鮨し禅｜大阪心斎橋の隠れ家鮨" data-i18n-attrs="alt:hero_alt" width="420" height="467">

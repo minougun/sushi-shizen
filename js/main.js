@@ -1,5 +1,4 @@
 const STORAGE_KEY = "sushi-zen-language";
-const STRIP_DISMISS_KEY = "sushi-zen-lang-strip-dismissed";
 
 const REVIEW_DEFAULTS = {
   google: {
@@ -37,22 +36,15 @@ const translations = {
     ogSiteName: "鮨し禅｜大阪心斎橋の隠れ家鮨",
     language_switcher_label: "言語切り替え",
     language_switcher_caption: "Language 言語",
-    hero_lang_strip_label: "表示言語",
-    hero_lang_strip_aria: "ページの表示言語を選ぶ",
     booking_microcopy:
       "お食事の目安は約2時間／変更・キャンセルは前日まで（当日は100%）",
     maps_primary_cta: "Google Mapsで道順を開く",
     access_exit_hint: "心斎橋駅から徒歩約5分・アルスビル4階",
-    trust_google_kicker: "口コミ・評価",
-    trust_google_hint: "地図とレビューを見る",
-    hero_visitor_hint_aria: "来店前のご案内",
     hero_eyebrow: "大阪・東心斎橋 / 完全予約制",
     logo_text: "鮨し禅",
     hero_lead:
       "旬、温度、間。<br>十席のカウンターで、その日の一貫と向き合う。",
     hero_summary: "完全予約制・カウンター10席。心斎橋駅から徒歩5分。",
-    hero_value_line:
-      "カウンター10席のみ。名店で研鑽を重ねた大将が、その日のおまかせでお迎えします。",
     booking_aria_label: "TableCheckで予約する",
     booking_card_label: "公式オンライン予約",
     hero_cta_secondary: "店舗情報を見る",
@@ -70,10 +62,6 @@ const translations = {
     trust_tabelog_sublabel: "国内最大級のグルメサイト（独自の5段階評価）",
     trust_tabelog_note:
       "※食べログの評価は独自の5段階です。3.5点台でも高水準店に多いスコアです。",
-    hero_visitor_hint_1: "夜は2回転の入替制です（18:00〜20:00／20:30〜23:00）。",
-    hero_visitor_hint_2: "お食事はおおよそ2時間程度を想定しています。",
-    hero_visitor_hint_3: "表示価格は税別です。目安として税込（10%）で約¥16,500〜。",
-    hero_visitor_hint_4: "スマートカジュアルでお越しください。",
     hero_phone_note: "当日のお問い合わせはお電話で",
     hero_quick_1: "心斎橋駅から徒歩5分",
     hero_quick_2: "カード・Alipay・WeChat Pay対応",
@@ -188,22 +176,15 @@ const translations = {
     ogSiteName: "Sushi Zen",
     language_switcher_label: "Language selector",
     language_switcher_caption: "Language",
-    hero_lang_strip_label: "Language",
-    hero_lang_strip_aria: "Choose page language",
     booking_microcopy:
       "~2 hrs dining · Cancel by the day before (same day: charged in full)",
     maps_primary_cta: "Open directions in Google Maps",
     access_exit_hint: "~5 min walk from Shinsaibashi Station · 4F Ars Building",
-    trust_google_kicker: "Reviews",
-    trust_google_hint: "See map & guest reviews",
-    hero_visitor_hint_aria: "Before you visit",
     hero_eyebrow: "Shinsaibashi, Osaka",
     logo_text: "Sushi Zen",
     hero_lead:
       "Season, temperature, timing.<br>Ten seats. One omakase rhythm.",
     hero_summary: "Reservation required. 5 minutes from Shinsaibashi Station.",
-    hero_value_line:
-      "Ten counter seats only. Chef Somono welcomes you with an evening omakase shaped by training at celebrated kitchens.",
     booking_aria_label: "Reserve on TableCheck",
     booking_card_label: "Official Reservation",
     hero_cta_secondary: "View Access & Hours",
@@ -221,10 +202,6 @@ const translations = {
     trust_tabelog_sublabel: "Japan restaurant guide · 5-point scale",
     trust_tabelog_note:
       "Tabelog uses Japan's own 5-point scale; mid-3 scores can still reflect excellent fine dining here.",
-    hero_visitor_hint_1: "Dinner has two seatings: 18:00–20:00 and 20:30–23:00.",
-    hero_visitor_hint_2: "Please allow about two hours for the meal.",
-    hero_visitor_hint_3: "Prices exclude tax; with 10% consumption tax, evening omakase from about JPY 16,500.",
-    hero_visitor_hint_4: "Smart casual attire is appreciated.",
     hero_phone_note: "Call for same-day inquiries",
     hero_quick_1: "5 min from Shinsaibashi Station",
     hero_quick_2: "Cards, Alipay & WeChat Pay accepted",
@@ -339,15 +316,10 @@ const translations = {
     ogSiteName: "스시 시젠",
     language_switcher_label: "언어 선택",
     language_switcher_caption: "언어 Language",
-    hero_lang_strip_label: "언어",
-    hero_lang_strip_aria: "표시 언어 선택",
     booking_microcopy:
       "식사 약 2시간 예상 / 변경·취소는 전날까지 (당일 100%)",
     maps_primary_cta: "Google 지도에서 길 찾기",
     access_exit_hint: "신사이바시역 도보 약 5분 · 아루스빌딩 4층",
-    trust_google_kicker: "리뷰·평점",
-    trust_google_hint: "지도와 리뷰 보기",
-    hero_visitor_hint_aria: "방문 전 안내",
     hero_eyebrow: "오사카 오마카세 / 예약제",
     logo_text: "鮨し禅",
     hero_lead:
@@ -360,8 +332,6 @@ const translations = {
     hero_link_call: "전화로 문의하기",
     hero_link_hours: "영업시간 보기",
     hero_meta: "저녁 오마카세 ¥15,000~ / 완전 예약제",
-    hero_value_line:
-      "카운터 10석만. 명문에서 수련을 쌓은 대장이 그날의 오마카세로 맞이합니다.",
     hero_trust_1: "완전 예약제 / 카운터 10석",
     hero_trust_2: "신사이바시역 도보 5분",
     hero_trust_3: "전석 금연 / 카드·QR 결제 가능",
@@ -372,10 +342,6 @@ const translations = {
     trust_tabelog_sublabel: "일본 맛집 가이드 · 자체 5점 만점",
     trust_tabelog_note:
       "※타베로그는 일본 독자의 5점 만점입니다. 3점대 중반도 고급점에서 흔히 보는 높은 점수입니다.",
-    hero_visitor_hint_1: "저녁은 2회전입니다 (18:00–20:00 / 20:30–23:00).",
-    hero_visitor_hint_2: "식사는 약 2시간을 가정해 주세요.",
-    hero_visitor_hint_3: "표시 가격은 세금 별도이며, 소비세 10% 포함 시 저녁 오마카세 약 ¥16,500~.",
-    hero_visitor_hint_4: "스마트 캐주얼 차림을 권장합니다.",
     hero_phone_note: "당일 문의는 전화로 가능합니다",
     hero_quick_1: "신사이바시역 도보 5분",
     hero_quick_2: "카드·Alipay·WeChat Pay 가능",
@@ -489,15 +455,10 @@ const translations = {
     ogSiteName: "鮨し禅",
     language_switcher_label: "语言切换",
     language_switcher_caption: "语言 Language",
-    hero_lang_strip_label: "显示语言",
-    hero_lang_strip_aria: "选择页面显示语言",
     booking_microcopy:
       "用餐约2小时／变更或取消请提前一天联系（当日将收取100%费用）",
     maps_primary_cta: "在 Google 地图中打开路线",
     access_exit_hint: "距心斋桥站步行约5分钟 · Ars大厦4楼",
-    trust_google_kicker: "评价",
-    trust_google_hint: "查看地图与评价",
-    hero_visitor_hint_aria: "到店前提示",
     hero_eyebrow: "大阪主厨推荐 / 预约制",
     logo_text: "鮨し禅",
     hero_lead:
@@ -510,8 +471,6 @@ const translations = {
     hero_link_call: "电话联系店铺",
     hero_link_hours: "查看营业时间",
     hero_meta: "晚间主厨推荐 ¥15,000 起 / 完全预约制",
-    hero_value_line:
-      "仅设十席吧台。由在多家名店历练过的大将，以当日主厨推荐套餐迎接您。",
     hero_trust_1: "完全预约制 / 仅10席吧台",
     hero_trust_2: "距心斋桥站步行5分钟",
     hero_trust_3: "全店禁烟 / 支持卡与二维码支付",
@@ -522,10 +481,6 @@ const translations = {
     trust_tabelog_sublabel: "日本美食指南 · 5 分制",
     trust_tabelog_note:
       "※食べログ为日本自有的 5 分制；3.5 分左右在高级店中也可能是很高的评价。",
-    hero_visitor_hint_1: "晚餐分两个时段（18:00–20:00 / 20:30–23:00）。",
-    hero_visitor_hint_2: "请预留约两小时用餐。",
-    hero_visitor_hint_3: "标价不含税；含 10% 消费税后，晚间主厨推荐套餐约 ¥16,500 起。",
-    hero_visitor_hint_4: "建议 smart casual 着装。",
     hero_phone_note: "当日咨询请直接致电",
     hero_quick_1: "距心斋桥站步行5分钟",
     hero_quick_2: "支持银行卡、Alipay 与 WeChat Pay",
@@ -647,36 +602,6 @@ function syncLangQueryParam(lang) {
     /* ignore */
   }
 }
-
-function dismissHeroLangStrip() {
-  safeSetStorage(STRIP_DISMISS_KEY, "1");
-  const strip = document.getElementById("hero-lang-strip");
-  if (strip) {
-    strip.hidden = true;
-  }
-}
-
-function initializeHeroLangStrip() {
-  const strip = document.getElementById("hero-lang-strip");
-  if (!strip) {
-    return;
-  }
-  if (safeGetStorage(STRIP_DISMISS_KEY)) {
-    strip.hidden = true;
-    return;
-  }
-  strip.hidden = false;
-  strip.querySelectorAll("[data-hero-lang]").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const next = btn.dataset.heroLang;
-      if (next && translations[next]) {
-        dismissHeroLangStrip();
-        applyLanguage(next);
-      }
-    });
-  });
-}
-
 
 function applyLanguage(lang) {
   const dict = translations[lang] || translations.ja;
@@ -1006,7 +931,6 @@ function initializePageBgParallax() {
 document.addEventListener("DOMContentLoaded", () => {
   const initialLanguage = getInitialLanguage();
   applyLanguage(initialLanguage);
-  initializeHeroLangStrip();
   initializeScrollReveal();
   initializeHeroOrnamentMotion();
   initializePageBgParallax();
@@ -1014,7 +938,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.querySelectorAll(".language-switcher__button").forEach((button) => {
     button.addEventListener("click", () => {
-      dismissHeroLangStrip();
       applyLanguage(button.dataset.lang);
     });
   });

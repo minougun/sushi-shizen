@@ -12,11 +12,12 @@
   <meta id="metaOgDescription" property="og:description" content="鮨し禅は大阪・東心斎橋にあるカウンター10席のおまかせ鮨店です。">
   <meta property="og:type" content="website">
   <meta id="metaOgSiteName" property="og:site_name" content="Sushi Zen">
-  <meta property="og:image" content="/images/ogp-sushi-zen.png">
+  <meta property="og:url" content="https://sushi-zen.vercel.app/">
+  <meta property="og:image" content="https://sushi-zen.vercel.app/images/ogp-sushi-zen.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="/images/ogp-sushi-zen.png">
+  <meta name="twitter:image" content="https://sushi-zen.vercel.app/images/ogp-sushi-zen.png">
   <meta name="theme-color" content="#131820">
   <meta name="theme-color" content="#131820" media="(prefers-color-scheme: dark)">
   <script>
@@ -70,11 +71,12 @@
   <!-- CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.3.0/dist/css/yakuhanjp.min.css">
   <!-- Page CSS -->
-  <link href="./css/style.css?v=20260404-35" rel="stylesheet" type="text/css" media="screen,print" />
-  <script src="./js/main.js?v=20260404-35" defer></script>
+  <link href="./css/style.css?v=20260404-36" rel="stylesheet" type="text/css" media="screen,print" />
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.4/dist/purify.min.js" crossorigin="anonymous" defer></script>
+  <script src="./js/main.js?v=20260404-36" defer></script>
 </head>
 
-<body class="body body__jp">
+<body class="body body__ja">
   <div class="page-bg-parallax" aria-hidden="true"></div>
   <div class="body__wrap">
     <!-- ヘッダー -->
@@ -145,9 +147,9 @@
             ※食べログの評価は独自の5段階です。3.5点台でも高水準店に多いスコアです。
           </p>
         </div>
-          <p class="header__image_kv">
+          <figure class="header__image_kv">
             <img src="./images/photo/sushi-photo-0.png" alt="鮨し禅｜大阪心斎橋の隠れ家鮨" data-i18n-attrs="alt:hero_alt" width="420" height="467">
-          </p>
+          </figure>
       </div>
     </header>
     <!-- /ヘッダー -->
@@ -208,7 +210,7 @@
                 </section>
               </li>
             </ul>
-            <p class="reserve__meta" data-i18n="hero_meta">夜のおまかせ ¥15,000〜 / 完全予約制</p>
+            <p class="reserve__meta" data-i18n="reserve_meta">夜のおまかせ ¥15,000〜 / 完全予約制</p>
             <ul class="reserve__support_list">
               <li data-i18n="reserve_support_1">心斎橋駅から徒歩5分</li>
               <li data-i18n="reserve_support_2">全席禁煙</li>
@@ -383,7 +385,7 @@
     </div>
     <!-- /コンテンツ -->
 
-    <div class="floating-reserve" aria-label="Quick reservation actions" data-i18n-attrs="aria-label:floating_reserve_label">
+    <div class="floating-reserve" aria-label="クイック予約" data-i18n-attrs="aria-label:floating_reserve_label">
       <a href="tel:07045678080" class="floating-reserve__link floating-reserve__link--call" data-i18n="floating_call">電話</a>
       <a href="https://www.tablecheck.com/ja/sushi-zen/reserve/message" data-tablecheck target="_blank" rel="noopener noreferrer" class="floating-reserve__link floating-reserve__link--reserve" data-i18n="floating_reserve">今すぐ予約</a>
     </div>

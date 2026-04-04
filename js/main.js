@@ -23,6 +23,62 @@ const TABLECHECK_URLS = {
   zh: "https://www.tablecheck.com/zh/sushi-zen/reserve/message",
 };
 
+/** @param {string} host */
+function isAllowedGoogleMapsHost(host) {
+  const h = host.toLowerCase();
+  if (h === "google.com" || h.endsWith(".google.com")) return true;
+  if (h === "google.co.jp" || h.endsWith(".google.co.jp")) return true;
+  if (h === "maps.app.goo.gl" || h === "goo.gl" || h.endsWith(".goo.gl")) return true;
+  if (h === "g.page" || h.endsWith(".g.page")) return true;
+  return false;
+}
+
+/** @param {string} host */
+function isAllowedTabelogHost(host) {
+  const h = host.toLowerCase();
+  return h === "tabelog.com" || h.endsWith(".tabelog.com");
+}
+
+/** @param {string} host */
+function isAllowedTablecheckHost(host) {
+  const h = host.toLowerCase();
+  return h === "tablecheck.com" || h.endsWith(".tablecheck.com");
+}
+
+/**
+ * @param {string} raw
+ * @param {string} fallback
+ * @param {"google"|"tabelog"|"tablecheck"} kind
+ */
+function sanitizeExternalHttpsUrl(raw, fallback, kind) {
+  if (typeof raw !== "string" || !raw.trim()) {
+    return fallback;
+  }
+  let u;
+  try {
+    u = new URL(raw);
+  } catch {
+    return fallback;
+  }
+  if (u.protocol !== "https:") {
+    return fallback;
+  }
+  if (u.username || u.password) {
+    return fallback;
+  }
+  const h = u.hostname.toLowerCase();
+  if (kind === "google" && !isAllowedGoogleMapsHost(h)) {
+    return fallback;
+  }
+  if (kind === "tabelog" && !isAllowedTabelogHost(h)) {
+    return fallback;
+  }
+  if (kind === "tablecheck" && !isAllowedTablecheckHost(h)) {
+    return fallback;
+  }
+  return u.href;
+}
+
 const translations = {
   ja: {
     lang: "ja",
@@ -49,7 +105,7 @@ const translations = {
     hero_link_map: "Google Mapsで場所を見る",
     hero_link_call: "電話で確認する",
     hero_link_hours: "営業時間を確認する",
-    hero_meta: "夜のおまかせ ¥15,000〜 / 完全予約制",
+    reserve_meta: "夜のおまかせ ¥15,000〜 / 完全予約制",
     hero_trust_1: "完全予約制・10席のカウンター",
     hero_trust_2: "心斎橋駅から徒歩5分",
     hero_trust_3: "全席禁煙・キャッシュレス対応",
@@ -126,8 +182,6 @@ const translations = {
     reserve_title_main: "ご予約",
     reserve_title_sub: "ご予約案内",
     reserve_call_note: "当日の空席確認はお電話で承ります",
-    reserve_occasion_note:
-      "記念日やお祝いのご相談は、TableCheck予約時の備考欄またはお電話にてお知らせください。",
     reserve_button: "TableCheckで予約する",
     reserve_link_map: "Google Mapsで場所を見る",
     reserve_link_hours: "営業時間を確認する",
@@ -187,7 +241,7 @@ const translations = {
     hero_link_map: "Open in Google Maps",
     hero_link_call: "Call the restaurant",
     hero_link_hours: "Check access & hours",
-    hero_meta: "Omakase from JPY 15,000",
+    reserve_meta: "Omakase from JPY 15,000",
     hero_trust_1: "Reservation only / 10 counter seats",
     hero_trust_2: "5 minutes from Shinsaibashi Station",
     hero_trust_3: "Non-smoking / cards and QR accepted",
@@ -263,8 +317,6 @@ const translations = {
     reserve_title_main: "Reservation",
     reserve_title_sub: "TableCheck",
     reserve_call_note: "For same-day availability, please call us directly.",
-    reserve_occasion_note:
-      "For anniversaries or celebrations, add a note on TableCheck or call us—we'll do our best to help.",
     reserve_button: "Reserve on TableCheck",
     reserve_link_map: "Open in Google Maps",
     reserve_link_hours: "Check access & hours",
@@ -325,7 +377,7 @@ const translations = {
     hero_link_map: "Google 지도에서 위치 보기",
     hero_link_call: "전화로 문의하기",
     hero_link_hours: "영업시간 보기",
-    hero_meta: "저녁 오마카세 ¥15,000~ / 완전 예약제",
+    reserve_meta: "저녁 오마카세 ¥15,000~ / 완전 예약제",
     hero_trust_1: "완전 예약제 / 카운터 10석",
     hero_trust_2: "신사이바시역 도보 5분",
     hero_trust_3: "전석 금연 / 카드·QR 결제 가능",
@@ -401,8 +453,6 @@ const translations = {
     reserve_title_main: "예약",
     reserve_title_sub: "예약 안내",
     reserve_call_note: "당일 빈자리 문의는 전화로 부탁드립니다",
-    reserve_occasion_note:
-      "기념일·축하 문의는 TableCheck 예약 시 요청사항에 적어 주시거나 전화로 알려 주세요.",
     reserve_button: "TableCheck에서 예약하기",
     reserve_link_map: "Google 지도에서 위치 보기",
     reserve_link_hours: "영업시간 보기",
@@ -462,7 +512,7 @@ const translations = {
     hero_link_map: "在 Google Maps 中查看位置",
     hero_link_call: "电话联系店铺",
     hero_link_hours: "查看营业时间",
-    hero_meta: "晚间主厨推荐 ¥15,000 起 / 完全预约制",
+    reserve_meta: "晚间主厨推荐 ¥15,000 起 / 完全预约制",
     hero_trust_1: "完全预约制 / 仅10席吧台",
     hero_trust_2: "距心斋桥站步行5分钟",
     hero_trust_3: "全店禁烟 / 支持卡与二维码支付",
@@ -538,8 +588,6 @@ const translations = {
     reserve_title_main: "预约",
     reserve_title_sub: "预约说明",
     reserve_call_note: "如需确认当日空位，请直接来电",
-    reserve_occasion_note:
-      "纪念日或庆祝需求请在 TableCheck 预约备注中填写，或直接致电告知。",
     reserve_button: "在 TableCheck 预约",
     reserve_link_map: "在 Google Maps 中查看位置",
     reserve_link_hours: "查看营业时间",
@@ -582,6 +630,17 @@ function setMetaContent(selector, value) {
   }
 }
 
+function setTranslatedHtml(node, html) {
+  if (window.DOMPurify && typeof window.DOMPurify.sanitize === "function") {
+    node.innerHTML = window.DOMPurify.sanitize(html, {
+      USE_PROFILES: { html: true },
+    });
+    return;
+  }
+  console.warn("DOMPurify not loaded; i18n HTML left unsanitized.");
+  node.innerHTML = html;
+}
+
 function syncLangQueryParam(lang) {
   if (!translations[lang]) {
     return;
@@ -597,8 +656,11 @@ function syncLangQueryParam(lang) {
 
 function applyLanguage(lang) {
   const dict = translations[lang] || translations.ja;
+  const langCode = dict.lang || "ja";
 
-  document.documentElement.lang = dict.lang;
+  document.documentElement.lang = langCode;
+  document.body.classList.remove("body__ja", "body__en", "body__ko", "body__zh", "body__jp");
+  document.body.classList.add("body", `body__${langCode}`);
   document.title = dict.title;
   setMetaContent("#metaDescription", dict.description);
   setMetaContent("#metaKeywords", dict.keywords);
@@ -616,7 +678,7 @@ function applyLanguage(lang) {
   document.querySelectorAll("[data-i18n-html]").forEach((node) => {
     const key = node.dataset.i18nHtml;
     if (dict[key] !== undefined) {
-      node.innerHTML = dict[key];
+      setTranslatedHtml(node, dict[key]);
     }
   });
 
@@ -636,10 +698,12 @@ function applyLanguage(lang) {
     button.setAttribute("aria-pressed", String(isActive));
   });
 
-  // TableCheck links: set href from translation dict
+  // TableCheck links: set href from translation dict (allowlist hosts)
   if (dict.tablecheck_url) {
+    const tcFallback = TABLECHECK_URLS[lang] || TABLECHECK_URLS.ja;
+    const safeTc = sanitizeExternalHttpsUrl(dict.tablecheck_url, tcFallback, "tablecheck");
     document.querySelectorAll("[data-tablecheck]").forEach((link) => {
-      link.href = dict.tablecheck_url;
+      link.href = safeTc;
     });
   }
 
@@ -792,14 +856,16 @@ function normalizeReviewPayload(data) {
     g && typeof g.rating === "number" ? g.rating : fallback.google.rating;
   const tabelogRating =
     t && typeof t.rating === "number" ? t.rating : fallback.tabelog.rating;
+  const rawGoogleUrl = g && typeof g.url === "string" ? g.url : "";
+  const rawTabelogUrl = t && typeof t.url === "string" ? t.url : "";
   return {
     google: {
       rating: googleRating,
-      url: (g && typeof g.url === "string" && g.url) || fallback.google.url,
+      url: sanitizeExternalHttpsUrl(rawGoogleUrl, fallback.google.url, "google"),
     },
     tabelog: {
       rating: tabelogRating,
-      url: (t && typeof t.url === "string" && t.url) || fallback.tabelog.url,
+      url: sanitizeExternalHttpsUrl(rawTabelogUrl, fallback.tabelog.url, "tabelog"),
     },
   };
 }
@@ -847,10 +913,20 @@ function applyReviewScoresToDom(payload) {
   }
 
   const p = payload || normalizeReviewPayload({});
+  const googleHref = sanitizeExternalHttpsUrl(
+    p.google.url,
+    REVIEW_DEFAULTS.google.url,
+    "google"
+  );
+  const tabelogHref = sanitizeExternalHttpsUrl(
+    p.tabelog.url,
+    REVIEW_DEFAULTS.tabelog.url,
+    "tabelog"
+  );
   document.querySelectorAll("[data-google-maps-link]").forEach((el) => {
-    el.href = p.google.url;
+    el.href = googleHref;
   });
-  tabelogLink.href = p.tabelog.url;
+  tabelogLink.href = tabelogHref;
 
   const gDec = Number(googleEl.dataset.reviewDecimals) || 1;
   const tDec = Number(tabelogEl.dataset.reviewDecimals) || 2;

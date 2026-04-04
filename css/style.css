@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Noto+Sans+KR:wght@300;400;500&family=Noto+Sans+SC:wght@300;400;500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300&family=Noto+Serif+SC:wght@200;300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Zen+Old+Mincho:wght@400;500;700&display=swap");
+@import url("./tokens.css");
 
 /* Single source of truth for the main site styles. */
 /* Edit this file first. css/media/* is kept only as legacy reference. */
@@ -1702,6 +1703,9 @@
 }
 
 header .header__image_kv {
+  margin: 0;
+  padding: 0;
+  border: 0;
   align-self: stretch;
   overflow: hidden;
 }
@@ -4754,14 +4758,6 @@ footer {
   line-height: 1.65;
 }
 
-.reserve__occasion_note {
-  margin-top: 12px;
-  color: rgba(218, 206, 182, 0.72);
-  font-size: 1.1rem;
-  letter-spacing: 0.08em;
-  line-height: 1.82;
-}
-
 .header__actions {
   align-items: center;
   gap: 14px;
@@ -5282,7 +5278,6 @@ body,
 .booking-card__cta,
 .booking-card__brand,
 .reserve__meta,
-.reserve__occasion_note,
 .reserve__support_list li,
 .reserve__policy_note,
 .section__copy,
@@ -5483,7 +5478,7 @@ header .header__image_kv img {
   line-height: 1.18;
   letter-spacing: 0.14em;
   text-align: center;
-  color: #f5f2eb;
+  color: var(--sz-text-cream);
 }
 
 #reserveSection .title__type1 .section__main::after {
@@ -5492,20 +5487,20 @@ header .header__image_kv img {
   transform: translateX(-50%);
   width: 68px;
   height: 1px;
-  background: linear-gradient(90deg, rgba(199, 170, 106, 0.12), rgba(199, 170, 106, 0.88) 50%, rgba(199, 170, 106, 0.12));
+  background: linear-gradient(90deg, var(--sz-gold-12), var(--sz-gold-88) 50%, var(--sz-gold-12));
 }
 
 #reserveSection .title__type1 .section__sub {
   display: inline-block;
   margin-top: 18px;
   padding: 9px 24px;
-  border: 1px solid rgba(199, 170, 106, 0.52);
+  border: 1px solid var(--sz-gold-52);
   border-radius: 2px;
   background: transparent;
   font-size: 1.08rem;
   line-height: 1.5;
   letter-spacing: 0.28em;
-  color: rgba(245, 242, 235, 0.94);
+  color: var(--sz-text-cream-soft);
   vertical-align: middle;
 }
 
@@ -5540,7 +5535,7 @@ header .header__image_kv img {
   letter-spacing: 0.08em;
   line-height: 1.72;
   max-width: 40em;
-  color: rgba(238, 232, 218, 0.92);
+  color: var(--sz-text-body-warm);
 }
 
 #reserveSection .reserve__support_list {
@@ -5559,7 +5554,7 @@ header .header__image_kv img {
   max-width: 38em;
   margin-left: auto;
   margin-right: auto;
-  color: rgba(168, 162, 152, 0.78);
+  color: var(--sz-text-policy-muted);
 }
 
 #reserveSection .reserve__call_note {

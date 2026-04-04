@@ -1,0 +1,8 @@
+{
+  "name": "sushi-zen-site",
+  "private": true,
+  "description": "Static site for Sushi Zen. Use `npm run check:i18n` before deploy.",
+  "scripts": {
+    "check:i18n": "node scripts/check-i18n-keys.js"
+  }
+}

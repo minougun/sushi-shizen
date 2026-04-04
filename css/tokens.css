@@ -1,0 +1,10 @@
+/* Design tokens — imported at top of style.css. Prefer var() in new / refactored rules. */
+:root {
+  --sz-gold-12: rgba(199, 170, 106, 0.12);
+  --sz-gold-52: rgba(199, 170, 106, 0.52);
+  --sz-gold-88: rgba(199, 170, 106, 0.88);
+  --sz-text-cream: #f5f2eb;
+  --sz-text-cream-soft: rgba(245, 242, 235, 0.94);
+  --sz-text-body-warm: rgba(238, 232, 218, 0.92);
+  --sz-text-policy-muted: rgba(168, 162, 152, 0.78);
+}

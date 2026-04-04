@@ -4133,18 +4133,18 @@ header > .language-switcher {
 /* ===== 2026-04-04 Washitsu polish ===== */
 body {
   background:
-    radial-gradient(circle at 12% 0%, rgba(179, 145, 82, 0.14), transparent 26%),
-    radial-gradient(circle at 100% 10%, rgba(126, 97, 52, 0.12), transparent 24%),
-    linear-gradient(180deg, #120f0c 0%, #0f0c0a 32%, #15110d 100%);
+    radial-gradient(circle at 12% 0%, rgba(255, 255, 255, 0.035), transparent 30%),
+    radial-gradient(circle at 100% 8%, rgba(179, 145, 82, 0.06), transparent 24%),
+    linear-gradient(180deg, #090a0c 0%, #07080a 36%, #0b0c0f 100%);
   color: #f1ece2;
 }
 
 body::before {
   background:
-    linear-gradient(90deg, transparent 0, transparent calc(50% - 560px), rgba(179,145,82,0.08) calc(50% - 560px), transparent calc(50% - 559px), transparent calc(50% + 559px), rgba(179,145,82,0.08) calc(50% + 559px), transparent calc(50% + 560px)),
-    repeating-linear-gradient(180deg, rgba(255,255,255,0.016) 0 1px, transparent 1px 9px),
-    radial-gradient(circle at 20% 30%, rgba(255,255,255,0.035), transparent 28%);
-  opacity: 0.42;
+    linear-gradient(90deg, transparent 0, transparent calc(50% - 560px), rgba(179,145,82,0.07) calc(50% - 560px), transparent calc(50% - 559px), transparent calc(50% + 559px), rgba(179,145,82,0.07) calc(50% + 559px), transparent calc(50% + 560px)),
+    repeating-linear-gradient(180deg, rgba(255,255,255,0.018) 0 1px, transparent 1px 9px),
+    radial-gradient(circle at 20% 30%, rgba(255,255,255,0.04), transparent 30%);
+  opacity: 0.44;
 }
 
 a {
@@ -4162,11 +4162,11 @@ header {
 }
 
 header::after {
-  background: linear-gradient(180deg, rgba(18, 15, 12, 0.08), rgba(18, 15, 12, 0.22));
+  background: linear-gradient(180deg, rgba(10, 11, 13, 0.1), rgba(10, 11, 13, 0.16));
 }
 
 header .header__hero {
-  background: linear-gradient(180deg, rgba(9, 8, 7, 0.08), rgba(9, 8, 7, 0));
+  background: linear-gradient(180deg, rgba(8, 9, 11, 0.06), rgba(8, 9, 11, 0));
 }
 
 .header__eyebrow {
@@ -5287,6 +5287,7 @@ header {
 }
 
 /* ビューポート固定。ページ全体の scrollY で JS が transform する */
+/* 参照: 深いチャコール＋和紙粒感に近づけるため、写真の上にトーン・左シェード・ヴィネットを積層 */
 .page-bg-parallax {
   position: fixed;
   left: 0;
@@ -5296,14 +5297,30 @@ header {
   width: 100%;
   z-index: 0;
   pointer-events: none;
-  background-color: #0f1114;
+  background-color: #08090b;
   background-image:
+    radial-gradient(circle at 14% 24%, rgba(255, 255, 255, 0.055) 0%, transparent 44%),
+    radial-gradient(ellipse 105% 92% at 50% 48%, transparent 36%, rgba(0, 0, 0, 0.32) 100%),
+    linear-gradient(180deg, rgba(2, 3, 5, 0.72) 0%, rgba(4, 5, 7, 0.22) 32%, transparent 52%),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.52) 0%, rgba(0, 0, 0, 0.18) 24%, transparent 50%),
     url("./../images/bg/AdobeStock_54536706122.png"),
     url("./../images/bg/AdobeStock_401925665.jpeg");
-  background-repeat: no-repeat, no-repeat;
+  background-repeat: no-repeat;
+  background-position:
+    center center,
+    center center,
+    center center,
+    center center,
+    left top,
+    center center;
+  background-size:
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    min(100vw, 86rem) auto,
+    cover;
   /* 上の円弧装飾は左端ビタ付け。青海波に見えていた左ストリップ(0612)は撤去済み */
-  background-position: left top, center center;
-  background-size: min(100vw, 86rem) auto, cover;
   will-change: transform;
   transform: translate3d(0, 0, 0);
 }
@@ -5316,22 +5333,22 @@ header::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(8, 9, 11, 0.08), rgba(8, 9, 11, 0.26));
+  background: linear-gradient(180deg, rgba(6, 7, 9, 0.1), rgba(6, 7, 9, 0.16));
   pointer-events: none;
   z-index: 1;
 }
 
 header .header__hero {
-  background: linear-gradient(180deg, rgba(9, 8, 7, 0.06), rgba(9, 8, 7, 0));
+  background: linear-gradient(180deg, rgba(7, 8, 10, 0.05), rgba(7, 8, 10, 0));
 }
 
 @media (max-width: 1023px) {
   header::after {
-    background: linear-gradient(180deg, rgba(8, 9, 11, 0.07), rgba(8, 9, 11, 0.22));
+    background: linear-gradient(180deg, rgba(6, 7, 9, 0.09), rgba(6, 7, 9, 0.14));
   }
 
   header .header__hero {
-    background: linear-gradient(180deg, rgba(9, 8, 7, 0.07), rgba(9, 8, 7, 0));
+    background: linear-gradient(180deg, rgba(7, 8, 10, 0.05), rgba(7, 8, 10, 0));
   }
 
   body::before {
@@ -5345,11 +5362,11 @@ header .header__hero {
 
 @media (max-width: 767px) {
   header::after {
-    background: linear-gradient(180deg, rgba(8, 9, 11, 0.05), rgba(8, 9, 11, 0.18));
+    background: linear-gradient(180deg, rgba(6, 7, 9, 0.06), rgba(6, 7, 9, 0.12));
   }
 
   header .header__hero {
-    background: linear-gradient(180deg, rgba(9, 8, 7, 0.05), rgba(9, 8, 7, 0));
+    background: linear-gradient(180deg, rgba(7, 8, 10, 0.04), rgba(7, 8, 10, 0));
   }
 
   body::before {

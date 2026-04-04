@@ -37,6 +37,8 @@ const translations = {
     hero_trust_2: "心斎橋駅から徒歩5分",
     hero_trust_3: "全席禁煙・キャッシュレス対応",
     hero_trust_ratings: `Google ${REVIEW_SCORES.google} ★ / 食べログ ${REVIEW_SCORES.tabelog}`,
+    hero_visitor_hint:
+      "夜は2回転の入替制です（18:00〜20:00／20:30〜23:00）。お食事はおおよそ2時間程度を想定しています。表示価格は税別のため、目安として税込（10%）で約¥16,500〜。スマートカジュアルでお越しください。",
     hero_phone_note: "当日のお問い合わせはお電話で",
     hero_quick_1: "心斎橋駅から徒歩5分",
     hero_quick_2: "カード・Alipay・WeChat Pay対応",
@@ -127,6 +129,8 @@ const translations = {
     payment_dt: "支払い方法",
     payment_short_dd: "カード / 電子マネー / QR決済（Alipay・WeChat Pay対応）",
     map_frame_title: "鮨し禅 地図 大阪市中央区東心斎橋1-14-15",
+    info_booking_flow:
+      "ご予約は TableCheck で、ご希望の夕方の時間帯をお選びください。",
     floating_reserve_label: "クイック予約",
     floating_call: "電話",
     floating_reserve: "今すぐ予約",
@@ -161,7 +165,9 @@ const translations = {
     hero_trust_1: "Reservation only / 10 counter seats",
     hero_trust_2: "5 minutes from Shinsaibashi Station",
     hero_trust_3: "Non-smoking / cards and QR accepted",
-    hero_trust_ratings: `Google ${REVIEW_SCORES.google} ★ / Tabelog ${REVIEW_SCORES.tabelog}`,
+    hero_trust_ratings: `Google ${REVIEW_SCORES.google} ★ — highly rated by guests`,
+    hero_visitor_hint:
+      "Dinner is served in two seatings (18:00–20:00 and 20:30–23:00). Allow about two hours. Prices exclude tax; with 10% consumption tax, evening omakase from about JPY 16,500. Smart casual attire is appreciated.",
     hero_phone_note: "Call for same-day inquiries",
     hero_quick_1: "5 min from Shinsaibashi Station",
     hero_quick_2: "Cards, Alipay & WeChat Pay accepted",
@@ -220,7 +226,7 @@ const translations = {
     course_title_sub: "Omakase Course",
     course_intro:
       "A single omakase course built around the finest ingredients of the day.",
-    course_note: "(excl. tax)",
+    course_note: "(excl. tax / evening omakase course)",
     lunch_label: "Lunch",
     lunch_note: "Lunch from 12:00 on weekends and holidays, by reservation the day before",
     course_image_alt: "Omakase course visual",
@@ -252,6 +258,8 @@ const translations = {
     payment_dt: "Payment",
     payment_short_dd: "Cards / E-money / QR payments (Alipay & WeChat Pay accepted)",
     map_frame_title: "Map of Sushi Zen, Higashi-Shinsaibashi, Osaka",
+    info_booking_flow:
+      "On TableCheck, choose the dinner seating time that fits your schedule.",
     floating_reserve_label: "Quick reservation",
     floating_call: "Call",
     floating_reserve: "Reserve now",
@@ -286,7 +294,9 @@ const translations = {
     hero_trust_1: "완전 예약제 / 카운터 10석",
     hero_trust_2: "신사이바시역 도보 5분",
     hero_trust_3: "전석 금연 / 카드·QR 결제 가능",
-    hero_trust_ratings: `Google ${REVIEW_SCORES.google} ★ / 타베로그 ${REVIEW_SCORES.tabelog}`,
+    hero_trust_ratings: `Google ${REVIEW_SCORES.google} ★ — 투숙객 평가 기준`,
+    hero_visitor_hint:
+      "저녁은 2회전(18:00–20:00 / 20:30–23:00)입니다. 식사는 약 2시간을 가정해 주세요. 표시 가격은 세금 별도이며, 소비세 10% 포함 시 저녁 오마카세 약 ¥16,500~. 스마트 캐주얼 차림을 권장합니다.",
     hero_phone_note: "당일 문의는 전화로 가능합니다",
     hero_quick_1: "신사이바시역 도보 5분",
     hero_quick_2: "카드·Alipay·WeChat Pay 가능",
@@ -376,6 +386,8 @@ const translations = {
     payment_dt: "결제 방법",
     payment_short_dd: "카드 / 전자화폐 / QR 결제 (Alipay·WeChat Pay 가능)",
     map_frame_title: "오사카 히가시신사이바시 스시 시젠 지도",
+    info_booking_flow:
+      "TableCheck에서 희망하는 저녁 시간대를 선택해 주세요.",
     floating_reserve_label: "빠른 예약",
     floating_call: "전화",
     floating_reserve: "지금 예약",
@@ -410,7 +422,9 @@ const translations = {
     hero_trust_1: "完全预约制 / 仅10席吧台",
     hero_trust_2: "距心斋桥站步行5分钟",
     hero_trust_3: "全店禁烟 / 支持卡与二维码支付",
-    hero_trust_ratings: `Google ${REVIEW_SCORES.google} ★ / Tabelog ${REVIEW_SCORES.tabelog}`,
+    hero_trust_ratings: `Google ${REVIEW_SCORES.google} ★ — 宾客评价参考`,
+    hero_visitor_hint:
+      "晚餐分两个时段（18:00–20:00 / 20:30–23:00），请预留约两小时。标价不含税，含 10% 消费税后晚间主厨推荐套餐约 ¥16,500 起。建议 smart casual 着装。",
     hero_phone_note: "当日咨询请直接致电",
     hero_quick_1: "距心斋桥站步行5分钟",
     hero_quick_2: "支持银行卡、Alipay 与 WeChat Pay",
@@ -500,6 +514,7 @@ const translations = {
     payment_dt: "支付方式",
     payment_short_dd: "信用卡 / 电子货币 / 二维码支付（支持支付宝·微信支付）",
     map_frame_title: "大阪东心斋桥鮨し禅地图",
+    info_booking_flow: "请在 TableCheck 上选择您方便的晚餐时段。",
     floating_reserve_label: "快捷预约",
     floating_call: "电话",
     floating_reserve: "立即预约",
@@ -596,14 +611,19 @@ function initializeScrollReveal() {
   }
 
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  targets.forEach((target) => {
+  targets.forEach((target, index) => {
     target.classList.add("scroll-reveal");
     if (reduceMotion) {
+      target.classList.add("is-visible");
+    } else if (index < 2) {
       target.classList.add("is-visible");
     }
   });
 
   if (reduceMotion || !("IntersectionObserver" in window)) {
+    if (!reduceMotion) {
+      targets.forEach((target) => target.classList.add("is-visible"));
+    }
     return;
   }
 
@@ -623,8 +643,10 @@ function initializeScrollReveal() {
     }
   );
 
-  targets.forEach((target) => {
-    observer.observe(target);
+  targets.forEach((target, index) => {
+    if (index >= 2) {
+      observer.observe(target);
+    }
   });
 }
 

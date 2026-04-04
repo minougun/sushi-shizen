@@ -40,6 +40,8 @@ const translations = {
     hero_lead:
       "旬、温度、間。<br>十席のカウンターで、その日の一貫と向き合う。",
     hero_summary: "完全予約制・カウンター10席。心斎橋駅から徒歩5分。",
+    hero_value_line:
+      "カウンター10席のみ。名店で研鑽を重ねた大将が、その日のおまかせでお迎えします。",
     booking_aria_label: "TableCheckで予約する",
     booking_card_label: "公式オンライン予約",
     hero_cta_secondary: "店舗情報を見る",
@@ -54,6 +56,8 @@ const translations = {
     trust_tabelog_aria: "食べログの店舗ページを開く",
     trust_google_label: "Google",
     trust_tabelog_label: "食べログ",
+    trust_tabelog_note:
+      "※食べログの評価は独自の5段階です。3.5点台でも高水準店に多いスコアです。",
     hero_visitor_hint:
       "夜は2回転の入替制です（18:00〜20:00／20:30〜23:00）。お食事はおおよそ2時間程度を想定しています。表示価格は税別のため、目安として税込（10%）で約¥16,500〜。スマートカジュアルでお越しください。",
     hero_phone_note: "当日のお問い合わせはお電話で",
@@ -122,6 +126,8 @@ const translations = {
     reserve_title_main: "ご予約",
     reserve_title_sub: "ご予約案内",
     reserve_call_note: "当日の空席確認はお電話で承ります",
+    reserve_occasion_note:
+      "記念日やお祝いのご相談は、TableCheck予約時の備考欄またはお電話にてお知らせください。",
     reserve_button: "TableCheckで予約する",
     reserve_link_map: "Google Mapsで場所を見る",
     reserve_link_hours: "営業時間を確認する",
@@ -172,6 +178,8 @@ const translations = {
     hero_lead:
       "Season, temperature, timing.<br>Ten seats. One omakase rhythm.",
     hero_summary: "Reservation required. 5 minutes from Shinsaibashi Station.",
+    hero_value_line:
+      "Ten counter seats only. Chef Somono welcomes you with an evening omakase shaped by training at celebrated kitchens.",
     booking_aria_label: "Reserve on TableCheck",
     booking_card_label: "Official Reservation",
     hero_cta_secondary: "View Access & Hours",
@@ -186,6 +194,8 @@ const translations = {
     trust_tabelog_aria: "Open the Tabelog restaurant page",
     trust_google_label: "Google",
     trust_tabelog_label: "Tabelog",
+    trust_tabelog_note:
+      "※Tabelog uses Japan's own 5-point scale; mid-3 scores can still mean excellent fine dining here.",
     hero_visitor_hint:
       "Dinner is served in two seatings (18:00–20:00 and 20:30–23:00). Allow about two hours. Prices exclude tax; with 10% consumption tax, evening omakase from about JPY 16,500. Smart casual attire is appreciated.",
     hero_phone_note: "Call for same-day inquiries",
@@ -253,6 +263,8 @@ const translations = {
     reserve_title_main: "Reservation",
     reserve_title_sub: "TableCheck",
     reserve_call_note: "For same-day availability, please call us directly.",
+    reserve_occasion_note:
+      "For anniversaries or celebrations, add a note on TableCheck or call us—we'll do our best to help.",
     reserve_button: "Reserve on TableCheck",
     reserve_link_map: "Open in Google Maps",
     reserve_link_hours: "Check access & hours",
@@ -311,6 +323,8 @@ const translations = {
     hero_link_call: "전화로 문의하기",
     hero_link_hours: "영업시간 보기",
     hero_meta: "저녁 오마카세 ¥15,000~ / 완전 예약제",
+    hero_value_line:
+      "카운터 10석만. 명문에서 수련을 쌓은 대장이 그날의 오마카세로 맞이합니다.",
     hero_trust_1: "완전 예약제 / 카운터 10석",
     hero_trust_2: "신사이바시역 도보 5분",
     hero_trust_3: "전석 금연 / 카드·QR 결제 가능",
@@ -318,6 +332,8 @@ const translations = {
     trust_tabelog_aria: "타베로그 매장 페이지 열기",
     trust_google_label: "Google",
     trust_tabelog_label: "타베로그",
+    trust_tabelog_note:
+      "※타베로그는 일본 독자의 5점 만점입니다. 3점대 중반도 고급점에서 흔히 보는 높은 점수입니다.",
     hero_visitor_hint:
       "저녁은 2회전(18:00–20:00 / 20:30–23:00)입니다. 식사는 약 2시간을 가정해 주세요. 표시 가격은 세금 별도이며, 소비세 10% 포함 시 저녁 오마카세 약 ¥16,500~. 스마트 캐주얼 차림을 권장합니다.",
     hero_phone_note: "당일 문의는 전화로 가능합니다",
@@ -385,6 +401,8 @@ const translations = {
     reserve_title_main: "예약",
     reserve_title_sub: "예약 안내",
     reserve_call_note: "당일 빈자리 문의는 전화로 부탁드립니다",
+    reserve_occasion_note:
+      "기념일·축하 문의는 TableCheck 예약 시 요청사항에 적어 주시거나 전화로 알려 주세요.",
     reserve_button: "TableCheck에서 예약하기",
     reserve_link_map: "Google 지도에서 위치 보기",
     reserve_link_hours: "영업시간 보기",
@@ -442,6 +460,8 @@ const translations = {
     hero_link_call: "电话联系店铺",
     hero_link_hours: "查看营业时间",
     hero_meta: "晚间主厨推荐 ¥15,000 起 / 完全预约制",
+    hero_value_line:
+      "仅设十席吧台。由在多家名店历练过的大将，以当日主厨推荐套餐迎接您。",
     hero_trust_1: "完全预约制 / 仅10席吧台",
     hero_trust_2: "距心斋桥站步行5分钟",
     hero_trust_3: "全店禁烟 / 支持卡与二维码支付",
@@ -449,6 +469,8 @@ const translations = {
     trust_tabelog_aria: "打开食べログ店铺页面",
     trust_google_label: "Google",
     trust_tabelog_label: "食べログ",
+    trust_tabelog_note:
+      "※食べログ为日本自有的 5 分制；3.5 分左右在高级店中也可能是很高的评价。",
     hero_visitor_hint:
       "晚餐分两个时段（18:00–20:00 / 20:30–23:00），请预留约两小时。标价不含税，含 10% 消费税后晚间主厨推荐套餐约 ¥16,500 起。建议 smart casual 着装。",
     hero_phone_note: "当日咨询请直接致电",
@@ -516,6 +538,8 @@ const translations = {
     reserve_title_main: "预约",
     reserve_title_sub: "预约说明",
     reserve_call_note: "如需确认当日空位，请直接来电",
+    reserve_occasion_note:
+      "纪念日或庆祝需求请在 TableCheck 预约备注中填写，或直接致电告知。",
     reserve_button: "在 TableCheck 预约",
     reserve_link_map: "在 Google Maps 中查看位置",
     reserve_link_hours: "查看营业时间",
@@ -863,7 +887,7 @@ function initializePageBgParallax() {
     return;
   }
 
-  const factor = 0.28;
+  const factor = 0.12;
   let ticking = false;
 
   function applyParallax() {

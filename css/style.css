@@ -421,7 +421,7 @@
     width: auto;
   }
   .section__slide_intro .slide__inner {
-    overflow: hidden;
+    overflow: visible;
     background: #223246;
     border: 1px solid rgba(255,255,255,0.14);
     -webkit-box-shadow: none;
@@ -431,7 +431,8 @@
     display: block;
     width: 100%;
     height: auto;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center;
   }
 
   /* ===== Section Inner ===== */
@@ -1717,14 +1718,14 @@ header .header__image_kv img {
 
 .section__slide_intro .slide__inner {
   height: 100%;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .section__slide_intro .slide__item img {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
   object-position: center;
   border-radius: 22px;
   transform: scale(1);
@@ -1852,10 +1853,6 @@ header .header__image_kv img {
   /* ===== Slider ===== */
   .section__slide_intro .slide__marquee {
     padding: 0 30px 18px;
-  }
-
-  .section__slide_intro .slide__inner img {
-    aspect-ratio: 4/5;
   }
 
   /* ===== Section Inner ===== */
@@ -2407,10 +2404,6 @@ header .header__image_kv img {
   .section__slide_intro .slide__set {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
-  }
-
-  .section__slide_intro .slide__inner img {
-    aspect-ratio: 4/5;
   }
 
   /* ===== Navigation ===== */
@@ -2979,10 +2972,6 @@ header .header__image_kv img {
 
   .section__slide_intro .slide__set {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .section__slide_intro .slide__inner img {
-    aspect-ratio: 4/5;
   }
 
   /* ===== Navigation ===== */
@@ -5038,8 +5027,9 @@ footer {
 }
 
 .section__slide_intro .slide__item img {
-  aspect-ratio: 1.08 / 1;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
   filter: sepia(0.03) saturate(0.96) contrast(1) brightness(0.99);
   image-rendering: auto;
   -webkit-backface-visibility: hidden;
@@ -5047,7 +5037,6 @@ footer {
 }
 
 header .header__image_kv,
-.section__slide_intro .slide__inner,
 .content__type1 .section__image,
 .section__chef_story .chef__image,
 .section__course_special .section__panel_base .section__panel_image {
@@ -5282,10 +5271,6 @@ header .header__image_kv img {
 
   .section__slide_intro .slide__item {
     padding: 0;
-  }
-
-  .section__slide_intro .slide__item img {
-    aspect-ratio: 1.2 / 1;
   }
 
   .reserve__policy_note {
@@ -5963,6 +5948,10 @@ header .header__image_kv img {
   .section__slide_intro .slide__inner > img {
     width: 100% !important;
     max-width: 100% !important;
+    height: auto !important;
+    aspect-ratio: auto !important;
+    object-fit: contain !important;
+    object-position: center !important;
     transform: none !important;
   }
 
@@ -6080,6 +6069,10 @@ header .header__image_kv img {
   .section__slide_intro .slide__inner > img {
     width: 100% !important;
     max-width: 100% !important;
+    height: auto !important;
+    aspect-ratio: auto !important;
+    object-fit: contain !important;
+    object-position: center !important;
     transform: none !important;
   }
 

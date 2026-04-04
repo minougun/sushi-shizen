@@ -4754,12 +4754,33 @@ footer {
   transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
 }
 
+/* グローバル a:hover / a:focus より詳細度を上げ、金ボタン上の文字を常に濃色で保つ */
 .header__map-cta:hover,
+.info__map-cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.28);
+  outline: none;
+  color: #15110c;
+  background: linear-gradient(180deg, #f2e4bc 0%, #c9ae64 100%);
+  border-color: rgba(120, 95, 48, 0.42);
+}
+
 .header__map-cta:focus-visible,
-.info__map-cta:hover,
 .info__map-cta:focus-visible {
   transform: translateY(-1px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.28);
+  color: #15110c;
+  background: linear-gradient(180deg, #f2e4bc 0%, #c9ae64 100%);
+  border-color: rgba(120, 95, 48, 0.42);
+  outline: 2px solid rgba(179, 145, 82, 0.78);
+  outline-offset: 3px;
+}
+
+.header__map-cta:focus:not(:focus-visible),
+.info__map-cta:focus:not(:focus-visible),
+.header__map-cta:active,
+.info__map-cta:active {
+  color: #15110c;
   outline: none;
 }
 
@@ -5853,6 +5874,55 @@ header .header__image_kv img {
   .header__trust--ratings-row .header__trust > li {
     width: auto;
     max-width: none;
+  }
+
+  .header__trust--ratings {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .header__trust--ratings .header__trust-sep {
+    display: none;
+  }
+
+  header .header__image_kv picture {
+    display: block;
+    width: 70%;
+    margin-inline: auto;
+  }
+
+  header .header__image_kv img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .section__slide_intro .slide__inner picture {
+    display: block;
+    width: 70%;
+    margin-inline: auto;
+  }
+
+  .section__slide_intro .slide__inner img {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .content__type1 .section__image picture,
+  .section__chef_story .chef__image picture,
+  .section__course_special .section__panel_image picture {
+    display: block;
+    width: 70%;
+    margin-inline: auto;
+  }
+
+  .content__type1 .section__image img,
+  .section__chef_story .chef__image img,
+  .section__course_special .section__panel_image img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
   }
 }
 

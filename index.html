@@ -418,5 +418,88 @@
     </footer>
     <!-- /フッター -->
   </div>
+  <!--
+    ローカル確認用スタイル（外部CSSより後に記述して確実に上書き）
+    本番へ push する前に、この <style id="sz-local-mobile-only"> ブロックごと削除してください。
+  -->
+  <style id="sz-local-mobile-only">
+    @media (max-width: 767px) {
+      .header__trust.header__trust--ratings-row {
+        overflow-x: visible !important;
+      }
+      header .header__trust.header__trust--ratings-row > li.header__trust--ratings {
+        display: flex !important;
+        flex-direction: column !important;
+        flex-wrap: nowrap !important;
+        align-items: flex-start !important;
+        gap: 10px !important;
+      }
+      header .header__trust.header__trust--ratings-row > li.header__trust--ratings > .header__trust-sep {
+        display: none !important;
+      }
+      header .header__image_kv {
+        overflow: visible !important;
+      }
+      header .header__image_kv > picture {
+        display: block !important;
+        width: 70% !important;
+        max-width: 70% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        box-sizing: border-box !important;
+      }
+      header .header__image_kv picture img,
+      header .header__image_kv img {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        transform: none !important;
+      }
+      .section__slide_intro .slide__inner {
+        overflow: visible !important;
+      }
+      .section__slide_intro .slide__inner > picture {
+        display: block !important;
+        width: 70% !important;
+        max-width: 70% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        box-sizing: border-box !important;
+      }
+      .section__slide_intro .slide__inner picture img,
+      .section__slide_intro .slide__inner > img {
+        width: 100% !important;
+        max-width: 100% !important;
+        transform: none !important;
+      }
+      .content__type1 .section__image,
+      .section__chef_story .chef__image,
+      .section__course_special .section__panel_base .section__panel_image {
+        overflow: visible !important;
+      }
+      .content__type1 .section__image > picture,
+      .section__chef_story .chef__image > picture,
+      .section__course_special .section__panel_base .section__panel_image > picture {
+        display: block !important;
+        width: 70% !important;
+        max-width: 70% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        box-sizing: border-box !important;
+      }
+      .content__type1 .section__image picture img,
+      .content__type1 .section__image > img,
+      .section__chef_story .chef__image picture img,
+      .section__chef_story .chef__image > img,
+      .section__course_special .section__panel_base .section__panel_image picture img,
+      .section__course_special .section__panel_base .section__panel_image > img {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        transform: none !important;
+      }
+    }
+  </style>
 </body>
 </html>

@@ -109,23 +109,37 @@
 
 ## 本番デプロイ（Vercel）
 
-1. **Git**  
-   `master`（または接続ブランチ）へ `push` で自動デプロイする設定が一般的。
+このプロジェクトは **Vercel の Git 連携に依存しない運用**を推奨する。リポジトリへの `push` だけでは本番が更新されない事例があるため、**ローカルから CLI で本番デプロイ**を正とする。
 
-2. **Git が反映されない場合**  
-   ダッシュボードの Production Branch・連携リポジトリを確認。緊急時はローカルから:
-   ```bash
-   cd /path/to/repo
-   npx vercel deploy --prod
-   ```
-   本プロジェクト例では `minouguns-projects/sushi-zen` に紐づく。
+### いつもの手順（本番反映）
 
-3. **環境変数（`api/review-scores.js`）**  
-   - `GOOGLE_MAPS_API_KEY` / `GOOGLE_PLACE_ID`（任意で Places API 本番値）  
-   - 未設定時は `GOOGLE_RATING_FALLBACK` 等で静的フォールバック
+リポジトリルートで:
 
-4. **OGP・canonical**  
-   `index.html` の `og:url` / `og:image` を **新店舗のドメインと OGP 画像** に差し替える。
+```bash
+npm run check:i18n
+npm run deploy:prod
+```
+
+（初回のみ `npx vercel login` とプロジェクト紐づけが必要。既に `vercel link` 済みならそのまま動く。）
+
+本番ドメイン例: `https://sushi-zen.vercel.app`（プロジェクト: `minouguns-projects/sushi-zen`）
+
+### Git 連携を止める（Vercel ダッシュボード）
+
+1. [Vercel Dashboard](https://vercel.com/dashboard) → 対象プロジェクト **sushi-zen** を開く  
+2. **Settings** → **Git**  
+3. **Disconnect**（Git リポジトリとの接続解除）
+
+これで `push` による自動デプロイは行われない。**ソース管理用の GitHub はそのまま使ってよい**（バックアップ・履歴・Actions の `check-i18n` 用）。本番更新は常に `npm run deploy:prod` だけにすれば、反映漏れを防げる。
+
+### 環境変数（`api/review-scores.js`）
+
+- `GOOGLE_MAPS_API_KEY` / `GOOGLE_PLACE_ID`（任意で Places API 本番値）
+- 未設定時は `GOOGLE_RATING_FALLBACK` 等で静的フォールバック
+
+### OGP・canonical
+
+`index.html` の `og:url` / `og:image` を **新店舗のドメインと OGP 画像** に差し替える。
 
 ---
 
@@ -138,7 +152,8 @@
 - [ ] `images/` 配下の差し替え + `npm run images:mobile` + スクリプトへの追記
 - [ ] ギャラリー枚数変更時は `index.html` と `style.css` のグリッドを整合
 - [ ] `npm run check:i18n` 成功
-- [ ] `git push` または `npx vercel deploy --prod` で本番確認（シークレットウィンドウ推奨）
+- [ ] `npm run deploy:prod` で本番確認（シークレットウィンドウ推奨）
+- [ ] （任意）GitHub へ `git push`（バックアップ・CI 用。Vercel 本番とは独立）
 
 ---
 

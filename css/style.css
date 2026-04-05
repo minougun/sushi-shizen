@@ -6902,7 +6902,14 @@ header .header__image_kv img {
     background: #e3dfd2 !important;
   }
 
+  /* 「鮨し禅について」「鮨し禅の想い」: グローバルより詳細度を上げて p まで黒に固定 */
+  .intro__about_concept .content__type1_origin .section__text,
+  .intro__about_concept .content__type1_origin .section__text p,
   .intro__about_concept .section__text,
+  .intro__about_concept .section__text p {
+    color: #000000 !important;
+  }
+
   .section__chef_story .section__text,
   .section__chef_story .chef__credential,
   .section__information .info__summary,

@@ -6936,6 +6936,7 @@ header .header__image_kv img {
   .title__type1 .section__main,
   .title__type1 .section__sub,
   main .section__title,
+  main .content__type1 .content__type1_origin .section__title,
   .section__chef_story .chef__name,
   .section__panel_text .section__title_primary,
   .section__panel_text .section__title_en {

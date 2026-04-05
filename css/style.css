@@ -2415,8 +2415,8 @@ header .header__image_kv img {
 
   .language-switcher__button {
     min-width: 0;
-    min-height: 34px;
-    padding: 0 8px;
+    min-height: 44px;
+    padding: 0 10px;
     font-size: 0.88rem;
     letter-spacing: 0.04em;
     opacity: 0.82;
@@ -2521,25 +2521,35 @@ header .header__image_kv img {
   .navigation .navigation__inner ul {
     width: max-content;
     min-width: 100%;
-    height: 46px;
+    min-height: 56px;
+    height: auto;
     flex-wrap: nowrap;
     justify-content: flex-start;
+    align-items: stretch;
     padding: 0 14px;
   }
 
   .navigation .navigation__inner ul li {
     width: auto;
-    height: 72px;
+    min-height: 56px;
+    height: auto;
     flex: none;
+    display: flex;
+    align-items: stretch;
   }
 
   .navigation .navigation__inner ul li a {
-    font-size: 1.55rem;
-    height: 72px;
+    font-size: 1.45rem;
+    min-height: 56px;
+    height: auto;
     letter-spacing: 0.03em;
     border-bottom: none;
-    padding: 0 18px;
+    padding: 0 16px;
     color: rgba(255,255,255,0.76);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
   }
 
   /* ===== Section Inner ===== */
@@ -2934,23 +2944,26 @@ header .header__image_kv img {
   }
 
   .language-switcher__button {
-    min-height: 34px;
+    min-height: 44px;
     padding: 0 8px;
-    font-size: 0.92rem;
+    font-size: 0.88rem;
   }
 
   .navigation .navigation__inner ul {
-    height: 50px;
+    min-height: 52px;
+    height: auto;
     padding: 0 10px;
   }
 
   .navigation .navigation__inner ul li {
-    height: 50px;
+    min-height: 52px;
+    height: auto;
   }
 
   .navigation .navigation__inner ul li a {
     font-size: 1.06rem;
-    height: 50px;
+    min-height: 52px;
+    height: auto;
     letter-spacing: 0.03em;
     line-height: 1.2;
     padding: 0 12px;
@@ -6479,6 +6492,12 @@ header .header__image_kv img {
   header .header__image_kv picture img,
   header .header__image_kv img {
     max-height: min(68vh, 480px) !important;
+    max-width: min(92vw, 420px) !important;
+  }
+
+  /* インページジャンプ時、上部ナビ直後で見切れないよう余白 */
+  main > section[id] {
+    scroll-margin-top: 12px;
   }
 
   .intro__about_concept .section__inner,
@@ -6517,9 +6536,9 @@ header .header__image_kv img {
     font-size: clamp(2.1rem, 7vw, 3.2rem) !important;
   }
 
-  /* ナビ・フローティング: タップ領域とセーフエリア */
+  /* ナビ・フローティング: タップ領域とセーフエリア（上書きで行高の矛盾を解消） */
   .navigation .navigation__inner ul li a {
-    min-height: 48px;
+    min-height: 56px;
     display: flex;
     align-items: center;
     box-sizing: border-box;

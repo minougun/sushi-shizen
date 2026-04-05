@@ -193,7 +193,8 @@ const translations = {
     hours_dt: "営業時間",
     phone_dt: "電話番号",
     address_dt: "住所",
-    address_access_dd: "大阪府大阪市中央区東心斎橋1-14-15 アルスビル 4F<br>心斎橋駅 徒歩5分",
+    address_access_dd:
+      '<span class="address__line">大阪府大阪市中央区東心斎橋1-14-15 アルスビル 4F</span><br><span class="address__subline">心斎橋駅 徒歩5分</span>',
     hours_short_dd: "夜 18:00〜20:00 / 20:30〜23:00<br>土日祝ランチ 12:00〜（前日予約制）",
     payment_dt: "支払い方法",
     payment_short_dd: "カード / 電子マネー / QR決済（Alipay・WeChat Pay対応）",
@@ -208,7 +209,8 @@ const translations = {
     sp_menu_aria_close: "メニューを閉じる",
     site_nav_aria: "サイト内メニュー",
     footer_name: "鮨し禅",
-    footer_address: "大阪府大阪市中央区東心斎橋1-14-15 アルスビル 4F",
+    footer_address:
+      '<span class="address__line">大阪府大阪市中央区東心斎橋1-14-15 アルスビル 4F</span>',
     tablecheck_url: TABLECHECK_URLS.ja,
     footer_copyright: "© 鮨し禅 All rights reserved.",
   },
@@ -326,7 +328,8 @@ const translations = {
     hours_dt: "Hours",
     phone_dt: "Phone",
     address_dt: "Address",
-    address_access_dd: "4F Ars Building, 1-14-15 Higashi-Shinsaibashi, Chuo-ku, Osaka<br>5 min walk from Shinsaibashi Station",
+    address_access_dd:
+      '<span class="address__line">4F Ars Building, 1-14-15 Higashi-Shinsaibashi, Chuo-ku, Osaka</span><br><span class="address__subline">5 min walk from Shinsaibashi Station</span>',
     hours_short_dd: "Dinner 18:00–20:00 / 20:30–23:00<br>Weekend lunch from 12:00 (book by the previous day)",
     payment_dt: "Payment",
     payment_short_dd: "Cards / E-money / QR payments (Alipay & WeChat Pay accepted)",
@@ -341,7 +344,8 @@ const translations = {
     sp_menu_aria_close: "Close menu",
     site_nav_aria: "Site menu",
     footer_name: "鮨し禅",
-    footer_address: "4F Ars Building, 1-14-15 Higashi-Shinsaibashi, Chuo-ku, Osaka",
+    footer_address:
+      '<span class="address__line">4F Ars Building, 1-14-15 Higashi-Shinsaibashi, Chuo-ku, Osaka</span>',
     tablecheck_url: TABLECHECK_URLS.en,
     footer_copyright: "© Sushi Zen All rights reserved.",
   },
@@ -458,7 +462,8 @@ const translations = {
     hours_dt: "영업시간",
     phone_dt: "전화번호",
     address_dt: "주소",
-    address_access_dd: "오사카부 오사카시 주오구 히가시신사이바시 1-14-15 아루스빌딩 4F<br>신사이바시역 도보 5분",
+    address_access_dd:
+      '<span class="address__line">오사카부 오사카시 주오구 히가시신사이바시 1-14-15 아루스빌딩 4F</span><br><span class="address__subline">신사이바시역 도보 5분</span>',
     hours_short_dd: "저녁 18:00–20:00 / 20:30–23:00<br>토·일·공휴일 런치 12:00부터 (전날 예약 필수)",
     payment_dt: "결제 방법",
     payment_short_dd: "카드 / 전자화폐 / QR 결제 (Alipay·WeChat Pay 가능)",
@@ -473,7 +478,8 @@ const translations = {
     sp_menu_aria_close: "메뉴 닫기",
     site_nav_aria: "사이트 메뉴",
     footer_name: "鮨し禅",
-    footer_address: "오사카부 오사카시 주오구 히가시신사이바시 1-14-15 아루스빌딩 4F",
+    footer_address:
+      '<span class="address__line">오사카부 오사카시 주오구 히가시신사이바시 1-14-15 아루스빌딩 4F</span>',
     tablecheck_url: TABLECHECK_URLS.ko,
     footer_copyright: "© Sushi Zen All rights reserved.",
   },
@@ -589,7 +595,8 @@ const translations = {
     hours_dt: "营业时间",
     phone_dt: "电话",
     address_dt: "地址",
-    address_access_dd: "大阪府大阪市中央区东心斋桥1-14-15 Ars大厦4F<br>距心斋桥站步行5分钟",
+    address_access_dd:
+      '<span class="address__line">大阪府大阪市中央区东心斋桥1-14-15 Ars大厦4F</span><br><span class="address__subline">距心斋桥站步行5分钟</span>',
     hours_short_dd: "晚间 18:00–20:00 / 20:30–23:00<br>周末及节假日午餐 12:00起（需提前一天预约）",
     payment_dt: "支付方式",
     payment_short_dd: "信用卡 / 电子货币 / 二维码支付（支持支付宝·微信支付）",
@@ -603,7 +610,8 @@ const translations = {
     sp_menu_aria_close: "关闭菜单",
     site_nav_aria: "网站菜单",
     footer_name: "鮨し禅",
-    footer_address: "大阪府大阪市中央区东心斋桥1-14-15 Ars大厦4F",
+    footer_address:
+      '<span class="address__line">大阪府大阪市中央区东心斋桥1-14-15 Ars大厦4F</span>',
     tablecheck_url: TABLECHECK_URLS.zh,
     footer_copyright: "© 鮨し禅 All rights reserved.",
   },

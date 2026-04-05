@@ -832,6 +832,22 @@
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
   }
+
+  .address__line,
+  .address__subline {
+    display: inline-block;
+    max-width: 100%;
+  }
+
+  .address__subline {
+    white-space: normal;
+  }
+
+  .body__ja .address__line {
+    white-space: nowrap;
+    overflow-wrap: normal;
+    word-break: keep-all;
+  }
   .section__cancel_note {
     font-size: 1.3rem;
     line-height: 1.7;
@@ -6467,6 +6483,12 @@ header .header__image_kv img {
   body {
     width: 100%;
     max-width: 100%;
+  }
+
+  .body__ja #informationSection .address__line,
+  .body__ja .content__footer_address .address__line {
+    font-size: clamp(0.82rem, calc((100vw - 44px - var(--sz-safe-x) - var(--sz-safe-xr)) / 22.5), 1em);
+    letter-spacing: clamp(0em, 0.04vw, 0.03em);
   }
 
   /* main・各セクション: 固定 px より safe-area を優先 */

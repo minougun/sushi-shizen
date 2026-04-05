@@ -95,13 +95,6 @@
   ```  
   新しい元画像を追加したら `scripts/generate-mobile-images.cjs` に `outWebp(...)` を1行足すのが安全。
 
-- **ヒーロー（`sushi-photo-0.png`）の背景差し替え・皿のニュートラル化（実験用）**  
-  `images/photo/sushi-photo-0.original.png` をバックアップとして残し、`images/bg/5453670612.png` を背景に合成する例:
-  ```bash
-  python3 scripts/compose-hero-sushi-photo-bg.py
-  ```
-  続けてモバイル用 WebP を更新（`hero-sushi-720w.webp` は `sushi-photo-0.png` から sharp で再生成）。`index.html` のヒーロー画像に `?v=` を付けてキャッシュを切る。
-
 ---
 
 ## CSS の注意

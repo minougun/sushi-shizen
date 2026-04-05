@@ -203,6 +203,10 @@ const translations = {
     floating_reserve_label: "クイック予約",
     floating_call: "電話",
     floating_reserve: "今すぐ予約",
+    sp_sitebar_reserve: "予約する",
+    sp_menu_aria_open: "メニューを開く",
+    sp_menu_aria_close: "メニューを閉じる",
+    site_nav_aria: "サイト内メニュー",
     footer_name: "鮨し禅",
     footer_address: "大阪府大阪市中央区東心斎橋1-14-15 アルスビル 4F",
     tablecheck_url: TABLECHECK_URLS.ja,
@@ -332,6 +336,10 @@ const translations = {
     floating_reserve_label: "Quick reservation",
     floating_call: "Call",
     floating_reserve: "Reserve now",
+    sp_sitebar_reserve: "Reserve",
+    sp_menu_aria_open: "Open menu",
+    sp_menu_aria_close: "Close menu",
+    site_nav_aria: "Site menu",
     footer_name: "鮨し禅",
     footer_address: "4F Ars Building, 1-14-15 Higashi-Shinsaibashi, Chuo-ku, Osaka",
     tablecheck_url: TABLECHECK_URLS.en,
@@ -460,6 +468,10 @@ const translations = {
     floating_reserve_label: "빠른 예약",
     floating_call: "전화",
     floating_reserve: "지금 예약",
+    sp_sitebar_reserve: "예약",
+    sp_menu_aria_open: "메뉴 열기",
+    sp_menu_aria_close: "메뉴 닫기",
+    site_nav_aria: "사이트 메뉴",
     footer_name: "鮨し禅",
     footer_address: "오사카부 오사카시 주오구 히가시신사이바시 1-14-15 아루스빌딩 4F",
     tablecheck_url: TABLECHECK_URLS.ko,
@@ -586,6 +598,10 @@ const translations = {
     floating_reserve_label: "快捷预约",
     floating_call: "电话",
     floating_reserve: "立即预约",
+    sp_sitebar_reserve: "预约",
+    sp_menu_aria_open: "打开菜单",
+    sp_menu_aria_close: "关闭菜单",
+    site_nav_aria: "网站菜单",
     footer_name: "鮨し禅",
     footer_address: "大阪府大阪市中央区东心斋桥1-14-15 Ars大厦4F",
     tablecheck_url: TABLECHECK_URLS.zh,
@@ -621,6 +637,65 @@ function syncLangQueryParam(lang) {
     history.replaceState({}, "", `${u.pathname}${u.search}${u.hash}`);
   } catch (_) {
     /* ignore */
+  }
+}
+
+function getCurrentLangFromDom() {
+  const raw = (document.documentElement.getAttribute("lang") || "ja").toLowerCase();
+  if (raw.startsWith("zh")) return "zh";
+  if (raw === "ko") return "ko";
+  if (raw === "en") return "en";
+  return "ja";
+}
+
+function syncSpNavMenuAria() {
+  const btn = document.getElementById("spNavMenuBtn");
+  if (!btn) return;
+  const lang = getCurrentLangFromDom();
+  const dict = translations[lang] || translations.ja;
+  const open = document.body.classList.contains("sp-nav-is-open");
+  btn.setAttribute("aria-expanded", String(open));
+  const label = open ? dict.sp_menu_aria_close : dict.sp_menu_aria_open;
+  if (label) btn.setAttribute("aria-label", label);
+}
+
+function initializeSpOyajiNav() {
+  const btn = document.getElementById("spNavMenuBtn");
+  const nav = document.getElementById("siteNav");
+  if (!btn || !nav) return;
+
+  function setOpen(open) {
+    const on = Boolean(open);
+    document.body.classList.toggle("sp-nav-is-open", on);
+    document.body.style.overflow = on ? "hidden" : "";
+    syncSpNavMenuAria();
+  }
+
+  btn.addEventListener("click", () => {
+    setOpen(!document.body.classList.contains("sp-nav-is-open"));
+  });
+
+  nav.addEventListener("click", (e) => {
+    const t = e.target;
+    if (t && typeof t.closest === "function" && t.closest("a[href]")) {
+      setOpen(false);
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      setOpen(false);
+    }
+  });
+
+  const mq = window.matchMedia("(max-width: 767px)");
+  function onMq(ev) {
+    if (!ev.matches) setOpen(false);
+  }
+  if (typeof mq.addEventListener === "function") {
+    mq.addEventListener("change", onMq);
+  } else if (typeof mq.addListener === "function") {
+    mq.addListener(onMq);
   }
 }
 
@@ -679,6 +754,7 @@ function applyLanguage(lang) {
 
   safeSetStorage(STORAGE_KEY, lang);
   syncLangQueryParam(lang);
+  syncSpNavMenuAria();
 }
 
 function safeGetStorage(key) {
@@ -982,6 +1058,7 @@ function initializePageBgParallax() {
 document.addEventListener("DOMContentLoaded", () => {
   const initialLanguage = getInitialLanguage();
   applyLanguage(initialLanguage);
+  initializeSpOyajiNav();
   initializeScrollReveal();
   initializeHeroOrnamentMotion();
   initializePageBgParallax();

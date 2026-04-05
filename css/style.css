@@ -6603,3 +6603,417 @@ header .header__image_kv img {
     justify-items: center !important;
   }
 }
+
+/* =====================================================================
+   スマホのみ: 参考 https://oyajisaigononigiri.com/ のシェルに近づける
+   （固定バー・ゴールド予約・全画面メニュー・セクション見出し帯）
+   PC（768px以上）は .sp-sitebar 非表示・ナビは既存のまま。
+   ===================================================================== */
+
+@media (min-width: 768px) {
+  .sp-sitebar {
+    display: none !important;
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --sp-oyaji-bar: #1a1a1a;
+    --sp-oyaji-gold: #bcaa6f;
+    --sp-oyaji-gold-deep: #9b8824;
+    --sp-oyaji-cream: #ebe8dc;
+    --sp-oyaji-ink: #1a1a1a;
+  }
+
+  .sp-sitebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    height: 56px;
+    padding: 0 max(12px, var(--sz-safe-x)) 0 max(12px, var(--sz-safe-xr));
+    box-sizing: border-box;
+    background: var(--sp-oyaji-bar);
+    border-bottom: 1px solid rgba(188, 170, 111, 0.28);
+  }
+
+  .sp-sitebar__brand {
+    flex: 0 0 auto;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.05rem;
+    font-weight: 400;
+    letter-spacing: 0.28em;
+    font-family:
+      "游明朝", "Yu Mincho", YuMincho,
+      "Hiragino Mincho Pro", "Noto Serif JP", serif;
+  }
+
+  .sp-sitebar__brand-text {
+    display: inline-block;
+  }
+
+  .sp-sitebar__reserve {
+    flex: 0 0 auto;
+    margin-left: auto;
+    margin-right: 48px;
+    min-width: 104px;
+    padding: 11px 14px;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    color: var(--sp-oyaji-ink);
+    background: var(--sp-oyaji-gold);
+    text-decoration: none;
+    border-radius: 2px;
+    transition: opacity 0.25s ease, background 0.25s ease;
+  }
+
+  .sp-sitebar__reserve:hover,
+  .sp-sitebar__reserve:active {
+    opacity: 0.92;
+    color: var(--sp-oyaji-ink);
+    background: #d4c585;
+  }
+
+  .sp-sitebar__menu {
+    position: absolute;
+    top: 50%;
+    right: max(12px, var(--sz-safe-xr));
+    width: 44px;
+    height: 44px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    transform: translateY(-50%);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .sp-sitebar__menu:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.65);
+    outline-offset: 2px;
+  }
+
+  .sp-sitebar__menu-bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    margin: 5px auto;
+    background: #fff;
+    border-radius: 1px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  body.sp-nav-is-open .sp-sitebar__menu-bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  body.sp-nav-is-open .sp-sitebar__menu-bar:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+
+  body.sp-nav-is-open .sp-sitebar__menu-bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  body.sp-nav-is-open .language-switcher {
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+
+  header {
+    padding-top: 56px;
+    box-sizing: border-box;
+  }
+
+  header .header__hero.section__inner {
+    padding-top: max(16px, calc(8px + var(--sz-safe-y))) !important;
+  }
+
+  .language-switcher {
+    top: calc(56px + 10px + var(--sz-safe-y)) !important;
+    right: max(12px, var(--sz-safe-xr)) !important;
+  }
+
+  .language-switcher__caption {
+    display: none !important;
+  }
+
+  .floating-reserve {
+    display: none !important;
+  }
+
+  /* ヒーロー: 画像を先に（メインビジュアル風） */
+  .header__hero.section__inner {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .header__image_kv {
+    order: -1 !important;
+    margin-top: 0 !important;
+    margin-bottom: 8px !important;
+  }
+
+  .header__hero_copy {
+    order: 0 !important;
+  }
+
+  /* 横スクロール帯を廃止し、オーバーレイメニューに */
+  .navigation {
+    position: fixed !important;
+    inset: 0 !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    height: 100vh !important;
+    max-height: none !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    z-index: 95 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 72px max(20px, var(--sz-safe-x)) 40px !important;
+    box-sizing: border-box !important;
+    background: linear-gradient(
+      180deg,
+      rgba(26, 26, 26, 0) 0,
+      rgba(26, 26, 26, 0) 56px,
+      rgba(26, 26, 26, 0.92) 56px,
+      rgba(26, 26, 26, 0.97) 100%
+    ) !important;
+    border: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+  }
+
+  body.sp-nav-is-open .navigation {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .navigation {
+      transition: none !important;
+    }
+
+    .sp-sitebar__menu-bar {
+      transition: none !important;
+    }
+  }
+
+  .navigation .navigation__inner {
+    overflow: visible !important;
+    width: 100% !important;
+    max-width: 360px !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+  }
+
+  .navigation .navigation__inner ul {
+    display: flex !important;
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+    align-items: stretch !important;
+    justify-content: center !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    height: auto !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    gap: 0 !important;
+  }
+
+  .navigation .navigation__inner ul li {
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    display: block !important;
+  }
+
+  .navigation .navigation__inner ul li a {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    min-height: 52px !important;
+    height: auto !important;
+    padding: 18px 16px !important;
+    box-sizing: border-box !important;
+    font-size: 1.85rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.22em !important;
+    color: #fff !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+    background: transparent !important;
+  }
+
+  .navigation .navigation__inner ul li:first-child a {
+    border-top: 1px solid rgba(255, 255, 255, 0.12) !important;
+  }
+
+  /* メイン: クリーム基調（本文はダークテキスト） */
+  .content__inner {
+    background: var(--sp-oyaji-cream) !important;
+  }
+
+  .content__inner > main {
+    color: var(--sp-oyaji-ink) !important;
+  }
+
+  .content__inner > main a {
+    color: var(--sp-oyaji-gold-deep) !important;
+  }
+
+  .content__inner > main a:hover,
+  .content__inner > main a:active {
+    color: #6d5f28 !important;
+  }
+
+  .section__slide_intro {
+    background: var(--sp-oyaji-cream) !important;
+  }
+
+  .section__slide_intro .slide__marquee {
+    background: var(--sp-oyaji-cream) !important;
+  }
+
+  .section__slide_intro .slide__inner {
+    background: #e3dfd2 !important;
+  }
+
+  .intro__about_concept .section__text,
+  .section__chef_story .section__text,
+  .section__chef_story .chef__credential,
+  .section__information .info__summary,
+  .section__information .info__list > dd,
+  .section__information .info__booking_flow,
+  .section__contact .reserve__meta,
+  .section__contact .reserve__support_list li,
+  .section__contact .reserve__policy_note,
+  .section__contact .reserve__call_note,
+  .section__course_special .section__intro,
+  .section__course_special .section__note,
+  .section__course_special .section__price,
+  .intro__about_committed .section__copy {
+    color: var(--sp-oyaji-ink) !important;
+  }
+
+  .section__chef_story .chef__eyebrow,
+  .section__chef_story .chef__name {
+    color: var(--sp-oyaji-ink) !important;
+  }
+
+  .info__list > dt {
+    color: var(--sp-oyaji-gold-deep) !important;
+  }
+
+  .access__link__small,
+  .section__information a.access__link__small {
+    color: var(--sp-oyaji-gold-deep) !important;
+  }
+
+  .title__type1 .section__main,
+  .title__type1 .section__sub,
+  main .section__title,
+  .section__chef_story .chef__name,
+  .section__panel_text .section__title_primary,
+  .section__panel_text .section__title_en {
+    color: var(--sp-oyaji-ink) !important;
+  }
+
+  /* セクション見出し: ゴールド帯（おやじサイトの .title に近い） */
+  .title__type1.section__title,
+  main .section__title,
+  .intro__about_committed .section__title {
+    background: var(--sp-oyaji-gold) !important;
+    margin-left: calc(-1 * max(16px, var(--sz-safe-x))) !important;
+    margin-right: calc(-1 * max(16px, var(--sz-safe-xr))) !important;
+    padding: 2.6rem max(18px, var(--sz-safe-x)) !important;
+    width: auto !important;
+    max-width: none !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+  }
+
+  .title__type1 .section__sub,
+  .section__title_en {
+    display: block !important;
+    margin-top: 0.85rem !important;
+    font-size: 1.25rem !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.28em !important;
+    opacity: 0.92 !important;
+  }
+
+  .section__course_special .section__panel_text .section__title {
+    background: var(--sp-oyaji-gold) !important;
+    margin: -1.25rem -1.25rem 1.25rem !important;
+    padding: 1.75rem 1rem !important;
+    text-align: center !important;
+    border-radius: 0 !important;
+  }
+
+  .section__course_special .section__panel_base {
+    background: rgba(255, 255, 255, 0.55) !important;
+    border: 1px solid rgba(26, 26, 26, 0.08) !important;
+    border-radius: 4px !important;
+    overflow: hidden !important;
+  }
+
+  .intro__about_committed .concept-card {
+    background: rgba(255, 255, 255, 0.65) !important;
+    border: 1px solid rgba(26, 26, 26, 0.08) !important;
+    color: var(--sp-oyaji-ink) !important;
+  }
+
+  .intro__about_committed .concept-card h3,
+  .intro__about_committed .concept-card p {
+    color: var(--sp-oyaji-ink) !important;
+  }
+
+  .booking-card,
+  .header__button--ghost,
+  .info__map-cta {
+    border-color: rgba(26, 26, 26, 0.2) !important;
+  }
+
+  .booking-card {
+    background: rgba(255, 255, 255, 0.85) !important;
+    color: var(--sp-oyaji-ink) !important;
+  }
+
+  .booking-card__label,
+  .booking-card__cta,
+  .booking-card__brand {
+    color: inherit !important;
+  }
+
+  footer {
+    background: var(--sp-oyaji-bar) !important;
+  }
+
+  .content__inner > main {
+    padding-bottom: max(48px, calc(32px + var(--sz-safe-b))) !important;
+  }
+}

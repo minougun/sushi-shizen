@@ -16,7 +16,7 @@
 
 ## 技術スタック
 
-- **フロント:** 静的 HTML + 単一 CSS（`css/style.css`）+ `js/main.js`（多言語・予約リンク・口コミ表示など）
+- **フロント:** 静的 HTML + 単一 CSS（`css/style.css`）+ `js/main.js`（多言語・予約リンクなど。ヒーローの星表示は削除済みだが `api/review-scores` 用の fetch ロジックは残置可能）
 - **サニタイズ:** `dompurify`（CDN）— `data-i18n-html` 用
 - **画像最適化（開発時）:** Node + `sharp`（`npm run images:mobile`）
 - **サーバレス（任意）:** `api/review-scores.js` — Google Places（新）+ 食べログ等のフォールバック（Vercel 環境変数）
@@ -30,7 +30,7 @@
 | パス | 役割 |
 |------|------|
 | `index.html` | 1ページ構成の本体。`data-i18n` / `data-i18n-html` / `data-i18n-attrs`。CSS/JS は `?v=` でキャッシュバスト |
-| `js/main.js` | 翻訳辞書（`ja` / `en` / `ko` / `zh`）、言語切替、外部 URL の allowlist 付き整形、口コミスコア fetch |
+| `js/main.js` | 翻訳辞書（`ja` / `en` / `ko` / `zh`）、言語切替、外部 URL の allowlist 付き整形（口コミ DOM が無いときはスコア fetch しない） |
 | `css/style.css` | メインスタイル（メディアクエリ込みの集約ファイル） |
 | `css/tokens.css` | デザイントークン（`style.css` から import） |
 | `scripts/check-i18n-keys.js` | HTML で使う i18n キーが `main.js` の各言語に揃っているか検証 |

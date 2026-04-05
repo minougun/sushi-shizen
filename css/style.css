@@ -6910,8 +6910,17 @@ header .header__image_kv img {
     color: #000000 !important;
   }
 
+  /* 大将: グローバル・タブレット層の白/薄色を上回して全文黒 */
+  .section__chef_story .content__type1_origin .section__text,
+  .section__chef_story .content__type1_origin .section__text p,
   .section__chef_story .section__text,
+  .section__chef_story .section__text p,
   .section__chef_story .chef__credential,
+  .section__chef_story .chef__eyebrow,
+  .section__chef_story .chef__name {
+    color: #000000 !important;
+  }
+
   .section__information .info__summary,
   .section__information .info__list > dd,
   .section__information .info__booking_flow,
@@ -6923,11 +6932,6 @@ header .header__image_kv img {
   .section__course_special .section__note,
   .section__course_special .section__price,
   .intro__about_committed .section__copy {
-    color: var(--sp-oyaji-ink) !important;
-  }
-
-  .section__chef_story .chef__eyebrow,
-  .section__chef_story .chef__name {
     color: var(--sp-oyaji-ink) !important;
   }
 
@@ -6944,7 +6948,6 @@ header .header__image_kv img {
   .title__type1 .section__sub,
   main .section__title,
   main .content__type1 .content__type1_origin .section__title,
-  .section__chef_story .chef__name,
   .section__panel_text .section__title_primary,
   .section__panel_text .section__title_en {
     color: var(--sp-oyaji-ink) !important;

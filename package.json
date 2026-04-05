@@ -1,7 +1,7 @@
 {
   "name": "sushi-zen-site",
   "private": true,
-  "description": "Static site for Sushi Zen. Use `npm run check:i18n` before deploy. Production: `npm run deploy:prod` (Vercel CLI).",
+  "description": "Static site for Sushi Zen. Production: https://sushi-zen.online — `npm run check:i18n` then `npm run deploy:prod` (Vercel CLI).",
   "scripts": {
     "check:i18n": "node scripts/check-i18n-keys.js",
     "images:mobile": "node scripts/generate-mobile-images.cjs",

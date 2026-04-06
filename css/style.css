@@ -6579,6 +6579,11 @@ header .header__image_kv img {
     font-size: clamp(1.02rem, 3.5vw, 1.22rem) !important;
   }
 
+  header .header__hero_copy .header__eyebrow {
+    font-size: clamp(0.66rem, 2.7vw, 0.8rem) !important;
+    letter-spacing: 0.02em !important;
+  }
+
   .title__type1 .section__main,
   #reserveSection .title__type1 .section__main {
     font-size: clamp(2.1rem, 7vw, 3.2rem) !important;
@@ -6635,6 +6640,23 @@ header .header__image_kv img {
   }
 }
 
+/* Hero eyebrow: keep the Fukushima + hours copy on a single line */
+header .header__hero_copy .header__eyebrow {
+  display: block;
+  width: max-content;
+  max-width: none;
+  white-space: nowrap;
+  overflow-wrap: normal;
+  word-break: keep-all;
+  letter-spacing: 0.06em;
+}
+
+@media (min-width: 768px) {
+  header .header__hero_copy .header__eyebrow {
+    font-size: clamp(0.96rem, 0.74rem + 0.5vw, 1.08rem);
+  }
+}
+
 @media (max-width: 380px) {
   .content__inner > main {
     padding-left: max(12px, var(--sz-safe-x)) !important;
@@ -6644,6 +6666,11 @@ header .header__image_kv img {
 
   .logo__text {
     font-size: clamp(2.2rem, 10vw, 3.6rem) !important;
+  }
+
+  header .header__hero_copy .header__eyebrow {
+    font-size: 0.66rem;
+    letter-spacing: 0.02em;
   }
 
   .section__slide_intro .slide__set {

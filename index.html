@@ -324,27 +324,30 @@
                 <div class="section__logo"></div>
                 <div class="section__title">
                   <span class="section__title_primary" data-i18n="course_title_primary">おすすめコース</span>
-                  <span class="section__title_en" data-i18n="course_title_sub">おまかせ</span>
+                  <span class="section__title_en" data-i18n="course_title_sub">4コース</span>
                 </div>
                 <p class="section__intro" data-i18n-html="course_intro">
-                  鮨し禅の夜のおまかせは、フリードリンク付きの2コースです。その日の旬の食材で仕立てる逸品料理と握りを、おまかせでお楽しみください。
+                  鮨し禅のコースは、全4件でご案内しています。<br>旬の食材で仕立てる逸品料理と握りを、価格帯に応じてお選びいただけます。
                 </p>
-                <div class="section__info_base">
+                <div class="section__info_base section__info_base--course-list">
                   <div class="section__info">
-                    <p class="section__price">¥18,000</p>
-                    <p class="section__note" data-i18n="course_tier_af">アルコールフリードリンク付き（税込）</p>
+                    <p class="section__price section__price--label" data-i18n="course_3_name">おまかせコース</p>
+                    <p class="section__note" data-i18n="course_3_detail">アルコールフリードリンク付き / 18,000円（税込） / 旬の食材で仕立てる逸品料理と握りを、バランスよく楽しめる定番コースです。</p>
                   </div>
                   <div class="section__info">
-                    <p class="section__price">¥16,000</p>
-                    <p class="section__note" data-i18n="course_tier_soft">ソフトドリンクフリードリンク付き（税込）</p>
+                    <p class="section__price section__price--label" data-i18n="course_4_name">おまかせコース</p>
+                    <p class="section__note" data-i18n="course_4_detail">ソフトドリンクフリードリンク付き / 16,000円（税込） / 鮨し禅らしい静かな流れを気軽に楽しめるスタンダードコースです。</p>
+                  </div>
+                  <div class="section__info">
+                    <p class="section__price section__price--label" data-i18n="course_1_name">VIPコース</p>
+                    <p class="section__note" data-i18n="course_1_detail">アルコールフリードリンク付き / 25,000円（税込） / 当店における最高級の食材を駆使した逸品料理やにぎりをご堪能いただけます。</p>
+                  </div>
+                  <div class="section__info">
+                    <p class="section__price section__price--label" data-i18n="course_2_name">VIPコース</p>
+                    <p class="section__note" data-i18n="course_2_detail">ソフトドリンクフリードリンク付き / 23,000円（税込） / 当店における最高級の食材を駆使した逸品料理やにぎりをご堪能いただけます。</p>
                   </div>
                 </div>
-                <div class="section__info_base section__info_base--secondary">
-                  <div class="section__info">
-                    <p class="section__price section__price--label" data-i18n="lunch_label">ランチ</p>
-                    <p class="section__note" data-i18n="lunch_note">土・日・祝 12:00〜（前日までの予約制）</p>
-                  </div>
-                </div>
+                <p class="section__note section__note--course-footnote" data-i18n="course_footnote">最新の内容・価格・提供条件は TableCheck 予約ページでご確認ください。</p>
               </div>
               <div class="section__panel_image">
                 <picture>
@@ -399,9 +402,25 @@
       <a href="https://www.tablecheck.com/ja/sushi-zen/reserve/message" data-tablecheck target="_blank" rel="noopener noreferrer" class="floating-reserve__link floating-reserve__link--reserve" data-i18n="floating_reserve">今すぐ予約</a>
     </div>
 
+    <div class="corner-language-switcher" data-i18n-attrs="aria-label:language_switcher_label">
+      <div class="corner-language-switcher__segmented" role="group" aria-label="Language">
+        <button class="language-switcher__button corner-language-switcher__button" type="button" data-lang="ja" aria-pressed="true">
+          <span class="corner-language-switcher__seg-inner">
+            <img class="language-switcher__flag corner-language-switcher__flag" src="./images/flags/jp.svg" alt="" width="20" height="14" decoding="async" aria-hidden="true" />
+            <span class="corner-language-switcher__label">日本語</span>
+          </span>
+        </button>
+        <button class="language-switcher__button corner-language-switcher__button" type="button" data-lang="en" aria-pressed="false">
+          <span class="corner-language-switcher__seg-inner">
+            <img class="language-switcher__flag corner-language-switcher__flag" src="./images/flags/us.svg" alt="" width="20" height="14" decoding="async" aria-hidden="true" />
+            <span class="corner-language-switcher__label">English</span>
+          </span>
+        </button>
+      </div>
+    </div>
+
     <!-- フッター -->
     <footer>
-      <span class="hero-ornament hero-ornament--scroll" aria-hidden="true"></span>
       <div class="content__footer section__inner">
         <p class="content__footer_name" data-i18n="footer_name">鮨し禅</p>
         <p class="content__footer_address" data-i18n-html="footer_address"><span class="address__line">大阪府大阪市中央区東心斎橋1-14-15 アルスビル 4F</span></p>
